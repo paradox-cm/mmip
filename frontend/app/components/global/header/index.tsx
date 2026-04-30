@@ -1,3 +1,4 @@
+import { LuEyeOff } from 'react-icons/lu'
 import { PiMagnifyingGlassBold } from 'react-icons/pi'
 
 import Image from 'next/image'
@@ -28,7 +29,12 @@ export default function Header() {
 
           <Navigation />
 
-          <div className="flex flex-1 justify-end">
+          <div className="flex flex-1 justify-end gap-2">
+            <Button asChild variant="outline" size="icon" className="size-[50px]">
+              <Link href="/api/escape" aria-label="Hide website quickly">
+                <LuEyeOff className="size-5" />
+              </Link>
+            </Button>
             <Button asChild variant="outline" size="icon" className="size-[50px]">
               <Link href="/search" aria-label="Search">
                 <PiMagnifyingGlassBold className="size-5" />

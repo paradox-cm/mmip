@@ -11,14 +11,20 @@ import { GetPostQueryResult } from '@/sanity.types'
 type PostCardData = {
   className?: string
   orientation?: 'horizontal' | 'vertical'
+  viewMode?: 'grid' | 'list'
   post: Pick<
     NonNullable<GetPostQueryResult>,
     'title' | 'excerpt' | 'coverImage' | 'category' | 'topic' | 'postType' | 'slug'
   >
 }
 
-export default function PostCard({ className, orientation = 'vertical', post }: PostCardData) {
-  const isHorizontal = orientation === 'horizontal'
+export default function PostCard({
+  className,
+  orientation = 'vertical',
+  viewMode = 'grid',
+  post,
+}: PostCardData) {
+  const isHorizontal = orientation === 'horizontal' || viewMode === 'list'
   const themeClasses = CARD_THEME[post.postType ?? 'default']
 
   return (
@@ -40,7 +46,7 @@ export default function PostCard({ className, orientation = 'vertical', post }: 
           />
         </div>
 
-        <div className={cn('@container flex w-full flex-col gap-2', { 'md:flex-1': isHorizontal })}>
+        <div className={cn('flex w-full flex-col gap-2 @container', { 'md:flex-1': isHorizontal })}>
           <div className="mb-1 flex flex-row items-center gap-1">
             <Badge variant={post.postType} className="capitalize text-white">
               {post.postType}
@@ -49,7 +55,7 @@ export default function PostCard({ className, orientation = 'vertical', post }: 
               {post.topic.name}
             </Badge>
           </div>
-          <h4 className="@md:text-2xl max-w-[34ch] font-sans text-xl font-medium">{post.title}</h4>
+          <h4 className="max-w-[34ch] font-sans text-xl font-medium @md:text-2xl">{post.title}</h4>
           {post.excerpt && (
             <CustomPortableText
               paragraphClassName="line-clamp-3"

@@ -25,7 +25,26 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { indexType = 'all' } = body
+    const rawIndexType = body.indexType ?? body._type ?? 'all'
+
+    const normalizeIndexType = (value: string): 'all' | 'posts' | 'services' | 'tribes' => {
+      switch (value) {
+        case 'post':
+        case 'posts':
+          return 'posts'
+        case 'service':
+        case 'services':
+          return 'services'
+        case 'tribe':
+        case 'tribes':
+          return 'tribes'
+        default:
+          return 'all'
+      }
+    }
+
+    const indexType =
+      typeof rawIndexType === 'string' ? normalizeIndexType(rawIndexType.toLowerCase()) : 'all'
 
     console.log('Starting Algolia indexing...', { indexType })
 

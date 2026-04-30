@@ -136,3 +136,15 @@ export const formatFileSize = (sizeInBytes: number) => {
   const sizeInMB = sizeInBytes / (1024 * 1024)
   return sizeInMB < 1 ? `${(sizeInBytes / 1024).toFixed(0)} KB` : `${sizeInMB.toFixed(1)} MB`
 }
+
+export function formatWebsiteUrl(url: string) {
+  try {
+    const normalizedUrl = /^https?:\/\//i.test(url) ? url : `https://${url}`
+    return new URL(normalizedUrl).hostname.replace(/^www\./i, '')
+  } catch {
+    return url
+      .replace(/^https?:\/\//i, '')
+      .replace(/^www\./i, '')
+      .replace(/\/.*$/, '')
+  }
+}

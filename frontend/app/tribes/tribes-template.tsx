@@ -14,7 +14,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/app/components/ui/select'
+import { cn } from '@/lib/utils'
 import type { AllTribesQueryResult } from '@/sanity.types'
+
+type SortOption = 'name-asc' | 'name-desc'
+type ViewMode = 'grid' | 'list'
+
+const isSortOption = (value: string | null): value is SortOption => {
+  return value === 'name-asc' || value === 'name-desc'
+}
+
+const isViewMode = (value: string | null): value is ViewMode => {
+  return value === 'grid' || value === 'list'
+}
 
 // const data = {
 //   name: 'Services',
@@ -30,17 +42,37 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
   const [selectedRegion, setSelectedRegion] = useState<string>(
     () => searchParams.get('region') || 'all',
   )
+  const [selectedSort, setSelectedSort] = useState<SortOption | undefined>(() => {
+    const sortFromParams = searchParams.get('sort')
+    return isSortOption(sortFromParams) ? sortFromParams : undefined
+  })
+  const [viewMode, setViewMode] = useState<ViewMode>(() => {
+    const viewFromParams = searchParams.get('view')
+    return isViewMode(viewFromParams) ? viewFromParams : 'grid'
+  })
 
   const [displayCount, setDisplayCount] = useState(12)
 
-  // Update URL when filters change
-  const updateSearchParams = (region: string) => {
+  // Update URL when filters, sort, or view change
+  const updateSearchParams = (region: string, sort: SortOption | undefined, view: ViewMode) => {
     const params = new URLSearchParams(searchParams)
 
     if (region === 'all') {
       params.delete('region')
     } else {
       params.set('region', region)
+    }
+
+    if (!sort) {
+      params.delete('sort')
+    } else {
+      params.set('sort', sort)
+    }
+
+    if (view === 'grid') {
+      params.delete('view')
+    } else {
+      params.set('view', view)
     }
 
     const newUrl = params.toString() ? `?${params.toString()}` : window.location.pathname
@@ -55,13 +87,27 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
     })
   }, [data, selectedRegion])
 
+  const sortedTribes = useMemo(() => {
+    if (!selectedSort) {
+      return filteredTribes
+    }
+
+    return [...filteredTribes].sort((a, b) => {
+      if (selectedSort === 'name-desc') {
+        return b.name.localeCompare(a.name, undefined, { sensitivity: 'base' })
+      }
+
+      return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
+    })
+  }, [filteredTribes, selectedSort])
+
   // Tribes to display (with load more functionality)
   const displayedTribes = useMemo(() => {
-    return filteredTribes.slice(0, displayCount)
-  }, [filteredTribes, displayCount])
+    return sortedTribes.slice(0, displayCount)
+  }, [sortedTribes, displayCount])
 
   // Check if there are more tribes to load
-  const hasMoreTribes = displayedTribes.length < filteredTribes.length
+  const hasMoreTribes = displayedTribes.length < sortedTribes.length
 
   // Load more function
   const loadMore = () => {
@@ -72,19 +118,33 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
   const handleRegionChange = (value: string) => {
     setSelectedRegion(value)
     setDisplayCount(12)
-    updateSearchParams(value)
+    updateSearchParams(value, selectedSort, viewMode)
+  }
+
+  const handleSortChange = (value: string) => {
+    if (!isSortOption(value)) return
+
+    setSelectedSort(value)
+    setDisplayCount(12)
+    updateSearchParams(selectedRegion, value, viewMode)
+  }
+
+  const handleViewModeChange = (value: ViewMode) => {
+    setViewMode(value)
+    updateSearchParams(selectedRegion, selectedSort, value)
   }
 
   // Clear all filters
   const clearFilters = () => {
     setSelectedRegion('all')
+    setSelectedSort(undefined)
     setDisplayCount(12)
-    updateSearchParams('all')
+    updateSearchParams('all', undefined, viewMode)
   }
 
   return (
     <>
-      <Section className="pb-8 sm:pb-8 lg:pb-8">
+      <Section>
         <div className="container flex flex-col gap-16">
           {/* Header */}
           <div className="flex flex-col gap-6">
@@ -94,13 +154,16 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
               and community resources.
             </p>
           </div>
+        </div>
+      </Section>
 
-          {/* Filters */}
-          <div className="flex flex-col justify-end md:flex-row md:items-center">
-            <div className="flex flex-wrap items-center justify-end gap-4">
+      <Section className="flex flex-col gap-8 border-t py-8 sm:py-8 lg:py-8">
+        <div className="container">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
               {/* Region Filter */}
               <Select value={selectedRegion} onValueChange={handleRegionChange}>
-                <SelectTrigger className="w-48">
+                <SelectTrigger className="w-full sm:w-48">
                   <SelectValue placeholder="Filter by region" />
                 </SelectTrigger>
                 <SelectContent>
@@ -111,8 +174,45 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
                 </SelectContent>
               </Select>
 
+              <Select value={selectedSort} onValueChange={handleSortChange}>
+                <SelectTrigger className="w-full sm:w-56">
+                  <SelectValue placeholder="Sort" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="name-asc">Name (A–Z)</SelectItem>
+                  <SelectItem value="name-desc">Name (Z–A)</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <div className="inline-flex items-center rounded-lg border bg-background p-1">
+                <button
+                  type="button"
+                  className={cn(
+                    'rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
+                    viewMode === 'grid'
+                      ? 'bg-foreground text-background'
+                      : 'text-foreground-subtle hover:text-foreground',
+                  )}
+                  onClick={() => handleViewModeChange('grid')}
+                >
+                  Grid
+                </button>
+                <button
+                  type="button"
+                  className={cn(
+                    'rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
+                    viewMode === 'list'
+                      ? 'bg-foreground text-background'
+                      : 'text-foreground-subtle hover:text-foreground',
+                  )}
+                  onClick={() => handleViewModeChange('list')}
+                >
+                  List
+                </button>
+              </div>
+
               {/* Clear Filters Button */}
-              {selectedRegion !== 'all' && (
+              {(selectedRegion !== 'all' || selectedSort) && (
                 <Button variant="ghost" onClick={clearFilters} size="sm">
                   Clear Filters
                 </Button>
@@ -127,9 +227,15 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
           {/* Tribes Grid */}
           {displayedTribes.length > 0 ? (
             <div className="space-y-8">
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div
+                className={cn(
+                  viewMode === 'grid'
+                    ? 'grid gap-6 md:grid-cols-2 lg:grid-cols-3'
+                    : 'flex flex-col gap-4',
+                )}
+              >
                 {displayedTribes.map(tribe => (
-                  <TribeCard key={tribe._id} tribe={tribe} />
+                  <TribeCard key={tribe._id} tribe={tribe} layout={viewMode} />
                 ))}
               </div>
 
@@ -152,7 +258,7 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
 
           {/* Results Summary */}
           <div className="mt-8 text-center text-sm text-gray-500">
-            Showing {displayedTribes.length} of {filteredTribes.length} tribes
+            Showing {displayedTribes.length} of {sortedTribes.length} tribes
           </div>
         </div>
       </Section>

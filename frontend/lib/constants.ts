@@ -21,3 +21,9 @@ export const CARD_THEME: Record<string, string> = {
   service: 'bg-gold-50 border-gold-200 hover:border-gold-500',
   default: 'bg-card border hover:border-hover',
 }
+
+export const REGION_LABELS = {
+  north: 'Northern CA',
+  central: 'Central CA',
+  south: 'Southern CA',
+} as const

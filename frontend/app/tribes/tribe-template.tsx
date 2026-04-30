@@ -7,6 +7,8 @@ import CoverImage from '@/app/components/shared/cover-image'
 import PortableText from '@/app/components/shared/portable-text'
 import Section from '@/app/components/shared/section'
 import { Badge } from '@/app/components/ui/badge'
+import { REGION_LABELS } from '@/lib/constants'
+import { formatWebsiteUrl } from '@/lib/utils'
 import type { GetTribeQueryResult } from '@/sanity.types'
 
 export default function TribeTemplate({ tribe }: { tribe: NonNullable<GetTribeQueryResult> }) {
@@ -43,7 +45,7 @@ function TribeHeader({
             </Badge>
           </Link>
           <Badge variant="service" className="bg-transparent capitalize">
-            {region}
+            {REGION_LABELS[region]}
           </Badge>
         </div>
         <h1>{name}</h1>
@@ -119,7 +121,7 @@ function TribeBody({
                       rel="noopener noreferrer"
                       className="text-sm hover:underline"
                     >
-                      Visit Website
+                      {formatWebsiteUrl(contactInfo.website)}
                     </a>
                   </div>
                 )}

@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { LuDownload, LuExternalLink } from 'react-icons/lu'
 
+import { link } from 'fs'
 import Link from 'next/link'
 import { PortableTextBlock } from 'next-sanity'
 import pluralize from 'pluralize-esm'
@@ -12,6 +13,7 @@ import PortableText from '@/app/components/shared/portable-text'
 import Section from '@/app/components/shared/section'
 import { Badge } from '@/app/components/ui/badge'
 import { Button } from '@/app/components/ui/button'
+import { formatWebsiteUrl } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 import type { GetPostQueryResult } from '@/sanity.types'
 import { fetchMorePosts } from '@/sanity/lib/fetch'
@@ -129,7 +131,7 @@ function PostBody({
           {(postType === 'tool' || postType === 'guide') && externalLink !== null && (
             <a href={externalLink ?? ''} target="_blank" rel="noopener noreferrer">
               <Button className="flex w-full items-center justify-between gap-2">
-                Visit website
+                {formatWebsiteUrl(externalLink)}
                 <LuExternalLink />
               </Button>
             </a>
