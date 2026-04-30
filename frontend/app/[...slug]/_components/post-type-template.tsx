@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { Suspense, useMemo, useState } from 'react'
 
 import { useRouter, useSearchParams } from 'next/navigation'
 
@@ -16,7 +16,7 @@ import {
 } from '@/app/components/ui/select'
 import type { PostTypeRoute } from '@/lib/resolve-route'
 
-export default function PostTypeTemplate({ data }: { data: PostTypeRoute }) {
+function PostTypeContent({ data }: { data: PostTypeRoute }) {
   const { postType, posts = [] } = data.data ?? {}
   const metadata = data.metadata
 
@@ -198,5 +198,13 @@ export default function PostTypeTemplate({ data }: { data: PostTypeRoute }) {
         </div>
       </Section>
     </>
+  )
+}
+
+export default function PostTypeTemplate({ data }: { data: PostTypeRoute }) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PostTypeContent data={data} />
+    </Suspense>
   )
 }

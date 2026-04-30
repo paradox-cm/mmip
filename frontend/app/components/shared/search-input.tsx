@@ -8,7 +8,6 @@ import Link from 'next/link'
 
 import { Badge } from '@/app/components/ui/badge'
 import { useSearch } from '@/lib/hooks/use-search'
-import { cn } from '@/lib/utils'
 
 export default function SearchComponent() {
   const [query, setQuery] = useState('')
@@ -90,14 +89,14 @@ export default function SearchComponent() {
                   <div className="min-w-0 flex-1">
                     <div className="mb-1 flex items-center gap-2">
                       <Image
-                        src={result.coverImage.url || '/default-image.png'}
+                        src={result.coverImage?.url || '/default-image.png'}
                         alt={result.title || 'Image'}
                         width={100}
                         height={80}
                       />
                       <h3 className="truncate font-medium text-gray-900">{result.title}</h3>
                       {result.postType && (
-                        <Badge variant={result.postType as any} className="text-xs">
+                        <Badge variant={result.postType} className="text-xs">
                           {result.postType}
                         </Badge>
                       )}
@@ -105,7 +104,7 @@ export default function SearchComponent() {
                     {result.excerpt && (
                       <p className="line-clamp-2 text-sm text-gray-600">{result.excerpt}</p>
                     )}
-                    {result.category.name && (
+                    {result.category?.name && (
                       <p className="mt-1 text-xs text-gray-500">in {result.category.name}</p>
                     )}
                   </div>

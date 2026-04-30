@@ -68,8 +68,8 @@ export default function CommandPalette() {
                   >
                     <div>
                       <SanityImage
-                        source={result.coverImage}
-                        alt={result.coverImage?.alt}
+                        source={result.coverImage ?? null}
+                        alt={result.coverImage?.alt ?? ''}
                         className="aspect-video w-full max-w-32 rounded-lg"
                       />
                     </div>
@@ -85,7 +85,7 @@ export default function CommandPalette() {
                           {result.postType}
                         </Badge>
                       </div>
-                      {result.category.name && (
+                      {result.category?.name && (
                         <div className="text-xs text-muted-foreground">
                           in {result.category.name}
                         </div>

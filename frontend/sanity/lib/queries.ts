@@ -215,6 +215,24 @@ export const pagesSlugs = defineQuery(`
   {"slug": slug.current}
 `)
 
+export const categoriesSlugs = defineQuery(`
+  *[_type == "category" && defined(slug.current)]
+  {"slug": slug.current}
+`)
+
+export const topicsSlugs = defineQuery(`
+  *[_type == "topic" && defined(slug.current)]
+  {"slug": slug.current}
+`)
+
+export const postRoutesSlugs = defineQuery(`
+  *[_type == "post" && defined(slug.current) && defined(category->slug.current)]
+  {
+    "slug": slug.current,
+    "categorySlug": category->slug.current
+  }
+`)
+
 // Categories
 const categoryFields = /* groq */ `
   _id,

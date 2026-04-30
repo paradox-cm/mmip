@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { Suspense, useMemo, useState } from 'react'
 
 import { useRouter, useSearchParams } from 'next/navigation'
 
@@ -28,11 +28,7 @@ const isViewMode = (value: string | null): value is ViewMode => {
   return value === 'grid' || value === 'list'
 }
 
-export default function CategoryTemplate({
-  data,
-}: {
-  data: NonNullable<GetCategoryWithAllPostsQueryResult>
-}) {
+function CategoryContent({ data }: { data: NonNullable<GetCategoryWithAllPostsQueryResult> }) {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -325,5 +321,17 @@ export default function CategoryTemplate({
         </div>
       </Section>
     </>
+  )
+}
+
+export default function CategoryTemplate({
+  data,
+}: {
+  data: NonNullable<GetCategoryWithAllPostsQueryResult>
+}) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CategoryContent data={data} />
+    </Suspense>
   )
 }

@@ -1987,6 +1987,22 @@ export type PostPagesSlugsResult = Array<{
 export type PagesSlugsResult = Array<{
   slug: string
 }>
+// Variable: categoriesSlugs
+// Query: *[_type == "category" && defined(slug.current)]  {"slug": slug.current}
+export type CategoriesSlugsResult = Array<{
+  slug: string
+}>
+// Variable: topicsSlugs
+// Query: *[_type == "topic" && defined(slug.current)]  {"slug": slug.current}
+export type TopicsSlugsResult = Array<{
+  slug: string
+}>
+// Variable: postRoutesSlugs
+// Query: *[_type == "post" && defined(slug.current) && defined(category->slug.current)]  {    "slug": slug.current,    "categorySlug": category->slug.current  }
+export type PostRoutesSlugsResult = Array<{
+  slug: string
+  categorySlug: string
+}>
 // Variable: allCategoriesQuery
 // Query: *[_type == "category" && defined(slug.current)] | order(order asc) {      _id,  name,  "slug": slug.current,  description,  image{      alt,  asset,  "metadata": asset->metadata,  "url": asset->url,  "extension": asset->extension  },  order  }
 export type AllCategoriesQueryResult = Array<{
@@ -2347,6 +2363,9 @@ declare module '@sanity/client' {
     '\n  *[_type == "post" && slug.current == $slug && category->slug.current == $categorySlug][0] {\n    body[]{\n      ...,\n      markDefs[]{\n        ...,\n        \n  _type == "link" => {\n    _type,\n    linkType,\n    label,\n    openInNewTab,\n    page->{\n      name,\n      "slug": slug.current\n    },\n    post->{\n      title,\n      "slug": slug.current\n    },\n    category->{\n      name,\n      description,\n      "slug": slug.current,\n      image{\n        \n  alt,\n  asset,\n  "metadata": asset->metadata,\n  "url": asset->url,\n  "extension": asset->extension\n\n      }\n    }\n  }\n\n      }\n    },\n    \n  \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  postType,\n  "slug": slug.current,\n  "title": coalesce(title, "Untitled"),\n  excerpt,\n  coverImage{\n    \n  alt,\n  asset,\n  "metadata": asset->metadata,\n  "url": asset->url,\n  "extension": asset->extension\n\n  },\n  "date": coalesce(date, _updatedAt),\n  category->{name, "slug": slug.current, description},\n  topic->{name, "slug": slug.current, description},\n  region\n,\n  body[]{\n    ...,\n    markDefs[]{\n      ...,\n      \n  _type == "link" => {\n    _type,\n    linkType,\n    label,\n    openInNewTab,\n    page->{\n      name,\n      "slug": slug.current\n    },\n    post->{\n      title,\n      "slug": slug.current\n    },\n    category->{\n      name,\n      description,\n      "slug": slug.current,\n      image{\n        \n  alt,\n  asset,\n  "metadata": asset->metadata,\n  "url": asset->url,\n  "extension": asset->extension\n\n      }\n    }\n  }\n\n    }\n  },\n  "headings": body[_type == "block" && style in ["h2", "h3"]]{\n    _key,\n    "level": style,\n    "text": pt::text(@)\n  },\n  authors[]->{firstName, lastName, picture},\n  toolFile{\n    _type,\n    asset->{\n      extension,\n      mimeType,\n      originalFilename,\n      size,\n      url\n    },\n    media\n  },\n  externalLink,\n  metadata\n\n  }\n': GetPostQueryResult
     '\n  *[_type == "post" && defined(slug.current)]\n  {"slug": slug.current}\n': PostPagesSlugsResult
     '\n  *[_type == "page" && defined(slug.current)]\n  {"slug": slug.current}\n': PagesSlugsResult
+    '\n  *[_type == "category" && defined(slug.current)]\n  {"slug": slug.current}\n': CategoriesSlugsResult
+    '\n  *[_type == "topic" && defined(slug.current)]\n  {"slug": slug.current}\n': TopicsSlugsResult
+    '\n  *[_type == "post" && defined(slug.current) && defined(category->slug.current)]\n  {\n    "slug": slug.current,\n    "categorySlug": category->slug.current\n  }\n': PostRoutesSlugsResult
     '\n  *[_type == "category" && defined(slug.current)] | order(order asc) {\n    \n  _id,\n  name,\n  "slug": slug.current,\n  description,\n  image{\n    \n  alt,\n  asset,\n  "metadata": asset->metadata,\n  "url": asset->url,\n  "extension": asset->extension\n\n  },\n  order\n\n  }\n': AllCategoriesQueryResult
     '\n  *[_type == \'category\' && slug.current == $slug][0]{\n    \n  _id,\n  name,\n  "slug": slug.current,\n  description,\n  image{\n    \n  alt,\n  asset,\n  "metadata": asset->metadata,\n  "url": asset->url,\n  "extension": asset->extension\n\n  },\n  order\n\n  }\n': GetCategoryQueryResult
     '\n  *[_type == \'category\' && slug.current == $slug][0]{\n    \n  _id,\n  name,\n  "slug": slug.current,\n  description,\n  image{\n    \n  alt,\n  asset,\n  "metadata": asset->metadata,\n  "url": asset->url,\n  "extension": asset->extension\n\n  },\n  order\n,\n    "posts": *[_type == "post" && category._ref == ^._id] | order(date desc, _updatedAt desc) {\n      \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  postType,\n  "slug": slug.current,\n  "title": coalesce(title, "Untitled"),\n  excerpt,\n  coverImage{\n    \n  alt,\n  asset,\n  "metadata": asset->metadata,\n  "url": asset->url,\n  "extension": asset->extension\n\n  },\n  "date": coalesce(date, _updatedAt),\n  category->{name, "slug": slug.current, description},\n  topic->{name, "slug": slug.current, description},\n  region\n\n    },\n    "availableTopics": array::unique(*[_type == "post" && category._ref == ^._id && defined(topic)].topic->{\n      name,\n      "slug": slug.current\n    })\n  }\n': GetCategoryWithAllPostsQueryResult

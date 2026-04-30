@@ -3,9 +3,12 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import PageBuilderPage from '@/app/components/shared/page-builder'
+import { POST_TYPE } from '@/lib/constants'
 import { resolveRoute } from '@/lib/resolve-route'
 import type { GetPageQueryResult } from '@/sanity.types'
 import { fetchSettings } from '@/sanity/lib/fetch'
+import { sanityFetch } from '@/sanity/lib/live'
+import { categoriesSlugs, pagesSlugs, postRoutesSlugs, topicsSlugs } from '@/sanity/lib/queries'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
 import CategoryTemplate from './_components/category-template'
@@ -20,16 +23,49 @@ type Props = {
  * Generate the static params for the page.
  * Learn more: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
  */
-// export async function generateStaticParams() {
-//   const { data } = await sanityFetch({
-//     query: postPagesSlugs,
-//     // Use the published perspective in generateStaticParams
-//     perspective: 'published',
+export async function generateStaticParams() {
+  const [pagesResult, categoriesResult, topicsResult, postsResult] = await Promise.all([
+    sanityFetch({
+      query: pagesSlugs,
+      perspective: 'published',
+      stega: false,
+    }),
+    sanityFetch({
+      query: categoriesSlugs,
+      perspective: 'published',
+      stega: false,
+    }),
+    sanityFetch({
+      query: topicsSlugs,
+      perspective: 'published',
+      stega: false,
+    }),
+    sanityFetch({
+      query: postRoutesSlugs,
+      perspective: 'published',
+      stega: false,
+    }),
+  ])
 
-//     stega: false,
-//   })
-//   return data
-// }
+  const pages = (pagesResult.data || []) as Array<{ slug?: string }>
+  const categories = (categoriesResult.data || []) as Array<{ slug?: string }>
+  const topics = (topicsResult.data || []) as Array<{ slug?: string }>
+  const posts = (postsResult.data || []) as Array<{ slug?: string; categorySlug?: string }>
+
+  const staticParams = [
+    ...pages.filter(page => page.slug).map(page => ({ slug: [page.slug as string] })),
+    ...categories
+      .filter(category => category.slug)
+      .map(category => ({ slug: [category.slug as string] })),
+    ...topics.filter(topic => topic.slug).map(topic => ({ slug: [topic.slug as string] })),
+    ...Object.keys(POST_TYPE).map(postTypeSlug => ({ slug: [postTypeSlug] })),
+    ...posts
+      .filter(post => post.categorySlug && post.slug)
+      .map(post => ({ slug: [post.categorySlug as string, post.slug as string] })),
+  ]
+
+  return staticParams
+}
 
 /**
  * ─────────────────────────────────────────
