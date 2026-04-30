@@ -204,7 +204,7 @@ export type Tribe = {
   _rev: string
   name: string
   slug: Slug
-  region: 'north' | 'central' | 'south'
+  region: 'north' | 'central' | 'south' | 'statewide'
   coverImage: {
     asset?: {
       _ref: string
@@ -250,7 +250,7 @@ export type Service = {
   _rev: string
   name: string
   slug: Slug
-  region: 'north' | 'central' | 'south'
+  region: 'north' | 'central' | 'south' | 'statewide'
   serviceType: {
     _ref: string
     _type: 'reference'
@@ -371,7 +371,7 @@ export type Post = {
   title: string
   slug: Slug
   date?: string
-  region: 'north' | 'central' | 'south'
+  region: 'north' | 'central' | 'south' | 'statewide'
   category: {
     _ref: string
     _type: 'reference'
@@ -1245,7 +1245,7 @@ export type GetHomepageQueryResult = {
       slug: string
       description: string | null
     }
-    region: 'central' | 'north' | 'south'
+    region: 'central' | 'north' | 'south' | 'statewide'
   }>
   featuredServices: Array<{
     _id: string
@@ -1255,7 +1255,7 @@ export type GetHomepageQueryResult = {
     _rev: string
     name: string
     slug: Slug
-    region: 'central' | 'north' | 'south'
+    region: 'central' | 'north' | 'south' | 'statewide'
     serviceType: {
       _ref: string
       _type: 'reference'
@@ -1349,7 +1349,7 @@ export type AllPostsQueryResult = Array<{
     slug: string
     description: string | null
   }
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   body: Array<
     | {
         children?: Array<{
@@ -1481,7 +1481,7 @@ export type GetPostsByTypeQueryResult = Array<{
     slug: string
     description: string | null
   }
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   body: Array<
     | {
         children?: Array<{
@@ -1613,7 +1613,7 @@ export type MorePostsQueryResult = Array<{
     slug: string
     description: string | null
   }
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   body: Array<
     | {
         children?: Array<{
@@ -1745,7 +1745,7 @@ export type PostQueryResult = {
     slug: string
     description: string | null
   }
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   body: Array<
     | {
         children?: Array<{
@@ -1940,7 +1940,7 @@ export type GetPostQueryResult = {
     slug: string
     description: string | null
   }
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   headings: Array<{
     _key: string
     level: 'blockquote' | 'h2' | 'h3' | 'h4' | 'lead' | 'normal' | 'small' | null
@@ -2079,7 +2079,7 @@ export type GetCategoryWithAllPostsQueryResult = {
       slug: string
       description: string | null
     }
-    region: 'central' | 'north' | 'south'
+    region: 'central' | 'north' | 'south' | 'statewide'
   }>
   availableTopics: Array<{
     name: string
@@ -2178,7 +2178,7 @@ export type GetTopicWithAllPostsQueryResult = {
       slug: string
       description: string | null
     }
-    region: 'central' | 'north' | 'south'
+    region: 'central' | 'north' | 'south' | 'statewide'
   }>
   availableTopics: Array<{
     name: string
@@ -2213,7 +2213,7 @@ export type AllServicesQueryResult = Array<{
     extension: string | null
   }
   name: string
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   serviceType: {
     name: string
     slug: string
@@ -2249,7 +2249,7 @@ export type GetServiceQueryResult = {
     extension: string | null
   }
   name: string
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   serviceType: {
     name: string
     slug: string
@@ -2292,7 +2292,7 @@ export type AllTribesQueryResult = Array<{
     extension: string | null
   }
   name: string
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   slug: string
   shortDescription: BlockContentBasic
 }>
@@ -2324,7 +2324,7 @@ export type GetTribeQueryResult = {
     extension: string | null
   }
   name: string
-  region: 'central' | 'north' | 'south'
+  region: 'central' | 'north' | 'south' | 'statewide'
   slug: string
   shortDescription: BlockContentBasic
   description: BlockContent

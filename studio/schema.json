@@ -1284,6 +1284,10 @@
             {
               "type": "string",
               "value": "south"
+            },
+            {
+              "type": "string",
+              "value": "statewide"
             }
           ]
         },
@@ -1567,6 +1571,10 @@
             {
               "type": "string",
               "value": "south"
+            },
+            {
+              "type": "string",
+              "value": "statewide"
             }
           ]
         },
@@ -2293,6 +2301,10 @@
             {
               "type": "string",
               "value": "south"
+            },
+            {
+              "type": "string",
+              "value": "statewide"
             }
           ]
         },

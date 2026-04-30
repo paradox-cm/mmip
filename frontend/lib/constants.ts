@@ -26,4 +26,5 @@ export const REGION_LABELS = {
   north: 'Northern CA',
   central: 'Central CA',
   south: 'Southern CA',
+  statewide: 'Statewide',
 } as const
