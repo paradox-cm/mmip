@@ -4,6 +4,12 @@ import { notFound } from 'next/navigation'
 
 import PageBuilderPage from '@/app/components/shared/page-builder'
 import { POST_TYPE } from '@/lib/constants'
+import {
+  createArticleJsonLd,
+  createCollectionPageJsonLd,
+  createWebPageJsonLd,
+  toJsonLdScript,
+} from '@/lib/jsonld'
 import { resolveRoute } from '@/lib/resolve-route'
 import type { GetPageQueryResult } from '@/sanity.types'
 import { fetchSettings } from '@/sanity/lib/fetch'
@@ -111,18 +117,76 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { slug } = await params
   const resolved = await resolveRoute(slug)
+  const path = `/${slug.join('/')}`
+
+  const renderWithJsonLd = (jsonLd: Record<string, unknown>, content: React.ReactNode) => (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLdScript(jsonLd) }}
+      />
+      {content}
+    </>
+  )
 
   switch (resolved.type) {
     case 'page':
-      return <RenderPage page={resolved.data} />
+      return renderWithJsonLd(
+        createWebPageJsonLd({
+          path,
+          title: resolved.metadata.title,
+          description: resolved.metadata.description,
+        }),
+        <RenderPage page={resolved.data} />,
+      )
     case 'post-type':
-      return <PostTypeTemplate data={resolved} />
+      return renderWithJsonLd(
+        createCollectionPageJsonLd({
+          path,
+          title: resolved.metadata.title,
+          description: resolved.metadata.description,
+          itemPaths: (resolved.data.posts || [])
+            .filter(post => post.category?.slug && post.slug)
+            .map(post => `/${post.category!.slug}/${post.slug}`),
+        }),
+        <PostTypeTemplate data={resolved} />,
+      )
     case 'category':
-      return <CategoryTemplate data={resolved.data} />
+      return renderWithJsonLd(
+        createCollectionPageJsonLd({
+          path,
+          title: resolved.metadata.title,
+          description: resolved.metadata.description,
+          itemPaths: resolved.data.posts
+            .filter(post => post.category?.slug && post.slug)
+            .map(post => `/${post.category!.slug}/${post.slug}`),
+        }),
+        <CategoryTemplate data={resolved.data} />,
+      )
     case 'topic':
-      return <CategoryTemplate data={resolved.data} />
+      return renderWithJsonLd(
+        createCollectionPageJsonLd({
+          path,
+          title: resolved.metadata.title,
+          description: resolved.metadata.description,
+          itemPaths: resolved.data.posts
+            .filter(post => post.category?.slug && post.slug)
+            .map(post => `/${post.category!.slug}/${post.slug}`),
+        }),
+        <CategoryTemplate data={resolved.data} />,
+      )
     case 'post':
-      return <PostTemplate post={resolved.data} />
+      return renderWithJsonLd(
+        createArticleJsonLd({
+          path,
+          title: resolved.metadata.title,
+          description: resolved.metadata.description,
+          image: resolved.data.coverImage?.url || undefined,
+          datePublished: resolved.data.date || undefined,
+          section: resolved.data.category?.name || resolved.data.topic?.name || undefined,
+        }),
+        <PostTemplate post={resolved.data} />,
+      )
     case 'not-found':
       return notFound()
     default:

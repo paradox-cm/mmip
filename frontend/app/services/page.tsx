@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { createCollectionPageJsonLd, toJsonLdScript } from '@/lib/jsonld'
 import { fetchAllServices, fetchSettings } from '@/sanity/lib/fetch'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
@@ -44,5 +45,20 @@ export default async function Page() {
     notFound()
   }
 
-  return <ServicesTemplate data={data} />
+  const jsonLd = createCollectionPageJsonLd({
+    path: '/services',
+    title: SERVICES_PAGE_TITLE,
+    description: SERVICES_PAGE_DESCRIPTION,
+    itemPaths: data.map(service => `/services/${service.slug}`),
+  })
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLdScript(jsonLd) }}
+      />
+      <ServicesTemplate data={data} />
+    </>
+  )
 }

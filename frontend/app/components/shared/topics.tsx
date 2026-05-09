@@ -34,11 +34,17 @@ export default async function Topics() {
     return a.name.localeCompare(b.name)
   })
 
+  const topicsWithPosts = sortedTopics.filter(topic => (topicPostCounts[topic.slug] || 0) > 0)
+
+  if (topicsWithPosts.length === 0) {
+    return null
+  }
+
   return (
     <div>
       <h2 className="mb-6 text-2xl">Browse by topic</h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-        {sortedTopics.map(topic => {
+        {topicsWithPosts.map(topic => {
           return (
             <Link key={topic._id} href={`${topic.slug}`}>
               <Tile className="group flex flex-col gap-2">

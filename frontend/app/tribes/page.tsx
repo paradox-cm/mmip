@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { createCollectionPageJsonLd, toJsonLdScript } from '@/lib/jsonld'
 import { fetchAllTribes, fetchSettings } from '@/sanity/lib/fetch'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
@@ -44,5 +45,20 @@ export default async function Page() {
     notFound()
   }
 
-  return <TribesTemplate data={data} />
+  const jsonLd = createCollectionPageJsonLd({
+    path: '/tribes',
+    title: TRIBES_PAGE_TITLE,
+    description: TRIBES_PAGE_DESCRIPTION,
+    itemPaths: data.map(tribe => `/tribes/${tribe.slug}`),
+  })
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLdScript(jsonLd) }}
+      />
+      <TribesTemplate data={data} />
+    </>
+  )
 }

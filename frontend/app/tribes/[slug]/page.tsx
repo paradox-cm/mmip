@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { toPlainText } from 'next-sanity'
 
+import { createOrganizationJsonLd, toJsonLdScript } from '@/lib/jsonld'
 import { fetchAllTribes, fetchSettings, fetchTribe } from '@/sanity/lib/fetch'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
@@ -71,5 +72,23 @@ export default async function TribePage({ params }: Props) {
     notFound()
   }
 
-  return <TribeTemplate tribe={tribe} />
+  const jsonLd = createOrganizationJsonLd({
+    path: `/tribes/${tribe.slug}`,
+    name: tribe.name,
+    description: tribe.shortDescription ? toPlainText(tribe.shortDescription) : undefined,
+    areaServed: tribe.region,
+    website: tribe.contactInfo?.website,
+    email: tribe.contactInfo?.email,
+    phone: tribe.contactInfo?.phone,
+  })
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLdScript(jsonLd) }}
+      />
+      <TribeTemplate tribe={tribe} />
+    </>
+  )
 }

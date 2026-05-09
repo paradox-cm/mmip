@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { toPlainText } from 'next-sanity'
 
+import { createServiceJsonLd, toJsonLdScript } from '@/lib/jsonld'
 import { fetchAllServices, fetchService, fetchSettings } from '@/sanity/lib/fetch'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
@@ -71,5 +72,24 @@ export default async function ServicePage({ params }: Props) {
     notFound()
   }
 
-  return <ServiceTemplate service={service} />
+  const jsonLd = createServiceJsonLd({
+    path: `/services/${service.slug}`,
+    name: service.name,
+    description: service.shortDescription ? toPlainText(service.shortDescription) : undefined,
+    serviceType: service.serviceType?.name,
+    areaServed: service.region,
+    website: service.contactInfo?.website,
+    email: service.contactInfo?.email,
+    phone: service.contactInfo?.phone,
+  })
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLdScript(jsonLd) }}
+      />
+      <ServiceTemplate service={service} />
+    </>
+  )
 }
