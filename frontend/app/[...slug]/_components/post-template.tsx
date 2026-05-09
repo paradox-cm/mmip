@@ -136,7 +136,7 @@ function PostBody({
               </Button>
             </a>
           )}
-          <TableOfContents headings={headings} />
+          {headings && headings.length > 0 && <TableOfContents headings={headings} />}
         </div>
       </aside>
       <article className="flex-[2]">

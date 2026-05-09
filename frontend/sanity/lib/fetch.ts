@@ -55,12 +55,27 @@ export async function fetchData<T>({
   perspective,
   stega,
 }: FetchOptions<T>): Promise<T> {
-  const { isEnabled: isDraftMode } = await draftMode()
+  let resolvedPerspective = perspective
+
+  if (!resolvedPerspective) {
+    let isDraftMode = false
+
+    try {
+      const draft = await draftMode()
+      isDraftMode = draft.isEnabled
+    } catch {
+      // `draftMode()` is request-scoped and can throw during build-time/static generation.
+      // In that context we safely default to the published perspective.
+      isDraftMode = false
+    }
+
+    resolvedPerspective = isDraftMode || isPreviewEnvironment ? 'drafts' : 'published'
+  }
 
   const { data } = await sanityFetch({
     query,
     params,
-    perspective: perspective ?? (isDraftMode || isPreviewEnvironment ? 'drafts' : 'published'),
+    perspective: resolvedPerspective,
     stega: stega ?? false,
     tags,
   })

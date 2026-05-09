@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { PortableTextBlock } from 'next-sanity'
 
 import CustomPortableText from '@/app/components/shared/portable-text'
+import SanityImage from '@/app/components/shared/sanity-image'
 // import { Badge } from '@/app/components/ui/badge'
 import Tile from '@/app/components/ui/tile'
 import { cn } from '@/lib/utils'
@@ -14,7 +15,7 @@ type Props = {
   layout?: 'grid' | 'list'
   tribe: Pick<
     NonNullable<GetTribeQueryResult>,
-    'name' | 'shortDescription' | 'slug' | 'contactInfo'
+    'name' | 'shortDescription' | 'slug' | 'contactInfo' | 'coverImage'
   >
 }
 
@@ -31,6 +32,14 @@ export default function TribeCard({ className, layout = 'grid', tribe }: Props) 
             className,
           )}
         >
+          <div className={cn('w-full', { 'sm:max-w-72 sm:flex-1': layout === 'list' })}>
+            <SanityImage
+              source={tribe.coverImage}
+              alt={tribe.coverImage?.alt || tribe.name}
+              className="aspect-video w-full rounded-lg"
+            />
+          </div>
+
           <div className="flex grow flex-col gap-2">
             <h3 className="font-sans text-lg font-medium">{tribe.name}</h3>
             {layout === 'grid' && tribe.shortDescription && (
