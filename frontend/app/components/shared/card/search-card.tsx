@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import pluralize from 'pluralize-esm'
 
 import { Badge } from '@/app/components/ui/badge'
 import { CARD_THEME } from '@/lib/constants'
@@ -20,12 +19,18 @@ export default function SearchCard({ className, orientation = 'vertical', post }
   const primaryType = post.postType ?? post.type
   const secondaryLabel = post.topic?.name ?? post.serviceType?.name ?? post.region
   const badgeVariant = post.postType ?? (post.type === 'service' ? 'service' : 'tribe')
+  const href =
+    post.type === 'post'
+      ? `/${post.category?.slug ?? ''}/${post.slug}`
+      : post.type === 'service'
+        ? `/services/${post.slug}`
+        : `/tribes/${post.slug}`
 
   return (
     <article className={cn('flex w-full flex-1', className)}>
       <Link
         aria-label={post.title}
-        href={post.url}
+        href={href || post.url}
         className={cn(
           'flex flex-1 flex-col gap-6 rounded-xl border p-4 transition-colors',
           { 'items-center md:flex-row': isHorizontal },

@@ -92,7 +92,7 @@ function PostHeader({
             value={excerpt as PortableTextBlock[]}
           />
         )}
-        {authors?.[0] && <Avatar person={authors[0]} date={date} />}
+        {/* {authors?.[0] && <Avatar person={authors[0]} date={date} />} */}
       </div>
 
       <div className="flex-1">

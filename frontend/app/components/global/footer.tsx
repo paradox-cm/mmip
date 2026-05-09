@@ -76,7 +76,7 @@ export default async function Footer() {
                   <div className="font-bold">Connect</div>
                   <ul>
                     <li>
-                      <a href="mailto:contact@resilientrelatives.com">Email us</a>
+                      <a href="mailto:CCVAP@cahuilla-nsn.gov">Email us</a>
                     </li>
                   </ul>
                 </div>
