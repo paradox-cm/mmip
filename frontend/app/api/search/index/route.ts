@@ -6,10 +6,16 @@ import { INDEXES } from '@/lib/algolia'
 import { portableTextToString } from '@/lib/utils'
 import { fetchAllPosts, fetchAllServices, fetchAllTribes } from '@/sanity/lib/fetch'
 
-const client = algoliasearch(
-  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
-  process.env.ALGOLIA_ADMIN_API_KEY!,
-)
+function getAdminClient() {
+  const appId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID
+  const apiKey = process.env.ALGOLIA_ADMIN_API_KEY
+
+  if (!appId || !apiKey) {
+    return null
+  }
+
+  return algoliasearch(appId, apiKey)
+}
 
 /**
  * API Route to handle indexing content into Algolia.
@@ -18,6 +24,11 @@ const client = algoliasearch(
 
 export async function POST(request: NextRequest) {
   try {
+    const client = getAdminClient()
+    if (!client) {
+      return NextResponse.json({ error: 'Search indexing is not configured' }, { status: 503 })
+    }
+
     // Verify webhook signature/secret if using webhooks
     const authHeader = request.headers.get('authorization')
     if (authHeader !== `Bearer ${process.env.SANITY_WEBHOOK_SECRET}`) {

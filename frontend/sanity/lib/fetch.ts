@@ -20,6 +20,7 @@ import {
 } from '@/sanity.types'
 import { isPreviewEnvironment } from '@/sanity/lib/api'
 import { sanityFetch } from '@/sanity/lib/live'
+import { token } from '@/sanity/lib/token'
 
 import {
   allCategoriesQuery,
@@ -69,7 +70,11 @@ export async function fetchData<T>({
       isDraftMode = false
     }
 
-    resolvedPerspective = isDraftMode || isPreviewEnvironment ? 'drafts' : 'published'
+    const wantsDrafts = isDraftMode || isPreviewEnvironment
+    // Drafts require a Viewer token. Preview deploys without
+    // SANITY_API_READ_TOKEN must stay on published or Sanity returns 401
+    // during static generation.
+    resolvedPerspective = wantsDrafts && token ? 'drafts' : 'published'
   }
 
   const { data } = await sanityFetch({

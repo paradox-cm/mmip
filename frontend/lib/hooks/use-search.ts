@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { INDEXES, searchClient } from '@/lib/algolia'
+import { getSearchClient, INDEXES } from '@/lib/algolia'
 import { SanityImage } from '@/types'
 
 export interface SearchResult {
@@ -75,7 +75,14 @@ export function useSearch(query: string): {
       setError(null)
 
       try {
-        const response = await searchClient.search([
+        const client = getSearchClient()
+        if (!client) {
+          setError('Search is not configured')
+          setResults([])
+          return
+        }
+
+        const response = await client.search([
           {
             indexName: INDEXES.posts,
             params: {
@@ -143,7 +150,18 @@ export function useSearchWithPagination(query: string, page: number = 0) {
       setError(null)
 
       try {
-        const response = await searchClient.search([
+        const client = getSearchClient()
+        if (!client) {
+          setError('Search is not configured')
+          if (page === 0) {
+            setResults([])
+          }
+          setHasMore(false)
+          setTotalResults(0)
+          return
+        }
+
+        const response = await client.search([
           {
             indexName: INDEXES.posts,
             params: {
