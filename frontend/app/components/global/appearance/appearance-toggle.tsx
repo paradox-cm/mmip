@@ -2,10 +2,11 @@
 
 import { LuMonitor, LuMoon, LuSun } from 'react-icons/lu'
 
+import { Button } from '@/app/components/ui/button'
 import { cn } from '@/lib/utils'
 
 import { useAppearance } from './appearance-provider'
-import { type Appearance,APPEARANCES } from './config'
+import { type Appearance, APPEARANCES } from './config'
 
 const OPTIONS: Record<Appearance, { label: string; Icon: typeof LuSun }> = {
   light: { label: 'Light', Icon: LuSun },
@@ -13,8 +14,39 @@ const OPTIONS: Record<Appearance, { label: string; Icon: typeof LuSun }> = {
   system: { label: 'System', Icon: LuMonitor },
 }
 
-export default function AppearanceToggle({ className }: { className?: string }) {
+function nextAppearance(current: Appearance): Appearance {
+  const index = APPEARANCES.indexOf(current)
+  return APPEARANCES[(index + 1) % APPEARANCES.length]
+}
+
+export default function AppearanceToggle({
+  className,
+  compact = false,
+}: {
+  className?: string
+  /** Single header button that cycles Light → Dark → System. */
+  compact?: boolean
+}) {
   const { appearance, setAppearance, ready } = useAppearance()
+  const current = ready ? appearance : 'system'
+
+  if (compact) {
+    const { label, Icon } = OPTIONS[current]
+    const next = nextAppearance(current)
+    return (
+      <Button
+        type="button"
+        variant="outline"
+        size="icon"
+        className={cn('size-[50px]', className)}
+        aria-label={`Appearance: ${label}. Switch to ${OPTIONS[next].label}`}
+        title={`${label} appearance`}
+        onClick={() => setAppearance(next)}
+      >
+        <Icon className="size-5" aria-hidden="true" />
+      </Button>
+    )
+  }
 
   return (
     <div

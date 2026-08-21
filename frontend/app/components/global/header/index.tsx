@@ -44,6 +44,7 @@ export default async function Header() {
           </div>
 
           <div className="flex flex-1 items-center justify-end gap-2">
+            <AppearanceToggle compact className="sm:hidden" />
             <AppearanceToggle className="hidden sm:inline-flex" />
             <Button asChild variant="outline" size="icon" className="size-[50px]">
               <Link href="/api/escape" aria-label="Hide website quickly">
