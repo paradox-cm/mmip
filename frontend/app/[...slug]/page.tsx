@@ -202,12 +202,12 @@ export default async function Page({ params }: Props) {
 function RenderPage({ page }: { page: NonNullable<GetPageQueryResult> }) {
   return (
     <div className="my-12 lg:my-24">
-      <div className="container border-b border-gray-100 pb-6">
+      <div className="container border-b pb-6">
         <div className="max-w-3xl">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-7xl">
+          <h2 className="text-h1 font-bold tracking-tight text-foreground-heading sm:text-5xl lg:text-7xl">
             {page.heading}
           </h2>
-          <p className="mt-4 text-base font-light uppercase leading-relaxed text-gray-600 lg:text-lg">
+          <p className="mt-4 text-body-small font-light uppercase leading-relaxed text-foreground-subtle lg:text-lg">
             {page.subheading}
           </p>
         </div>

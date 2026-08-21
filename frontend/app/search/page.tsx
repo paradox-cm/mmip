@@ -35,7 +35,9 @@ function SearchResults() {
   if (error) {
     return (
       <div className="py-12 text-center">
-        <p className="text-red-600">Search failed. Please try again.</p>
+        <p role="alert" className="text-destructive">
+          Search failed. Please try again.
+        </p>
       </div>
     )
   }
@@ -57,7 +59,7 @@ function SearchResults() {
       <Section className="">
         <div className="container">
           <div className="flex flex-col items-center gap-8 text-center">
-            <h1 className="text-3xl">Search</h1>
+            <h1 className="text-h2">Search</h1>
             <div className="flex w-full flex-col items-center gap-4">
               <HeroSearch onSearch={handleSearch} initialValue={initialQuery} />
             </div>
@@ -69,14 +71,14 @@ function SearchResults() {
         <div className="container">
           {hasResults ? (
             <div className="flex flex-col items-center gap-8">
-              <p className="text-center text-sm text-foreground-muted">
+              <p aria-live="polite" className="text-center text-label text-foreground-muted">
                 {isLoading && page === 0
                   ? 'Loading...'
                   : showingAllPosts
                     ? `Showing ${results.length} of ${totalResults} posts`
                     : `Showing ${results.length} of ${totalResults} results for "${query}"`}
               </p>
-              <div className="col-span-4 grid grid-cols-3 gap-6 md:col-span-5 md:col-start-2">
+              <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {results.map(result => {
                   return <SearchCard key={result.objectID} post={result} />
                 })}
@@ -84,26 +86,26 @@ function SearchResults() {
               {/* Load More Button */}
               {hasMore && (
                 <div className="flex justify-center">
-                  <Button onClick={handleLoadMore} disabled={isLoading} variant="outline" size="lg">
-                    {isLoading ? 'Loading...' : 'Load More Results'}
+                  <Button onClick={handleLoadMore} loading={isLoading} variant="outline" size="lg">
+                    {isLoading ? 'Loading' : 'Load More Results'}
                   </Button>
                 </div>
               )}
             </div>
           ) : isLoading && page === 0 ? (
             <div className="py-12 text-center">
-              <p className="text-gray-500">Loading posts...</p>
+              <p className="text-foreground-muted">Loading posts...</p>
             </div>
           ) : query ? (
             <div className="text-center">
               <p className="">No results found for {query}</p>
-              <p className="text-sm">
+              <p className="text-label text-foreground-muted">
                 Try different keywords or clear your search to see all posts
               </p>
             </div>
           ) : (
             <div className="py-12 text-center">
-              <p className="text-gray-500">Loading all posts...</p>
+              <p className="text-foreground-muted">Loading all posts...</p>
             </div>
           )}
         </div>
@@ -118,8 +120,8 @@ export default function SearchPage() {
       fallback={
         <div className="container py-12">
           <div className="text-center">
-            <h1 className="mb-6 text-3xl font-bold">Search</h1>
-            <div className="mx-auto h-12 w-full max-w-2xl animate-pulse rounded-lg bg-gray-200"></div>
+            <h1 className="mb-6 text-h2 font-bold">Search</h1>
+            <div className="mx-auto h-12 w-full max-w-2xl animate-pulse rounded-lg bg-background-emphasis" />
           </div>
         </div>
       }

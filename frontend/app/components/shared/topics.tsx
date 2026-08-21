@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import SanityImage from '@/app/components/shared/sanity-image'
 import Tile from '@/app/components/ui/tile'
+import { CARD_INTERACTION } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 import { fetchAllPosts, fetchTopics } from '@/sanity/lib/fetch'
 
 export default async function Topics() {
@@ -42,12 +44,16 @@ export default async function Topics() {
 
   return (
     <div>
-      <h2 className="mb-6 text-2xl">Browse by topic</h2>
+      <h2 className="mb-6 text-h3">Browse by topic</h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         {topicsWithPosts.map(topic => {
           return (
-            <Link key={topic._id} href={`${topic.slug}`}>
-              <Tile className="group flex flex-col gap-2">
+            <Link
+              key={topic._id}
+              href={`${topic.slug}`}
+              className={cn('group block rounded-xl', CARD_INTERACTION)}
+            >
+              <Tile className="flex flex-col gap-2">
                 {topic.image && topic.image.metadata && (
                   <div className="relative flex items-center justify-center py-6">
                     <SanityImage
@@ -60,8 +66,8 @@ export default async function Topics() {
                 )}
                 <div className="flex flex-row justify-center">
                   <div className="text-center">
-                    <p className="text-lg font-medium">{topic.name}</p>
-                    <p className="text-sm text-foreground-subtle">
+                    <p className="text-body font-medium">{topic.name}</p>
+                    <p className="text-label text-foreground-subtle">
                       {topicPostCounts[topic.slug] || 0}{' '}
                       {(topicPostCounts[topic.slug] || 0) === 1 ? 'post' : 'posts'}
                     </p>

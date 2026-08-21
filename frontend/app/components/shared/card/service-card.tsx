@@ -6,6 +6,7 @@ import { PortableTextBlock } from 'next-sanity'
 import CustomPortableText from '@/app/components/shared/portable-text'
 import { Badge } from '@/app/components/ui/badge'
 import Tile from '@/app/components/ui/tile'
+import { CARD_INTERACTION } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import type { GetServiceQueryResult } from '@/sanity.types'
 
@@ -20,7 +21,11 @@ type Props = {
 
 export default function ServiceCard({ className, layout = 'grid', service }: Props) {
   return (
-    <Link aria-label={service.name} href={`/services/${service.slug}`}>
+    <Link
+      aria-label={service.name}
+      href={`/services/${service.slug}`}
+      className={cn('group block rounded-xl', CARD_INTERACTION)}
+    >
       <article className={cn('flex size-full', layout === 'list' && 'w-full', className)}>
         <Tile
           className={cn(
@@ -64,7 +69,7 @@ export default function ServiceCard({ className, layout = 'grid', service }: Pro
               </div>
             )}
 
-            <Badge variant="outline" className="bg-sand-200/50 font-normal">
+            <Badge variant="secondary" className="font-normal">
               {service.serviceType.name}
             </Badge>
           </div>

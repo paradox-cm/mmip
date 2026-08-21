@@ -4,7 +4,7 @@ import { PortableTextBlock } from 'next-sanity'
 import CustomPortableText from '@/app/components/shared/portable-text'
 import SanityImage from '@/app/components/shared/sanity-image'
 import { Badge } from '@/app/components/ui/badge'
-import { CARD_THEME } from '@/lib/constants'
+import { CARD_INTERACTION, CARD_THEME } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import { GetPostQueryResult } from '@/sanity.types'
 
@@ -33,7 +33,8 @@ export default function PostCard({
         aria-label={post.title}
         href={`/${post.category.slug}/${post.slug}`}
         className={cn(
-          'flex flex-1 flex-col gap-6 rounded-xl border p-4 transition-colors',
+          'flex flex-1 flex-col gap-6 rounded-xl border p-4',
+          CARD_INTERACTION,
           { 'items-center md:flex-row': isHorizontal },
           themeClasses,
         )}
@@ -48,14 +49,14 @@ export default function PostCard({
 
         <div className={cn('flex w-full flex-col gap-2 @container', { 'md:flex-1': isHorizontal })}>
           <div className="mb-1 flex flex-row items-center gap-1">
-            <Badge variant={post.postType} className="capitalize text-white">
+            <Badge variant={post.postType} className="capitalize">
               {post.postType}
             </Badge>
-            <Badge variant={post.postType} className="bg-transparent">
+            <Badge variant={post.postType} appearance="soft">
               {post.topic.name}
             </Badge>
           </div>
-          <h4 className="max-w-[34ch] font-sans text-xl font-medium @md:text-2xl">{post.title}</h4>
+          <h4 className="max-w-[34ch] font-sans text-xl font-medium @md:text-h3">{post.title}</h4>
           {post.excerpt && (
             <CustomPortableText
               paragraphClassName="line-clamp-3"

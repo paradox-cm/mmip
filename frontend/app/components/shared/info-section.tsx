@@ -13,10 +13,12 @@ export default function CTA({ block }: InfoProps) {
     <div className="container my-12">
       <div className="max-w-3xl">
         {block?.heading && (
-          <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl">{block.heading}</h2>
+          <h2 className="text-h3 font-bold text-foreground-heading md:text-3xl lg:text-4xl">
+            {block.heading}
+          </h2>
         )}
         {block?.subheading && (
-          <span className="mb-8 mt-4 block text-lg font-light uppercase text-gray-900/70">
+          <span className="mb-8 mt-4 block text-body font-light uppercase text-foreground-subtle">
             {block.subheading}
           </span>
         )}
