@@ -7,22 +7,7 @@ const compat = new FlatCompat({
 })
 
 export default [
-  {
-    ignores: [
-      'next.config.ts',
-      'sanity.types.ts',
-      'node_modules/',
-      '.next/',
-      'dist/',
-      'prettier.config.*',
-      'eslint.config.*',
-      'tailwind.config.*',
-      'postcss.config.*',
-    ],
-  },
-  ...compat.config({
-    extends: ['next/core-web-vitals', 'next/typescript'],
-  }),
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     plugins: {
       'simple-import-sort': simpleImportSort,
@@ -40,4 +25,16 @@ export default [
     },
   },
   ...tailwind.configs['flat/recommended'],
+  {
+    ignores: [
+      'next.config.ts',
+      'sanity.types.ts',
+      'node_modules/',
+      '.next/',
+      'dist/',
+      'prettier.config.*',
+      'tailwind.config.*',
+      'postcss.config.*',
+    ],
+  },
 ]
