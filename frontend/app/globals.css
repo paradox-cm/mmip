@@ -113,6 +113,34 @@
   --color-info-400: 0.76 0.03 210; /* oklch(0.76 0.03 210) */
   --color-info-500: 0.7 0.03 210; /* oklch(0.7 0.03 210) */
   --color-info-foreground: 0.24 0.02 210; /* oklch(0.24 0.02 210) */
+
+  /* ============================ */
+  /* Radius                       */
+  /* ============================ */
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) - 0.375rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+  --radius-pill: 9999px;
+
+  /* ============================ */
+  /* Motion                       */
+  /* ============================ */
+  --motion-fast: 120ms;
+  --motion-standard: 200ms;
+  --motion-slow: 320ms;
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-standard: 0ms;
+    --motion-slow: 0ms;
+  }
 }
 
 :root {
@@ -122,7 +150,8 @@
   --background: var(--color-sand-50);
   --background-subtle: var(--color-sand-100);
   --background-emphasis: var(--color-sand-200);
-  --background-overlay: rgba(0, 0, 0, 0.85);
+  /* Complete color (not an L C H triplet) — consumed directly, not via oklch(). */
+  --background-overlay: oklch(0.07 0.008 70 / 0.6);
 
   --foreground: var(--color-twilight-950);
   --foreground-heading: var(--color-twilight-900);
@@ -145,6 +174,10 @@
   --card-foreground: var(--foreground);
 
   --input: var(--color-sand-50);
+
+  /* Neutral wash used for hover/press on any surface in the ladder. */
+  --overlay-hover: 0 0 0 / 0.04;
+  --overlay-press: 0 0 0 / 0.08;
 
   /* ========================================================= */
   /* Feedback Colors         */
@@ -179,21 +212,30 @@
   /* ========================================================= */
   --primary: var(--color-gold-500);
   --primary-hover: var(--color-gold-600);
-  --primary-foreground: var(--color-white);
+  --primary-active: var(--color-gold-700);
+  /* Gold sits at L 0.62; white ink on it fails AA, twilight ink clears 5:1. */
+  --primary-foreground: var(--color-twilight-950);
 
   --secondary: var(--color-twilight-900);
-  --secondary-hover: var(--color-gray-darker);
-  --secondary-active: var(--color-gray-deep);
+  --secondary-hover: var(--color-twilight-800);
+  --secondary-active: var(--color-twilight-950);
   --secondary-foreground: var(--color-white);
 
   --accent: var(--color-sand-200);
+  --accent-hover: var(--color-sand-300);
+  --accent-active: var(--color-sand-400);
   --accent-foreground: var(--foreground);
 
   --muted: var(--color-sand-200);
   --muted-foreground: var(--foreground-muted);
 
   --destructive: var(--color-error-500);
+  --destructive-hover: var(--color-error-400);
   --destructive-foreground: var(--color-error-foreground);
+
+  /* Inline links need more weight than the gold accent carries on light sand. */
+  --link: var(--color-gold-700);
+  --link-hover: var(--color-gold-600);
 
   /* ========================================================= */
   /* Border & Divider Colors                                   */
@@ -206,12 +248,95 @@
   /* Rings & Focus                                             */
   /* ========================================================= */
   --ring-focus: var(--color-gold-500);
-  --ring-error: var(--color-ring-error-500);
+  --ring-error: var(--color-error-500);
+}
+
+/* =========================================================================
+ * Dark appearance
+ * Remaps the same semantic aliases onto the same OKLCH scales. The raw
+ * scales above are untouched; sand carries the surfaces so dark stays warm.
+ * ========================================================================= */
+.dark,
+[data-color-scheme='dark'] {
+  color-scheme: dark;
+
+  --background: var(--color-sand-950);
+  --background-subtle: var(--color-sand-900);
+  --background-emphasis: var(--color-sand-800);
+  --background-overlay: oklch(0.03 0.005 70 / 0.75);
+
+  --foreground: var(--color-sand-50);
+  --foreground-heading: var(--color-white);
+  --foreground-accent: var(--color-gold-400);
+  --foreground-subtle: var(--color-sand-300);
+  --foreground-muted: var(--color-sand-400);
+
+  --surface: var(--color-sand-800);
+  --surface-hover: var(--color-sand-700);
+  --surface-foreground: var(--foreground);
+
+  --popover: var(--color-sand-900);
+  --popover-foreground: var(--foreground);
+
+  --card: var(--color-sand-900);
+  --card-hover: var(--color-sand-800);
+  --card-foreground: var(--foreground);
+
+  --input: var(--color-sand-900);
+
+  --overlay-hover: 1 0 0 / 0.06;
+  --overlay-press: 1 0 0 / 0.12;
+
+  --icon: var(--color-sand-100);
+
+  --primary: var(--color-gold-400);
+  --primary-hover: var(--color-gold-300);
+  --primary-active: var(--color-gold-200);
+  --primary-foreground: var(--color-sand-950);
+
+  --secondary: var(--color-sand-100);
+  --secondary-hover: var(--color-white);
+  --secondary-active: var(--color-sand-300);
+  --secondary-foreground: var(--color-twilight-950);
+
+  --accent: var(--color-sand-800);
+  --accent-hover: var(--color-sand-700);
+  --accent-active: var(--color-sand-600);
+  --accent-foreground: var(--foreground);
+
+  --muted: var(--color-sand-800);
+  --muted-foreground: var(--foreground-muted);
+
+  --link: var(--color-gold-300);
+  --link-hover: var(--color-gold-200);
+
+  --border: var(--color-sand-800);
+  --border-strong: var(--color-sand-600);
+  --border-input: var(--color-sand-700);
+
+  --ring-focus: var(--color-gold-400);
+  --ring-error: var(--color-error-400);
 }
 
 @layer base {
   html {
     @apply scroll-smooth;
+  }
+
+  /* Reduced motion is honoured globally. Opt an element back in with
+     data-allow-motion when the movement carries meaning (e.g. a spinner). */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *:not([data-allow-motion]),
+    *:not([data-allow-motion])::before,
+    *:not([data-allow-motion])::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   body {
@@ -227,7 +352,12 @@
   }
 
   ::selection {
-    /* @apply; */
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Every focusable element gets the gold ring unless a component opts out. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring-focus ring-offset-2 ring-offset-background;
   }
 
   h1,
@@ -239,12 +369,13 @@
     @apply scroll-mt-36 font-heading font-medium leading-normal;
   }
 
+  /* Named roles below resolve to the same values these rules always used. */
   .display {
-    @apply text-5xl md:text-6xl md:leading-heading;
+    @apply text-display md:text-6xl md:leading-heading;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl;
+    @apply text-h1 md:text-5xl;
   }
 
   .lead {
@@ -252,7 +383,7 @@
   }
 
   p {
-    @apply text-lg leading-body;
+    @apply text-body;
   }
 }
 
