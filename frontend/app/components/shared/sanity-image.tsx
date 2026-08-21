@@ -43,7 +43,7 @@ export default function SanityImage({
       {...props}
     />
   ) : (
-    <div className="aspect-[3/2] rounded-md border bg-sand-50" />
+    <div className="aspect-[3/2] rounded-md border bg-muted" />
   )
 
   return <div className="relative">{img}</div>

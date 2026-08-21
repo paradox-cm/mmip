@@ -137,7 +137,7 @@ export function ViewToggle({
     <div
       role="group"
       aria-label="Result layout"
-      className="inline-flex items-center rounded-lg border bg-background p-1"
+      className="inline-flex items-center rounded-lg border border-strong bg-background p-1"
     >
       {(['grid', 'list'] as const).map(mode => (
         <button
@@ -188,7 +188,7 @@ export function FilterChips({
             CHIP_CLASSES,
             value === chip.slug
               ? 'border-foreground bg-foreground text-background'
-              : 'border-border bg-background text-foreground-subtle hover:border-strong hover:bg-accent hover:text-foreground active:bg-accent-active',
+              : 'border-strong bg-background text-foreground-subtle hover:bg-accent hover:text-foreground active:bg-accent-active',
           )}
           onClick={() => onValueChange(chip.slug)}
         >

@@ -45,7 +45,7 @@ export default {
         pill: 'var(--radius-pill)',
       },
       boxShadow: {
-        layer: '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+        layer: 'var(--shadow-layer)',
       },
       colors: {
         white: 'oklch(var(--color-white) / <alpha-value>)',

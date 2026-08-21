@@ -20,7 +20,10 @@ export default function AppearanceToggle({ className }: { className?: string }) 
     <div
       role="radiogroup"
       aria-label="Appearance"
-      className={cn('inline-flex items-center gap-0.5 rounded-lg border bg-background p-1', className)}
+      className={cn(
+        'inline-flex items-center gap-0.5 rounded-lg border border-strong bg-background p-1',
+        className,
+      )}
     >
       {APPEARANCES.map(option => {
         const { label, Icon } = OPTIONS[option]

@@ -27,7 +27,11 @@ export default async function Header() {
             href="/"
             aria-label="Resilient Relatives Home"
           >
-            <Image src={LogoMark} alt="Resilient Relatives logo" className="size-12" />
+            <Image
+              src={LogoMark}
+              alt="Resilient Relatives logo"
+              className="size-12 dark:brightness-0 dark:invert"
+            />
             <span className="text-body font-medium leading-none">
               Resilient
               <br />

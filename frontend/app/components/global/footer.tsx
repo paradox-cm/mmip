@@ -39,7 +39,11 @@ export default async function Footer() {
                   href="/"
                   aria-label="Resilient Relatives Home"
                 >
-                  <Image src={LogoMark} alt="Resilient Relatives logo" className="size-12" />
+                  <Image
+                    src={LogoMark}
+                    alt="Resilient Relatives logo"
+                    className="size-12 dark:brightness-0 dark:invert"
+                  />
                   <span className="text-body font-medium leading-none">
                     Resilient
                     <br />
@@ -116,14 +120,22 @@ function BuiltBy() {
           alt="Community background"
           className="min-h-[500px] object-cover"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background"
+        />
       </div>
       <div className="container relative z-10 flex flex-col items-center gap-4 py-16 md:py-20 lg:py-24 xl:py-28">
         <div className="w-[207px]">
           <Image src={CommunityEagleImg} alt="Community eagle" />
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-center text-3xl">Built by and for Native communities.</h2>
-          <p className="text-center">For families, advocates, and future generations.</p>
+          <h2 className="text-center text-3xl text-foreground-heading">
+            Built by and for Native communities.
+          </h2>
+          <p className="text-center text-foreground">
+            For families, advocates, and future generations.
+          </p>
         </div>
       </div>
     </div>

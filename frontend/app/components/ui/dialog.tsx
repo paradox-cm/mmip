@@ -54,7 +54,7 @@ function DialogContent({
       {showCloseButton && (
         <DialogPrimitive.Close
           data-slot="dialog-close"
-          className="absolute right-4 top-4 z-[60] cursor-pointer rounded-pill border bg-background p-2 text-foreground opacity-80 outline-none transition-[opacity,background-color,box-shadow] duration-fast ease-standard hover:bg-accent hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 disabled:pointer-events-none motion-reduce:active:scale-100 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0"
+          className="absolute right-4 top-4 z-[60] cursor-pointer rounded-pill border border-strong bg-background p-2 text-foreground opacity-80 outline-none transition-[opacity,background-color,box-shadow] duration-fast ease-standard hover:bg-accent hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 disabled:pointer-events-none motion-reduce:active:scale-100 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0"
         >
           <LuX />
           <span className="sr-only">Close</span>

@@ -5,6 +5,12 @@ export const APPEARANCES = ['light', 'dark', 'system'] as const
 export type Appearance = (typeof APPEARANCES)[number]
 export type ResolvedAppearance = Exclude<Appearance, 'system'>
 
+/** Browser chrome / PWA theme-color. Matches sand-50 and sand-950. */
+export const APPEARANCE_THEME_COLORS: Record<ResolvedAppearance, string> = {
+  light: '#fcf8f3',
+  dark: '#020100',
+}
+
 export function isAppearance(value: unknown): value is Appearance {
   return APPEARANCES.includes(value as Appearance)
 }
@@ -21,4 +27,6 @@ var root=document.documentElement;
 root.classList.toggle('dark',dark);
 root.setAttribute('data-color-scheme',dark?'dark':'light');
 root.style.colorScheme=dark?'dark':'light';
+var meta=document.querySelector('meta[name="theme-color"]');
+if(meta) meta.setAttribute('content',dark?'${APPEARANCE_THEME_COLORS.dark}':'${APPEARANCE_THEME_COLORS.light}');
 }catch(e){}})();`

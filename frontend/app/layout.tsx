@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { toPlainText, VisualEditing } from 'next-sanity'
-import { Toaster } from 'sonner'
 
 import { AppearanceProvider } from '@/app/components/global/appearance/appearance-provider'
-import { appearanceBootScript } from '@/app/components/global/appearance/config'
+import { AppearanceToaster } from '@/app/components/global/appearance/appearance-toaster'
+import {
+  APPEARANCE_THEME_COLORS,
+  appearanceBootScript,
+} from '@/app/components/global/appearance/config'
 import Footer from '@/app/components/global/footer'
 import Header from '@/app/components/global/header'
 import DraftModeToast from '@/app/components/shared/draft-mode-toast'
@@ -90,13 +93,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       )}
     >
       <head>
+        <meta name="theme-color" content={APPEARANCE_THEME_COLORS.light} />
         <script dangerouslySetInnerHTML={{ __html: appearanceBootScript }} />
       </head>
       <body>
         <AppearanceProvider>
           <section className="min-h-screen pt-20">
-            {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
-            <Toaster />
+            {/* The toaster follows the resolved appearance so draft-mode
+                notices do not flash a light panel on a dark page. */}
+            <AppearanceToaster />
             {isDraftMode && (
               <>
                 <DraftModeToast />

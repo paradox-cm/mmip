@@ -52,7 +52,7 @@ export default function TableOfContents({ headings, className }: TableOfContents
   }
 
   return (
-    <nav className={cn('flex flex-col gap-4 rounded-lg border p-6', className)}>
+    <nav className={cn('flex flex-col gap-4 rounded-lg border border-strong p-6', className)}>
       <h3 className="text-sm font-semibold text-foreground">Table of Contents</h3>
       {headings.length !== 0 && (
         <ul className="flex flex-col gap-1.5">
