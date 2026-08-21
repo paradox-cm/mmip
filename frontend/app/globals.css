@@ -299,12 +299,14 @@
   --foreground-subtle: var(--color-sand-300);
   --foreground-muted: var(--color-sand-400);
 
-  --surface: var(--color-sand-800);
-  --surface-hover: var(--color-sand-700);
+  --surface: var(--color-sand-700);
+  --surface-hover: var(--color-sand-600);
   --surface-foreground: var(--foreground);
 
   /* One step up from the page so cards and menus lift; --border stays the
-     quiet divider against sand-950. Interactive edges use --border-strong. */
+     quiet divider against sand-950. Interactive edges use --border-strong.
+     Washes (muted/surface/accent) sit one step above the card so chips and
+     selected rows still read on the lifted surface. */
   --popover: var(--color-sand-800);
   --popover-foreground: var(--foreground);
 
@@ -329,9 +331,9 @@
   --secondary-active: var(--color-sand-300);
   --secondary-foreground: var(--color-twilight-950);
 
-  --accent: var(--color-sand-800);
-  --accent-hover: var(--color-sand-700);
-  --accent-active: var(--color-sand-600);
+  --accent: var(--color-sand-700);
+  --accent-hover: var(--color-sand-600);
+  --accent-active: var(--color-sand-500);
   --accent-foreground: var(--foreground);
 
   --success: var(--color-success-700);
@@ -359,7 +361,7 @@
   --destructive-foreground: var(--color-error-ink);
   --destructive-strong: var(--color-terracota-300);
 
-  --muted: var(--color-sand-800);
+  --muted: var(--color-sand-700);
   --muted-foreground: var(--foreground-muted);
 
   --link: var(--color-gold-300);
