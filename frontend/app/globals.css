@@ -362,7 +362,9 @@
   --destructive-strong: var(--color-terracota-300);
 
   --muted: var(--color-sand-700);
-  --muted-foreground: var(--foreground-muted);
+  /* sand-400 on the lifted wash is 3.77:1. sand-300 clears 4.5:1
+     on muted/surface without collapsing into heading white. */
+  --muted-foreground: var(--color-sand-300);
 
   --link: var(--color-gold-300);
   --link-hover: var(--color-gold-200);
