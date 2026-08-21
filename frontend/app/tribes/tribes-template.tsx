@@ -7,7 +7,6 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import TribeCard from '@/app/components/shared/card/tribe-card'
 import {
   ClearFiltersButton,
-  FilterBar,
   FilterControls,
   RegionFilter,
   SortFilter,

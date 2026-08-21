@@ -12,7 +12,6 @@ import Section from '@/app/components/shared/section'
 import { Badge } from '@/app/components/ui/badge'
 import { Button } from '@/app/components/ui/button'
 import { formatWebsiteUrl } from '@/lib/utils'
-import { cn } from '@/lib/utils'
 import type { GetPostQueryResult } from '@/sanity.types'
 import { fetchMorePosts } from '@/sanity/lib/fetch'
 

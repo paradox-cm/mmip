@@ -211,9 +211,12 @@
   /* Interactive Colors (States & Buttons)                     */
   /* ========================================================= */
   --primary: var(--color-gold-500);
-  --primary-hover: var(--color-gold-600);
-  --primary-active: var(--color-gold-700);
-  /* Gold sits at L 0.62; white ink on it fails AA, twilight ink clears 5:1. */
+  /* Gold sits at L 0.62; white ink on it fails AA, twilight ink clears 5:1.
+     With dark ink the state ladder has to brighten rather than deepen, or
+     hover and press lose contrast against their own label. Same direction as
+     dark, so engaging gold always reads the same way. */
+  --primary-hover: var(--color-gold-400);
+  --primary-active: var(--color-gold-300);
   --primary-foreground: var(--color-twilight-950);
 
   --secondary: var(--color-twilight-900);
@@ -232,6 +235,9 @@
   --destructive: var(--color-error-500);
   --destructive-hover: var(--color-error-400);
   --destructive-foreground: var(--color-error-foreground);
+  /* The error scale is a muted pastel built for fills; error *text* needs the
+     saturated end of the same hue to clear AA on a light surface. */
+  --destructive-strong: var(--color-terracota-600);
 
   /* Inline links need more weight than the gold accent carries on light sand. */
   --link: var(--color-gold-700);
@@ -240,9 +246,11 @@
   /* ========================================================= */
   /* Border & Divider Colors                                   */
   /* ========================================================= */
+  /* --border stays the quiet divider. The other two bound interactive things,
+     so they need 3:1 against the background (WCAG 1.4.11). */
   --border: var(--color-sand-200);
-  --border-strong: var(--color-sand-400);
-  --border-input: var(--color-sand-300);
+  --border-strong: var(--color-sand-500);
+  --border-input: var(--color-sand-500);
 
   /* ========================================================= */
   /* Rings & Focus                                             */
@@ -304,6 +312,8 @@
   --accent-active: var(--color-sand-600);
   --accent-foreground: var(--foreground);
 
+  --destructive-strong: var(--color-terracota-300);
+
   --muted: var(--color-sand-800);
   --muted-foreground: var(--foreground-muted);
 
@@ -311,8 +321,8 @@
   --link-hover: var(--color-gold-200);
 
   --border: var(--color-sand-800);
-  --border-strong: var(--color-sand-600);
-  --border-input: var(--color-sand-700);
+  --border-strong: var(--color-sand-500);
+  --border-input: var(--color-sand-500);
 
   --ring-focus: var(--color-gold-400);
   --ring-error: var(--color-error-400);

@@ -5,7 +5,7 @@ import { LuMonitor, LuMoon, LuSun } from 'react-icons/lu'
 import { cn } from '@/lib/utils'
 
 import { useAppearance } from './appearance-provider'
-import { APPEARANCES, type Appearance } from './config'
+import { type Appearance,APPEARANCES } from './config'
 
 const OPTIONS: Record<Appearance, { label: string; Icon: typeof LuSun }> = {
   light: { label: 'Light', Icon: LuSun },

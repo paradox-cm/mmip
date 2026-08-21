@@ -21,7 +21,7 @@ function Label({
       {children}
       {required && (
         <>
-          <span aria-hidden="true" className="text-destructive">
+          <span aria-hidden="true" className="text-destructive-strong">
             *
           </span>
           <span className="sr-only">(required)</span>

@@ -26,8 +26,10 @@ const buttonVariants = cva(
           'bg-secondary text-secondary-foreground hover:bg-secondary-hover active:bg-secondary-active',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive-hover active:bg-destructive',
+        // border-strong, not border: an outline button's edge is what
+        // identifies the control, so it needs 3:1 against the background.
         outline:
-          'border bg-background hover:border-strong hover:bg-accent hover:text-foreground active:bg-accent-active',
+          'border border-strong bg-background hover:bg-accent hover:text-foreground active:bg-accent-active',
         ghost: 'hover:bg-accent hover:text-foreground active:bg-accent-active',
         link: 'text-link underline-offset-4 hover:text-link-hover hover:underline active:scale-100',
       },

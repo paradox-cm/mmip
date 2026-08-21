@@ -3,9 +3,9 @@
 import * as React from 'react'
 
 import {
+  type Appearance,
   APPEARANCE_STORAGE_KEY,
   isAppearance,
-  type Appearance,
   type ResolvedAppearance,
 } from './config'
 

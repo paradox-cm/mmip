@@ -35,7 +35,7 @@ function SearchResults() {
   if (error) {
     return (
       <div className="py-12 text-center">
-        <p role="alert" className="text-destructive">
+        <p role="alert" className="text-destructive-strong">
           Search failed. Please try again.
         </p>
       </div>

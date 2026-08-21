@@ -54,6 +54,7 @@ export default {
         destructive: {
           DEFAULT: 'oklch(var(--destructive) / <alpha-value>)',
           hover: 'oklch(var(--destructive-hover) / <alpha-value>)',
+          strong: 'oklch(var(--destructive-strong) / <alpha-value>)',
           foreground: 'oklch(var(--destructive-foreground) / <alpha-value>)',
         },
         'destructive-foreground': 'oklch(var(--destructive-foreground) / <alpha-value>)',
