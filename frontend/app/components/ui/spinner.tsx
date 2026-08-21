@@ -7,6 +7,8 @@ function Spinner({ className, ...props }: React.ComponentProps<'svg'>) {
     <LuLoaderCircle
       role="status"
       aria-label="Loading"
+      // Progress feedback stays animated even under prefers-reduced-motion.
+      data-allow-motion=""
       className={cn('size-4 animate-spin text-foreground-muted', className)}
       {...props}
     />
