@@ -3,9 +3,10 @@ import { draftMode } from 'next/headers'
 import { toPlainText, VisualEditing } from 'next-sanity'
 import { Toaster } from 'sonner'
 
+import { AppearanceProvider } from '@/app/components/global/appearance/appearance-provider'
+import { appearanceBootScript } from '@/app/components/global/appearance/config'
 import Footer from '@/app/components/global/footer'
 import Header from '@/app/components/global/header'
-import CommandPalette from '@/app/components/shared/command-palette'
 import DraftModeToast from '@/app/components/shared/draft-mode-toast'
 import { SITE_NAME } from '@/lib/constants'
 import { handleError } from '@/lib/handle-error'
@@ -81,31 +82,37 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(
         'bg-background text-foreground',
         HelveticaNowFont.variable,
         RealHeadFont.variable,
       )}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: appearanceBootScript }} />
+      </head>
       <body>
-        <section className="min-h-screen pt-20">
-          {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
-          <Toaster />
-          {isDraftMode && (
-            <>
-              <DraftModeToast />
-              {/*  Enable Visual Editing, only to be rendered when Draft Mode is enabled */}
-              <VisualEditing />
-            </>
-          )}
-          {/* The <SanityLive> component is responsible for making all sanityFetch calls in your application live, so should always be rendered. */}
-          <SanityLive onError={handleError} />
-          <Header />
-          <main className="">{children}</main>
-          <Footer />
-        </section>
-        {/* <CommandPalette /> */}
-        <SpeedInsights />
+        <AppearanceProvider>
+          <section className="min-h-screen pt-20">
+            {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
+            <Toaster />
+            {isDraftMode && (
+              <>
+                <DraftModeToast />
+                {/*  Enable Visual Editing, only to be rendered when Draft Mode is enabled */}
+                <VisualEditing />
+              </>
+            )}
+            {/* The <SanityLive> component is responsible for making all sanityFetch calls in your application live, so should always be rendered. */}
+            <SanityLive onError={handleError} />
+            <Header />
+            <main className="">{children}</main>
+            <Footer />
+          </section>
+          {/* Command palette stays unwired; /search is the supported entry point. */}
+          <SpeedInsights />
+        </AppearanceProvider>
       </body>
     </html>
   )

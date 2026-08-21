@@ -2,11 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import ResolvedLink from '@/app/components/shared/resolved-link'
+import { cn } from '@/lib/utils'
 import CommunityBgImg from '@/public/images/community-bg.png'
 import CommunityEagleImg from '@/public/images/community-eagle.png'
 import LogoMark from '@/public/logo-mark.svg'
 import { sanityFetch } from '@/sanity/lib/live'
 import { navigationQuery } from '@/sanity/lib/queries'
+
+const FOOTER_LINK_CLASSES =
+  'rounded-md outline-none transition-colors duration-fast ease-standard hover:text-link-hover focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background-subtle'
 
 export default async function Footer() {
   const { data } = await sanityFetch({
@@ -31,12 +35,12 @@ export default async function Footer() {
             <div className="flex flex-col items-start justify-between gap-24 md:flex-row">
               <div className="flex">
                 <Link
-                  className="flex flex-1 items-center gap-3"
+                  className={cn('flex flex-1 items-center gap-3', FOOTER_LINK_CLASSES)}
                   href="/"
                   aria-label="Resilient Relatives Home"
                 >
                   <Image src={LogoMark} alt="Resilient Relatives logo" className="size-12" />
-                  <span className="text-lg font-medium leading-none">
+                  <span className="text-body font-medium leading-none">
                     Resilient
                     <br />
                     Relatives
@@ -52,7 +56,9 @@ export default async function Footer() {
                     <ul className="flex flex-col gap-4">
                       {resourcesDropdown.dropdownItems.map((link, idx) => (
                         <li key={idx}>
-                          <ResolvedLink link={link}>{link.label}</ResolvedLink>
+                          <ResolvedLink link={link} className={FOOTER_LINK_CLASSES}>
+                            {link.label}
+                          </ResolvedLink>
                         </li>
                       ))}
                     </ul>
@@ -65,7 +71,9 @@ export default async function Footer() {
                     <div className="font-bold">Company</div>
                     <ul>
                       <li>
-                        <ResolvedLink link={aboutLink.link}>{aboutLink.link.label}</ResolvedLink>
+                        <ResolvedLink link={aboutLink.link} className={FOOTER_LINK_CLASSES}>
+                          {aboutLink.link.label}
+                        </ResolvedLink>
                       </li>
                     </ul>
                   </div>
@@ -76,7 +84,9 @@ export default async function Footer() {
                   <div className="font-bold">Connect</div>
                   <ul>
                     <li>
-                      <a href="mailto:CCVAP@cahuilla-nsn.gov">Email us</a>
+                      <a href="mailto:CCVAP@cahuilla-nsn.gov" className={FOOTER_LINK_CLASSES}>
+                        Email us
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -86,7 +96,7 @@ export default async function Footer() {
             <hr />
 
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-              <p className="text-sm text-gray-500">
+              <p className="text-label text-foreground-muted">
                 &copy; {new Date().getFullYear()} Resilient Relatives. All rights reserved.
               </p>
             </div>

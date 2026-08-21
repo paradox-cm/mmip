@@ -7,19 +7,20 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/app/components/ui/navigation-menu'
-import { fetchNavigation } from '@/sanity/lib/fetch'
 
-export default async function Navigation() {
-  const data = await fetchNavigation()
+import { filterPrimaryNav, type PrimaryNav } from './nav-items'
 
-  if (!data || !data.primaryNav || data.primaryNav.length === 0) {
+export default function Navigation({ primaryNav }: { primaryNav: PrimaryNav | null | undefined }) {
+  const items = filterPrimaryNav(primaryNav)
+
+  if (items.length === 0) {
     return null
   }
 
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {data?.primaryNav?.map(({ dropdownLabel, link, type, dropdownItems }, i) => (
+        {items.map(({ dropdownLabel, link, type, dropdownItems }, i) => (
           <NavigationMenuItem key={i}>
             {type === 'dropdown' && dropdownItems ? (
               <>
@@ -31,7 +32,6 @@ export default async function Navigation() {
                         <NavigationMenuLink asChild>
                           <ResolvedLink link={link}>
                             <div className="font-medium">{link.label}</div>
-                            {/* <div className="">Browse all components in the library.</div> */}
                           </ResolvedLink>
                         </NavigationMenuLink>
                       </li>
