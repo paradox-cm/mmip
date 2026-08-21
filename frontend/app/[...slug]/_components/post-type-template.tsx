@@ -5,15 +5,14 @@ import { Suspense, useMemo, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 import PostCard from '@/app/components/shared/card/post-card'
+import {
+  ClearFiltersButton,
+  FilterControls,
+  RegionFilter,
+  SelectFilter,
+} from '@/app/components/shared/filter-bar'
 import Section from '@/app/components/shared/section'
 import { Button } from '@/app/components/ui/button'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/app/components/ui/select'
 import type { PostTypeRoute } from '@/lib/resolve-route'
 
 function PostTypeContent({ data }: { data: PostTypeRoute }) {
@@ -68,6 +67,14 @@ function PostTypeContent({ data }: { data: PostTypeRoute }) {
     return Array.from(topicsMap.values())
   }, [posts])
 
+  const topicOptions = useMemo(
+    () => [
+      { value: 'all', label: 'All Topics' },
+      ...availableTopics.map(topic => ({ value: topic.slug, label: topic.name })),
+    ],
+    [availableTopics],
+  )
+
   // Filter posts based on selected filters
   const filteredPosts = useMemo(() => {
     return posts.filter(post => {
@@ -117,51 +124,33 @@ function PostTypeContent({ data }: { data: PostTypeRoute }) {
         <div className="container flex flex-col gap-16">
           {/* Header */}
           <div className="flex flex-col gap-6">
-            <h1 className="text-4xl text-foreground-heading">{metadata.title}</h1>
+            <h1 className="text-h1 text-foreground-heading">{metadata.title}</h1>
             {metadata.description && (
-              <p className="max-w-reading text-lg text-foreground-subtle">{metadata.description}</p>
+              <p className="max-w-reading text-body text-foreground-subtle">
+                {metadata.description}
+              </p>
             )}
           </div>
 
           {/* Filters */}
-          <div className="flex flex-col justify-end md:flex-row md:items-center">
-            <div className="flex flex-wrap items-center justify-end gap-4">
-              {/* Region Filter */}
-              <Select value={selectedRegion} onValueChange={handleRegionChange}>
-                <SelectTrigger className="w-48">
-                  <SelectValue placeholder="Filter by region" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Regions</SelectItem>
-                  <SelectItem value="north">Northern CA</SelectItem>
-                  <SelectItem value="central">Central CA</SelectItem>
-                  <SelectItem value="south">Southern CA</SelectItem>
-                </SelectContent>
-              </Select>
-
-              {/* Topic Filter */}
-              <Select value={selectedTopic} onValueChange={handleTopicChange}>
-                <SelectTrigger className="w-48">
-                  <SelectValue placeholder="Filter by topic" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Topics</SelectItem>
-                  {availableTopics.map(topic => (
-                    <SelectItem key={topic.slug} value={topic.slug}>
-                      {topic.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              {/* Clear Filters Button */}
-              {(selectedRegion !== 'all' || selectedTopic !== 'all') && (
-                <Button variant="ghost" onClick={clearFilters} size="sm">
-                  Clear Filters
-                </Button>
-              )}
-            </div>
-          </div>
+          <FilterControls className="lg:justify-end">
+            <RegionFilter
+              value={selectedRegion}
+              onValueChange={handleRegionChange}
+              className="sm:w-48"
+            />
+            <SelectFilter
+              label="Filter by topic"
+              placeholder="Filter by topic"
+              value={selectedTopic}
+              onValueChange={handleTopicChange}
+              options={topicOptions}
+              className="sm:w-48"
+            />
+            {(selectedRegion !== 'all' || selectedTopic !== 'all') && (
+              <ClearFiltersButton onClick={clearFilters} />
+            )}
+          </FilterControls>
         </div>
       </Section>
 
@@ -187,12 +176,14 @@ function PostTypeContent({ data }: { data: PostTypeRoute }) {
             </div>
           ) : (
             <div className="flex justify-center py-12">
-              <p className="text-lg text-gray-500">No posts found matching the selected filters.</p>
+              <p className="text-body text-foreground-muted">
+                No posts found matching the selected filters.
+              </p>
             </div>
           )}
 
           {/* Results Summary */}
-          <div className="mt-8 text-center text-sm text-gray-500">
+          <div className="mt-8 text-center text-label text-foreground-muted" aria-live="polite">
             Showing {displayedPosts.length} of {filteredPosts.length} posts
           </div>
         </div>
