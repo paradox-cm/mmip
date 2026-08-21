@@ -12,19 +12,18 @@ const Post = ({ post }: { post: AllPostsQueryResult[0] }) => {
 
   return (
     <article key={_id} className="flex max-w-xl flex-col items-start justify-between">
-      <div className="text-sm text-gray-500">
+      <div className="text-label text-foreground-muted">
         <DateComponent dateString={date} />
       </div>
 
-      <h3 className="mt-3 text-2xl font-semibold">
+      <h3 className="mt-3 text-h3 font-semibold">
         <Link
-          className="underline transition-colors hover:text-red-500"
+          className="rounded-sm underline underline-offset-4 transition-colors duration-fast ease-standard hover:text-link-hover"
           href={`/${category?.slug}/${slug}`}
         >
           {title}
         </Link>
       </h3>
-      {/* <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{excerpt}</p> */}
     </article>
   )
 }

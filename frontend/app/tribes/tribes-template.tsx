@@ -5,34 +5,18 @@ import { Suspense, useMemo, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 import TribeCard from '@/app/components/shared/card/tribe-card'
+import {
+  ClearFiltersButton,
+  FilterControls,
+  RegionFilter,
+  SortFilter,
+  ViewToggle,
+} from '@/app/components/shared/filter-bar'
 import Section from '@/app/components/shared/section'
 import { Button } from '@/app/components/ui/button'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/app/components/ui/select'
+import { isSortOption, isViewMode, type SortOption, type ViewMode } from '@/lib/filters'
 import { cn } from '@/lib/utils'
 import type { AllTribesQueryResult } from '@/sanity.types'
-
-type SortOption = 'name-asc' | 'name-desc'
-type ViewMode = 'grid' | 'list'
-
-const isSortOption = (value: string | null): value is SortOption => {
-  return value === 'name-asc' || value === 'name-desc'
-}
-
-const isViewMode = (value: string | null): value is ViewMode => {
-  return value === 'grid' || value === 'list'
-}
-
-// const data = {
-//   name: 'Services',
-//   description:
-//     'Browse verified services for MMIP support—from emergency response and legal advocacy to healing, shelter, and youth programs—offered by Tribes, inter-tribal partners, and vetted providers across California.',
-// }
 
 function TribesContent({ data }: { data: AllTribesQueryResult }) {
   const router = useRouter()
@@ -148,8 +132,8 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
         <div className="container flex flex-col gap-16">
           {/* Header */}
           <div className="flex flex-col gap-6">
-            <h1 className="text-4xl text-foreground-heading">Tribes</h1>
-            <p className="max-w-reading text-lg text-foreground-subtle">
+            <h1 className="text-h1 text-foreground-heading">Tribes</h1>
+            <p className="max-w-reading text-body text-foreground-subtle">
               Browse California Tribes and their information, including contact details, locations,
               and community resources.
             </p>
@@ -159,66 +143,14 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
 
       <Section className="flex flex-col gap-8 border-t py-8 sm:py-8 lg:py-8">
         <div className="container">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              {/* Region Filter */}
-              <Select value={selectedRegion} onValueChange={handleRegionChange}>
-                <SelectTrigger className="w-full sm:w-48">
-                  <SelectValue placeholder="Filter by region" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Regions</SelectItem>
-                  <SelectItem value="north">Northern CA</SelectItem>
-                  <SelectItem value="central">Central CA</SelectItem>
-                  <SelectItem value="south">Southern CA</SelectItem>
-                </SelectContent>
-              </Select>
-
-              <Select value={selectedSort} onValueChange={handleSortChange}>
-                <SelectTrigger className="w-full sm:w-56">
-                  <SelectValue placeholder="Sort" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="name-asc">Name (A–Z)</SelectItem>
-                  <SelectItem value="name-desc">Name (Z–A)</SelectItem>
-                </SelectContent>
-              </Select>
-
-              <div className="inline-flex items-center rounded-lg border bg-background p-1">
-                <button
-                  type="button"
-                  className={cn(
-                    'rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
-                    viewMode === 'grid'
-                      ? 'bg-foreground text-background'
-                      : 'text-foreground-subtle hover:text-foreground',
-                  )}
-                  onClick={() => handleViewModeChange('grid')}
-                >
-                  Grid
-                </button>
-                <button
-                  type="button"
-                  className={cn(
-                    'rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
-                    viewMode === 'list'
-                      ? 'bg-foreground text-background'
-                      : 'text-foreground-subtle hover:text-foreground',
-                  )}
-                  onClick={() => handleViewModeChange('list')}
-                >
-                  List
-                </button>
-              </div>
-
-              {/* Clear Filters Button */}
-              {(selectedRegion !== 'all' || selectedSort) && (
-                <Button variant="ghost" onClick={clearFilters} size="sm">
-                  Clear Filters
-                </Button>
-              )}
-            </div>
-          </div>
+          <FilterControls>
+            <RegionFilter value={selectedRegion} onValueChange={handleRegionChange} />
+            <SortFilter value={selectedSort} onValueChange={handleSortChange} />
+            <ViewToggle value={viewMode} onValueChange={handleViewModeChange} />
+            {(selectedRegion !== 'all' || selectedSort) && (
+              <ClearFiltersButton onClick={clearFilters} />
+            )}
+          </FilterControls>
         </div>
       </Section>
 
@@ -250,14 +182,14 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
             </div>
           ) : (
             <div className="flex justify-center py-12">
-              <p className="text-lg text-gray-500">
+              <p className="text-body text-foreground-muted">
                 No tribes found matching the selected filters.
               </p>
             </div>
           )}
 
           {/* Results Summary */}
-          <div className="mt-8 text-center text-sm text-gray-500">
+          <div className="mt-8 text-center text-label text-foreground-muted" aria-live="polite">
             Showing {displayedTribes.length} of {sortedTribes.length} tribes
           </div>
         </div>

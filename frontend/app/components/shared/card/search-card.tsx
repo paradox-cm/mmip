@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { Badge } from '@/app/components/ui/badge'
-import { CARD_THEME } from '@/lib/constants'
+import { CARD_INTERACTION, CARD_THEME } from '@/lib/constants'
 import { type SearchResult } from '@/lib/hooks/use-search'
 import { cn } from '@/lib/utils'
 
@@ -32,7 +32,8 @@ export default function SearchCard({ className, orientation = 'vertical', post }
         aria-label={post.title}
         href={href || post.url}
         className={cn(
-          'flex flex-1 flex-col gap-6 rounded-xl border p-4 transition-colors',
+          'flex flex-1 flex-col gap-6 rounded-xl border p-4',
+          CARD_INTERACTION,
           { 'items-center md:flex-row': isHorizontal },
           themeClasses,
           className,
@@ -48,11 +49,11 @@ export default function SearchCard({ className, orientation = 'vertical', post }
 
         <div className={cn('flex flex-col gap-2', { 'flex-1': isHorizontal })}>
           <div className="mb-1 flex flex-row items-center gap-1">
-            <Badge variant={badgeVariant} className="capitalize text-white">
+            <Badge variant={badgeVariant} className="capitalize">
               {primaryType}
             </Badge>
             {secondaryLabel && (
-              <Badge variant={badgeVariant} className="truncate bg-transparent">
+              <Badge variant={badgeVariant} appearance="soft" className="truncate">
                 {secondaryLabel}
               </Badge>
             )}

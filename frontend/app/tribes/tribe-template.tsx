@@ -1,4 +1,4 @@
-import { LuClock, LuGlobe, LuMail, LuMapPin, LuPhone } from 'react-icons/lu'
+import { LuGlobe, LuMail, LuMapPin, LuPhone } from 'react-icons/lu'
 
 import Link from 'next/link'
 import { PortableTextBlock } from 'next-sanity'
@@ -14,7 +14,7 @@ import type { GetTribeQueryResult } from '@/sanity.types'
 export default function TribeTemplate({ tribe }: { tribe: NonNullable<GetTribeQueryResult> }) {
   return (
     <>
-      <Section className="border-b bg-sand-50 lg:py-24">
+      <Section className="border-b bg-background-subtle lg:py-24">
         <div className="container">
           <TribeHeader {...tribe} />
         </div>
@@ -39,12 +39,12 @@ function TribeHeader({
     <div className="flex flex-col gap-16 md:flex-row md:items-center">
       <div className="flex w-full flex-[2] flex-col gap-6">
         <div className="flex flex-row items-center gap-1">
-          <Link href="/tribes">
-            <Badge variant="service" className="capitalize text-white">
+          <Link href="/tribes" className="rounded-md">
+            <Badge variant="tribe" className="capitalize">
               Tribe
             </Badge>
           </Link>
-          <Badge variant="service" className="bg-transparent capitalize">
+          <Badge variant="tribe" appearance="soft" className="capitalize">
             {REGION_LABELS[region]}
           </Badge>
         </div>
@@ -75,12 +75,12 @@ function TribeBody({
         <div className="flex max-w-80 flex-col gap-6 md:sticky md:top-36 lg:top-40">
           {/* Contact Information */}
           {contactInfo && (
-            <div className="rounded-lg border bg-sand-50 p-6">
+            <div className="rounded-lg border bg-card p-6">
               <h3 className="mb-4 text-lg font-semibold">Contact Information</h3>
               <div className="space-y-3">
                 {contactInfo.address && (
                   <div className="flex items-start gap-2">
-                    <LuMapPin className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+                    <LuMapPin className="mt-0.5 size-4 shrink-0 text-foreground-muted" />
                     <div className="text-sm">
                       <div>{contactInfo.address}</div>
                       {(contactInfo.city || contactInfo.state || contactInfo.zip) && (
@@ -96,7 +96,7 @@ function TribeBody({
 
                 {contactInfo.phone && (
                   <div className="flex items-center gap-2">
-                    <LuPhone className="size-4 shrink-0 text-muted-foreground" />
+                    <LuPhone className="size-4 shrink-0 text-foreground-muted" />
                     <a href={`tel:${contactInfo.phone}`} className="text-sm hover:underline">
                       {contactInfo.phone}
                     </a>
@@ -105,7 +105,7 @@ function TribeBody({
 
                 {contactInfo.email && (
                   <div className="flex items-center gap-2">
-                    <LuMail className="size-4 shrink-0 text-muted-foreground" />
+                    <LuMail className="size-4 shrink-0 text-foreground-muted" />
                     <a href={`mailto:${contactInfo.email}`} className="text-sm hover:underline">
                       {contactInfo.email}
                     </a>
@@ -114,7 +114,7 @@ function TribeBody({
 
                 {contactInfo.website && (
                   <div className="flex items-center gap-2">
-                    <LuGlobe className="size-4 shrink-0 text-muted-foreground" />
+                    <LuGlobe className="size-4 shrink-0 text-foreground-muted" />
                     <a
                       href={contactInfo.website}
                       target="_blank"

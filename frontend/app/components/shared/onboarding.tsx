@@ -33,27 +33,27 @@ const OnboardingMessage = ({ message, link, type, path }: OnboardingMessageProps
   return (
     <>
       <div>
-        <h3 className="text-2xl font-semibold">{message.title}</h3>
-        <p className="mt-1 text-sm text-white/80">{message.description}</p>
+        <h3 className="text-h3 font-semibold text-foreground-heading">{message.title}</h3>
+        <p className="mt-1 text-label text-foreground-subtle">{message.description}</p>
       </div>
 
       <div>
         {!isPresentation ? (
           <Link
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-red-500 transition-colors duration-200 hover:bg-red-100 focus:bg-red-200"
+            className="inline-flex items-center gap-2 rounded-pill bg-primary px-6 py-3 text-primary-foreground outline-none transition-colors duration-fast ease-standard hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background-emphasis active:bg-primary-active"
             href={link.href}
             target="_blank"
           >
             {link.title}
             {(link.showIcon ?? true) && (
-              <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg className="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
               </svg>
             )}
           </Link>
         ) : (
           <button
-            className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-6 py-3 text-red-500 transition-colors duration-200 hover:bg-red-100 focus:bg-red-200"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-pill bg-primary px-6 py-3 text-primary-foreground outline-none transition-colors duration-fast ease-standard hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background-emphasis active:bg-primary-active"
             data-sanity={createDataAttribute({
               id: uuid(),
               type,
@@ -62,7 +62,7 @@ const OnboardingMessage = ({ message, link, type, path }: OnboardingMessageProps
           >
             {link.title}
             {(link.showIcon ?? true) && (
-              <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg className="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
               </svg>
             )}
@@ -75,9 +75,9 @@ const OnboardingMessage = ({ message, link, type, path }: OnboardingMessageProps
 
 export default function Onboarding() {
   return (
-    <div className="mx-auto grid max-w-2xl grid-flow-row gap-6 rounded-lg bg-red-500 p-8 py-12 text-center text-white">
+    <div className="mx-auto grid max-w-2xl grid-flow-row gap-6 rounded-lg border bg-background-emphasis p-8 py-12 text-center text-foreground">
       <svg
-        className="mx-auto h-10 w-10 text-gray-400"
+        className="mx-auto size-10"
         aria-hidden="true"
         width="512"
         height="512"
@@ -119,9 +119,9 @@ export default function Onboarding() {
 
 export function PageOnboarding() {
   return (
-    <div className="mx-auto grid max-w-2xl grid-flow-row gap-6 rounded-lg bg-red-500 p-8 py-12 text-center text-white">
+    <div className="mx-auto grid max-w-2xl grid-flow-row gap-6 rounded-lg border bg-background-emphasis p-8 py-12 text-center text-foreground">
       <svg
-        className="mx-auto h-10 w-10 text-gray-400"
+        className="mx-auto size-10"
         aria-hidden="true"
         width="512"
         height="512"

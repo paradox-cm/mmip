@@ -4,6 +4,8 @@ import Link from 'next/link'
 
 import SanityImage from '@/app/components/shared/sanity-image'
 import Tile from '@/app/components/ui/tile'
+import { CARD_INTERACTION } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 import { fetchCategories } from '@/sanity/lib/fetch'
 
 import { stegaClean } from '@sanity/client/stega'
@@ -17,12 +19,16 @@ export default async function Categories() {
 
   return (
     <div>
-      <h2 className="mb-6 text-2xl">Explore by category</h2>
+      <h2 className="mb-6 text-h3">Explore by category</h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         {data.map(cat => {
           return (
-            <Link key={cat._id} href={`${cat.slug}`}>
-              <Tile className="group flex flex-col gap-6">
+            <Link
+              key={cat._id}
+              href={`${cat.slug}`}
+              className={cn('group block rounded-xl', CARD_INTERACTION)}
+            >
+              <Tile className="flex flex-col gap-6">
                 {cat.image && cat.image.metadata && (
                   <div className="relative flex items-center justify-center py-8">
                     <SanityImage
@@ -35,8 +41,8 @@ export default async function Categories() {
                 )}
                 <div className="flex flex-row items-center justify-between">
                   <p className="text-xl font-medium">{cat.name}</p>
-                  <div className="flex size-10 items-center justify-center rounded-full bg-muted transition-colors group-hover:bg-secondary">
-                    <RiArrowRightLine className="size-5 text-white" />
+                  <div className="flex size-10 items-center justify-center rounded-pill bg-muted text-muted-foreground transition-colors duration-fast ease-standard group-hover:bg-secondary group-hover:text-secondary-foreground">
+                    <RiArrowRightLine className="size-5" />
                   </div>
                 </div>
               </Tile>

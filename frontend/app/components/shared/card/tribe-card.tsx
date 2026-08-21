@@ -7,6 +7,7 @@ import CustomPortableText from '@/app/components/shared/portable-text'
 import SanityImage from '@/app/components/shared/sanity-image'
 // import { Badge } from '@/app/components/ui/badge'
 import Tile from '@/app/components/ui/tile'
+import { CARD_INTERACTION } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import type { GetTribeQueryResult } from '@/sanity.types'
 
@@ -21,7 +22,11 @@ type Props = {
 
 export default function TribeCard({ className, layout = 'grid', tribe }: Props) {
   return (
-    <Link aria-label={tribe.name} href={`/tribes/${tribe.slug}`}>
+    <Link
+      aria-label={tribe.name}
+      href={`/tribes/${tribe.slug}`}
+      className={cn('group block rounded-xl', CARD_INTERACTION)}
+    >
       <article className={cn('flex size-full', layout === 'list' && 'w-full', className)}>
         <Tile
           className={cn(

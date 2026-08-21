@@ -1,7 +1,5 @@
-import { Suspense } from 'react'
 import { LuDownload, LuExternalLink } from 'react-icons/lu'
 
-import { link } from 'fs'
 import Link from 'next/link'
 import { PortableTextBlock } from 'next-sanity'
 import pluralize from 'pluralize-esm'
@@ -14,23 +12,15 @@ import Section from '@/app/components/shared/section'
 import { Badge } from '@/app/components/ui/badge'
 import { Button } from '@/app/components/ui/button'
 import { formatWebsiteUrl } from '@/lib/utils'
-import { cn } from '@/lib/utils'
 import type { GetPostQueryResult } from '@/sanity.types'
 import { fetchMorePosts } from '@/sanity/lib/fetch'
 
 import TableOfContents from './table-of-contents'
 
-export const CARD_THEME: Record<string, string> = {
-  article: 'bg-sage-100',
-  guide: 'bg-terracota-100',
-  tool: 'bg-twilight-100',
-  service: 'bg-gold-100',
-}
-
 export default async function PostTemplate({ post }: { post: NonNullable<GetPostQueryResult> }) {
   return (
     <>
-      <Section className="border-b bg-sand-50 lg:py-24">
+      <Section className="border-b bg-background-subtle lg:py-24">
         <div className="container">
           <PostHeader {...post} />
         </div>
@@ -70,19 +60,16 @@ function PostHeader({
     <div className="flex flex-col gap-16 md:flex-row md:items-center">
       <div className="flex w-full flex-[2] flex-col gap-6">
         <div className="flex flex-row items-center gap-1">
-          <Link href={`/${pluralize(postType)}`}>
-            <Badge variant={postType} className="capitalize text-white">
+          <Link href={`/${pluralize(postType)}`} className="rounded-md">
+            <Badge variant={postType} className="capitalize">
               {postType}
             </Badge>
           </Link>
-          <Link href={`/${topic.slug}`}>
-            <Badge variant={postType} className="bg-transparent">
+          <Link href={`/${topic.slug}`} className="rounded-md">
+            <Badge variant={postType} appearance="soft">
               {topic.name}
             </Badge>
           </Link>
-          {/* <Badge variant={postType} className="bg-transparent">
-            {topic.name}
-          </Badge> */}
         </div>
         <h1>{title}</h1>
         {excerpt?.length && (
@@ -112,7 +99,6 @@ function PostBody({
   NonNullable<GetPostQueryResult>,
   'body' | 'headings' | 'postType' | 'toolFile' | 'externalLink'
 >) {
-  console.log('externalLink:', externalLink)
   return (
     <div className="flex flex-col gap-16 md:flex-row">
       <aside className="flex-1">
@@ -162,13 +148,13 @@ async function MorePosts({ skip, limit }: { skip: string; limit: number }) {
       </div>
     ) : (
       <div className="flex justify-center">
-        <p className="text-lg text-gray-500">No related posts found.</p>
+        <p className="text-body text-foreground-muted">No related posts found.</p>
       </div>
     )
 
   return (
     <div className="flex flex-col gap-6">
-      <h2 className="text-2xl">Related resources</h2>
+      <h2 className="text-h3">Related resources</h2>
       {postGrid}
     </div>
   )

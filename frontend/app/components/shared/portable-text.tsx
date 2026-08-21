@@ -121,7 +121,12 @@ export default function CustomPortableText({
   }
 
   return (
-    <div className={['prose prose-a:text-red-500', className].filter(Boolean).join(' ')}>
+    <div
+      className={cn(
+        'prose prose-a:font-medium prose-a:underline-offset-4 hover:prose-a:text-link-hover',
+        className,
+      )}
+    >
       <PortableText components={components} value={value} />
     </div>
   )

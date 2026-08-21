@@ -4,8 +4,6 @@ import { useState } from 'react'
 
 import { Button } from '@/app/components/ui/button'
 
-import SearchComponent from '../components/shared/search-input'
-
 // Only show in development
 export default function AdminPage() {
   const [isLoading, setIsLoading] = useState(false)
@@ -36,15 +34,14 @@ export default function AdminPage() {
     <div className="container p-8">
       <h1>Admin Tools</h1>
       <div className="mt-8">
-        <Button onClick={handleReindex} disabled={isLoading}>
-          {isLoading ? 'Reindexing...' : 'Reindex Algolia Search'}
+        <Button onClick={handleReindex} loading={isLoading}>
+          {isLoading ? 'Reindexing' : 'Reindex Algolia Search'}
         </Button>
         {result && (
-          <pre className="mt-4 rounded bg-gray-100 p-4">{JSON.stringify(result, null, 2)}</pre>
+          <pre className="mt-4 overflow-x-auto rounded-lg bg-background-subtle p-4 text-label">
+            {JSON.stringify(result, null, 2)}
+          </pre>
         )}
-      </div>
-      <div>
-        <SearchComponent />
       </div>
     </div>
   )

@@ -1,4 +1,3 @@
-// filepath: /Users/caseykennedy/sites/cahuilla-mmip/frontend/app/components/shared/command-palette.tsx
 'use client'
 
 import { useState } from 'react'
@@ -48,7 +47,7 @@ export default function CommandPalette() {
       />
       <CommandList>
         {isLoading && (
-          <div className="p-8 text-center text-sm text-muted-foreground">Searching...</div>
+          <div className="p-8 text-center text-sm text-foreground-muted">Searching...</div>
         )}
 
         {!isLoading && query && results.length === 0 && (
@@ -81,12 +80,12 @@ export default function CommandPalette() {
                       </div>
                       <div className="mb-1 flex items-start justify-between gap-2">
                         <span className="text-base font-medium">{result.title}</span>
-                        <Badge variant={result.postType} className="capitalize text-white">
+                        <Badge variant={result.postType} className="capitalize">
                           {result.postType}
                         </Badge>
                       </div>
                       {result.category?.name && (
-                        <div className="text-xs text-muted-foreground">
+                        <div className="text-xs text-foreground-muted">
                           in {result.category.name}
                         </div>
                       )}
