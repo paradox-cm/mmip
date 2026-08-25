@@ -129,10 +129,10 @@ function BuiltBy() {
           <Image src={CommunityEagleImg} alt="Community eagle" />
         </div>
         <div className="-mt-2 flex flex-col gap-0.5 md:mt-0 md:gap-2">
-          <h2 className="text-center text-lg leading-tight md:text-3xl md:leading-normal">
+          <h2 className="text-center text-lg leading-tight dark:text-brand-ink md:text-3xl md:leading-normal">
             Built by and for Native communities.
           </h2>
-          <p className="text-center text-xs leading-snug md:text-body">
+          <p className="text-center text-xs leading-snug dark:text-twilight-950 md:text-body">
             For families, advocates, and future generations.
           </p>
         </div>

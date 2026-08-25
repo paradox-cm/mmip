@@ -12,6 +12,9 @@ import { fetchCategories } from '@/sanity/lib/fetch'
 
 import { stegaClean } from '@sanity/client/stega'
 
+const CATEGORY_ICON_MOTION =
+  'origin-center transition-transform duration-fast ease-standard group-hover:scale-110 max-md:group-active:scale-110 motion-reduce:transform-none'
+
 export default async function Categories() {
   const data = await fetchCategories()
 
@@ -41,18 +44,22 @@ export default async function Categories() {
                 </div>
                 {iconSrc ? (
                   <div className="relative flex items-center justify-center py-8">
-                    <TaxonomyIcon kind="category" slug={cat.slug} name={cat.name} />
+                    <div className={CATEGORY_ICON_MOTION}>
+                      <TaxonomyIcon kind="category" slug={cat.slug} name={cat.name} />
+                    </div>
                   </div>
                 ) : (
                   cat.image &&
                   cat.image.metadata && (
                     <div className="brand-artwork relative flex items-center justify-center py-8">
-                      <SanityImage
-                        source={cat.image}
-                        alt={stegaClean(cat.image?.alt)}
-                        fill={false}
-                        sizes="100vw"
-                      />
+                      <div className={CATEGORY_ICON_MOTION}>
+                        <SanityImage
+                          source={cat.image}
+                          alt={stegaClean(cat.image?.alt)}
+                          fill={false}
+                          sizes="100vw"
+                        />
+                      </div>
                     </div>
                   )
                 )}

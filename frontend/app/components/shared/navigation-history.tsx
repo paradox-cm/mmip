@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useRef, useState } from 'react'
+import { createContext, Suspense, useContext, useEffect, useRef, useState } from 'react'
 
 import { usePathname, useSearchParams } from 'next/navigation'
 
@@ -32,11 +32,14 @@ function readStoredRoute(): InternalRoute | null {
   }
 }
 
-export default function NavigationHistory({ children }: { children: React.ReactNode }) {
+function NavigationHistoryTracker({
+  onPreviousChange,
+}: {
+  onPreviousChange: (route: InternalRoute | null) => void
+}) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const previousRoute = useRef<InternalRoute | null>(null)
-  const [previous, setPrevious] = useState<InternalRoute | null>(null)
   const search = searchParams.toString()
 
   useEffect(() => {
@@ -48,18 +51,27 @@ export default function NavigationHistory({ children }: { children: React.ReactN
     if (!previousRoute.current) {
       const storedRoute = readStoredRoute()
       if (storedRoute && storedRoute.href !== route.href) {
-        setPrevious(storedRoute)
+        onPreviousChange(storedRoute)
       }
     } else if (previousRoute.current.href !== route.href) {
-      setPrevious(previousRoute.current)
+      onPreviousChange(previousRoute.current)
     }
 
     previousRoute.current = route
     window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(route))
-  }, [pathname, search])
+  }, [onPreviousChange, pathname, search])
+
+  return null
+}
+
+export default function NavigationHistory({ children }: { children: React.ReactNode }) {
+  const [previous, setPrevious] = useState<InternalRoute | null>(null)
 
   return (
     <NavigationHistoryContext.Provider value={previous}>
+      <Suspense fallback={null}>
+        <NavigationHistoryTracker onPreviousChange={setPrevious} />
+      </Suspense>
       {children}
     </NavigationHistoryContext.Provider>
   )
