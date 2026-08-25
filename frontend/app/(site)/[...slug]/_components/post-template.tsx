@@ -5,6 +5,7 @@ import { PortableTextBlock } from 'next-sanity'
 import pluralize from 'pluralize-esm'
 
 import Avatar from '@/app/components/shared/avatar'
+import BackLink from '@/app/components/shared/back-link'
 import PostCard from '@/app/components/shared/card/post-card'
 import CoverImage from '@/app/components/shared/cover-image'
 import PortableText from '@/app/components/shared/portable-text'
@@ -59,6 +60,7 @@ function PostHeader({
   return (
     <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
       <div className="flex w-full flex-[2] flex-col gap-6">
+        <BackLink fallback={{ href: `/${category.slug}`, label: category.name }} />
         <div className="flex flex-row flex-wrap items-center gap-1">
           <Link href={`/${pluralize(postType)}`} className="rounded-md">
             <Badge variant={postType} className="capitalize">

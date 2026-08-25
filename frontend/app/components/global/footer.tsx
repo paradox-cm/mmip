@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { LuArrowUp } from 'react-icons/lu'
 
 import LogoMark from '@/app/components/shared/logo-mark'
 import ResolvedLink from '@/app/components/shared/resolved-link'
+import { Button } from '@/app/components/ui/button'
 import { cn } from '@/lib/utils'
 import CommunityBgImg from '@/public/images/community-bg.png'
 import CommunityEagleImg from '@/public/images/community-eagle.png'
@@ -99,6 +101,11 @@ export default async function Footer() {
               <p className="text-label text-foreground-muted">
                 &copy; {new Date().getFullYear()} Resilient Relatives. All rights reserved.
               </p>
+              <Button asChild variant="outline" size="icon">
+                <a href="#top" aria-label="Back to top">
+                  <LuArrowUp aria-hidden="true" className="size-5" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -117,12 +124,12 @@ function BuiltBy() {
           className="min-h-[280px] w-full object-cover max-md:h-full md:min-h-[500px]"
         />
       </div>
-      <div className="container relative z-10 flex flex-col items-center gap-1 pt-3 pb-8 md:gap-4 md:py-20 lg:py-24 xl:py-28">
+      <div className="container relative z-10 flex flex-col items-center gap-1 pb-8 pt-3 md:gap-4 md:py-20 lg:py-24 xl:py-28">
         <div className="w-[156px] md:w-[207px]">
           <Image src={CommunityEagleImg} alt="Community eagle" />
         </div>
-        <div className="-mt-1 flex flex-col gap-0.5 md:mt-0 md:gap-2">
-          <h2 className="text-center text-base leading-tight md:text-3xl md:leading-heading">
+        <div className="-mt-2 flex flex-col gap-0.5 md:mt-0 md:gap-2">
+          <h2 className="text-center text-lg leading-tight md:text-3xl md:leading-normal">
             Built by and for Native communities.
           </h2>
           <p className="text-center text-xs leading-snug md:text-body">

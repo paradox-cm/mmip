@@ -4,6 +4,7 @@ import { Suspense, useMemo, useState } from 'react'
 
 import { useRouter, useSearchParams } from 'next/navigation'
 
+import Breadcrumbs from '@/app/components/shared/breadcrumbs'
 import TribeCard from '@/app/components/shared/card/tribe-card'
 import {
   ClearFiltersButton,
@@ -132,6 +133,7 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
         <div className="container flex flex-col gap-16">
           {/* Header */}
           <div className="flex flex-col gap-6">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Tribes' }]} />
             <h1 className="text-h1 text-foreground-heading">Tribes</h1>
             <p className="max-w-reading text-body text-foreground-subtle">
               Browse California Tribes and their information, including contact details, locations,

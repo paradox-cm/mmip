@@ -4,6 +4,7 @@ import { Suspense, useMemo, useState } from 'react'
 
 import { useRouter, useSearchParams } from 'next/navigation'
 
+import Breadcrumbs from '@/app/components/shared/breadcrumbs'
 import PostCard from '@/app/components/shared/card/post-card'
 import {
   ClearFiltersButton,
@@ -124,6 +125,7 @@ function PostTypeContent({ data }: { data: PostTypeRoute }) {
         <div className="container flex flex-col gap-16">
           {/* Header */}
           <div className="flex flex-col gap-6">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: metadata.title }]} />
             <h1 className="text-h1 text-foreground-heading">{metadata.title}</h1>
             {metadata.description && (
               <p className="max-w-reading text-body text-foreground-subtle">

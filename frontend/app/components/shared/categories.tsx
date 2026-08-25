@@ -32,10 +32,10 @@ export default async function Categories() {
               href={`${cat.slug}`}
               className={cn('group block rounded-xl', CARD_INTERACTION)}
             >
-              <Tile className="flex flex-col gap-6">
+              <Tile className="flex flex-col gap-6 max-md:group-active:border-strong max-md:group-active:bg-card-hover">
                 <div className="flex flex-row items-center justify-between">
                   <p className="text-xl font-medium">{cat.name}</p>
-                  <div className="flex size-10 items-center justify-center rounded-pill bg-muted text-muted-foreground transition-colors duration-fast ease-standard group-hover:bg-secondary group-hover:text-secondary-foreground">
+                  <div className="flex size-10 items-center justify-center rounded-pill bg-muted text-muted-foreground transition-colors duration-fast ease-standard max-md:group-active:bg-secondary max-md:group-active:text-secondary-foreground group-hover:bg-secondary group-hover:text-secondary-foreground">
                     <RiArrowRightLine className="size-5" />
                   </div>
                 </div>

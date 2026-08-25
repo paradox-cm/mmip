@@ -4,6 +4,7 @@ import { Suspense, useCallback, useEffect, useState } from 'react'
 
 import { useSearchParams } from 'next/navigation'
 
+import Breadcrumbs from '@/app/components/shared/breadcrumbs'
 import SearchCard from '@/app/components/shared/card/search-card'
 import HeroSearch from '@/app/components/shared/hero-search'
 import Section from '@/app/components/shared/section'
@@ -35,8 +36,10 @@ function SearchResults() {
   if (error) {
     return (
       <div className="py-12 text-center">
-        <p role="alert" className="text-destructive-strong">
-          Search failed. Please try again.
+        <p role="status" className="text-foreground-muted">
+          {error === 'not-configured'
+            ? 'Search is temporarily unavailable while setup is completed.'
+            : 'Search is temporarily unavailable. Please try again later.'}
         </p>
       </div>
     )
@@ -59,6 +62,7 @@ function SearchResults() {
       <Section className="">
         <div className="container">
           <div className="flex flex-col items-center gap-8 text-center">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Search' }]} />
             <h1 className="text-h2">Search</h1>
             <div className="flex w-full flex-col items-center gap-4">
               <HeroSearch onSearch={handleSearch} initialValue={initialQuery} />
@@ -119,8 +123,9 @@ export default function SearchPage() {
     <Suspense
       fallback={
         <div className="container py-12">
-          <div className="text-center">
-            <h1 className="mb-6 text-h2 font-bold">Search</h1>
+          <div className="flex flex-col items-center gap-8 text-center">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Search' }]} />
+            <h1 className="text-h2 font-bold">Search</h1>
             <div className="mx-auto h-12 w-full max-w-2xl animate-pulse rounded-lg bg-background-emphasis" />
           </div>
         </div>

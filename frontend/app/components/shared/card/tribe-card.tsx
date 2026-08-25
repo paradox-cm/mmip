@@ -33,11 +33,15 @@ export default function TribeCard({ className, layout = 'grid', tribe }: Props) 
             'flex min-w-0 flex-1',
             layout === 'grid'
               ? 'flex-col gap-8'
-              : 'w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between',
+              : 'w-full flex-row items-center gap-4 p-4 sm:justify-between sm:p-6',
             className,
           )}
         >
-          <div className={cn('w-full', { 'sm:max-w-72 sm:flex-1': layout === 'list' })}>
+          <div
+            className={cn('w-full', {
+              'w-28 shrink-0 sm:max-w-72 sm:flex-1': layout === 'list',
+            })}
+          >
             <SanityImage
               source={tribe.coverImage}
               alt={tribe.coverImage?.alt || tribe.name}
@@ -45,7 +49,7 @@ export default function TribeCard({ className, layout = 'grid', tribe }: Props) 
             />
           </div>
 
-          <div className="flex grow flex-col gap-2">
+          <div className="flex min-w-0 grow flex-col gap-2">
             <h3 className="font-sans text-lg font-medium">{tribe.name}</h3>
             {layout === 'grid' && tribe.shortDescription && (
               <CustomPortableText

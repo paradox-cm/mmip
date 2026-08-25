@@ -15,6 +15,7 @@
     "typegen": "sanity typegen generate",
     "assets:brand": "node scripts/generate-brand-assets.mjs",
     "check:brand-assets": "node scripts/check-brand-assets.mjs",
+    "check:search": "node --env-file=.env.local scripts/check-search-config.mjs",
     "clean": "rm -rf node_modules && rm -rf .next"
   },
   "dependencies": {

@@ -25,6 +25,7 @@ export default function PostCard({
   post,
 }: PostCardData) {
   const isHorizontal = orientation === 'horizontal' || viewMode === 'list'
+  const isMobileList = viewMode === 'list'
   const themeClasses = CARD_THEME[post.postType ?? 'default']
 
   return (
@@ -35,11 +36,12 @@ export default function PostCard({
         className={cn(
           'flex min-w-0 flex-1 flex-col gap-6 rounded-xl border p-4',
           CARD_INTERACTION,
-          { 'items-center md:flex-row': isHorizontal },
+          isHorizontal && 'md:flex-row md:items-center',
+          isMobileList && 'flex-row gap-4',
           themeClasses,
         )}
       >
-        <div className={cn('w-full', { 'md:flex-1': isHorizontal })}>
+        <div className={cn('w-full', isMobileList && 'w-28 shrink-0', isHorizontal && 'md:flex-1')}>
           <SanityImage
             source={post.coverImage}
             alt={post.coverImage?.alt || post.title}
@@ -47,7 +49,13 @@ export default function PostCard({
           />
         </div>
 
-        <div className={cn('flex w-full flex-col gap-2 @container', { 'md:flex-1': isHorizontal })}>
+        <div
+          className={cn(
+            'flex w-full flex-col gap-2 @container',
+            isMobileList && 'min-w-0 flex-1',
+            isHorizontal && 'md:flex-1',
+          )}
+        >
           <div className="mb-1 flex flex-row items-center gap-1">
             <Badge variant={post.postType} className="capitalize">
               {post.postType}
@@ -59,7 +67,7 @@ export default function PostCard({
           <h4 className="max-w-[34ch] font-sans text-xl font-medium @md:text-h3">{post.title}</h4>
           {post.excerpt && (
             <CustomPortableText
-              paragraphClassName="line-clamp-3"
+              paragraphClassName={cn('line-clamp-3', isMobileList && 'hidden md:block')}
               value={post.excerpt as PortableTextBlock[]}
             />
           )}

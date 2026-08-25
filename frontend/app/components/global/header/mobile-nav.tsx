@@ -127,6 +127,10 @@ export default function MobileNav({
             })}
           </nav>
         )}
+
+        <p className="mt-auto text-caption text-foreground-muted">
+          &copy; 2026 Resilient Relatives. All rights reserved.
+        </p>
       </SheetContent>
     </Sheet>
   )

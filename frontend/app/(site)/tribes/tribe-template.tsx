@@ -3,6 +3,7 @@ import { LuGlobe, LuMail, LuMapPin, LuPhone } from 'react-icons/lu'
 import Link from 'next/link'
 import { PortableTextBlock } from 'next-sanity'
 
+import BackLink from '@/app/components/shared/back-link'
 import CoverImage from '@/app/components/shared/cover-image'
 import PortableText from '@/app/components/shared/portable-text'
 import Section from '@/app/components/shared/section'
@@ -38,6 +39,7 @@ function TribeHeader({
   return (
     <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
       <div className="flex w-full flex-[2] flex-col gap-6">
+        <BackLink fallback={{ href: '/tribes', label: 'Tribes' }} />
         <div className="flex flex-row flex-wrap items-center gap-1">
           <Link href="/tribes" className="rounded-md">
             <Badge variant="tribe" className="capitalize">

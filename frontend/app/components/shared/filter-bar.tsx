@@ -147,7 +147,7 @@ export function ViewToggle({
           className={cn(
             SEGMENT_CLASSES,
             value === mode
-              ? 'bg-foreground text-background'
+              ? 'bg-brand-emphasis text-background'
               : 'text-foreground-subtle hover:bg-accent hover:text-foreground active:bg-accent-active',
           )}
           onClick={() => onValueChange(mode)}
@@ -187,7 +187,7 @@ export function FilterChips({
           className={cn(
             CHIP_CLASSES,
             value === chip.slug
-              ? 'border-foreground bg-foreground text-background'
+              ? 'border-brand-emphasis bg-brand-emphasis text-background'
               : 'border-border bg-background text-foreground-subtle hover:border-strong hover:bg-accent hover:text-foreground active:bg-accent-active',
           )}
           onClick={() => onValueChange(chip.slug)}

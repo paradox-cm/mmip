@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import Breadcrumbs from '@/app/components/shared/breadcrumbs'
 import PageBuilderPage from '@/app/components/shared/page-builder'
 import { POST_TYPE } from '@/lib/constants'
 import {
@@ -217,7 +218,8 @@ function RenderPage({ page }: { page: NonNullable<GetPageQueryResult> }) {
     <div className="my-12 lg:my-24">
       <div className="container border-b pb-6">
         <div className="max-w-3xl">
-          <h2 className="text-h1 font-bold tracking-tight text-foreground-heading sm:text-5xl lg:text-7xl">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: page.heading }]} />
+          <h2 className="mt-6 text-h1 font-bold tracking-tight text-foreground-heading sm:text-5xl lg:text-7xl">
             {page.heading}
           </h2>
           <p className="mt-4 text-body-small font-light uppercase leading-relaxed text-foreground-subtle lg:text-lg">

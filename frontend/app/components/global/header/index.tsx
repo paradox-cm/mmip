@@ -22,12 +22,12 @@ export default async function Header() {
       <div className="container">
         <div className="flex items-center justify-between gap-3 md:gap-5">
           <Link
-            className="flex min-w-0 flex-1 items-center gap-3 rounded-lg outline-none transition-opacity duration-fast ease-standard hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group flex min-w-0 flex-1 items-center gap-3 rounded-lg outline-none transition-opacity duration-fast ease-standard hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             href="/"
             aria-label="Resilient Relatives Home"
           >
-            <LogoMark className="size-10 shrink-0 sm:size-12" />
-            <span className="min-w-0 text-body font-medium leading-none">
+            <LogoMark className="size-10 shrink-0 transition-transform duration-fast ease-standard max-lg:group-active:scale-110 motion-reduce:transform-none lg:group-hover:scale-110 sm:size-12" />
+            <span className="min-w-0 text-body font-medium leading-none text-foreground-heading">
               Resilient
               <br />
               Relatives

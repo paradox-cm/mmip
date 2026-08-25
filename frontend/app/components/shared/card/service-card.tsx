@@ -32,7 +32,7 @@ export default function ServiceCard({ className, layout = 'grid', service }: Pro
             'flex min-w-0 flex-1',
             layout === 'grid'
               ? 'flex-col gap-8'
-              : 'w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between',
+              : 'w-full flex-row items-center justify-between gap-3 p-4 sm:gap-4 sm:p-6',
             className,
           )}
         >
@@ -58,7 +58,7 @@ export default function ServiceCard({ className, layout = 'grid', service }: Pro
           <div
             className={cn(
               'flex min-w-0 flex-row flex-wrap items-center',
-              layout === 'grid' ? 'justify-between gap-2' : 'justify-between gap-4 sm:justify-end',
+              layout === 'grid' ? 'justify-between gap-2' : 'shrink-0 justify-end gap-4',
             )}
           >
             {layout === 'grid' && service.contactInfo?.city && (

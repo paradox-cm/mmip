@@ -40,6 +40,8 @@ export interface SearchResult {
   coverImage?: SanityImage
 }
 
+export type SearchError = 'not-configured' | 'request-failed'
+
 const attributesToRetrieve = [
   'title',
   'name',
@@ -63,11 +65,11 @@ const attributesToRetrieve = [
 export function useSearch(query: string): {
   results: SearchResult[]
   isLoading: boolean
-  error: string | null
+  error: SearchError | null
 } {
   const [results, setResults] = useState<SearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<SearchError | null>(null)
 
   useEffect(() => {
     const searchAlgolia = async () => {
@@ -77,7 +79,7 @@ export function useSearch(query: string): {
       try {
         const client = getSearchClient()
         if (!client) {
-          setError('Search is not configured')
+          setError('not-configured')
           setResults([])
           return
         }
@@ -115,7 +117,7 @@ export function useSearch(query: string): {
         setResults(limitedResults)
       } catch (err) {
         console.error('Search error:', err)
-        setError('Search failed')
+        setError('request-failed')
         setResults([])
       } finally {
         setIsLoading(false)
@@ -139,7 +141,7 @@ export function useSearch(query: string): {
 export function useSearchWithPagination(query: string, page: number = 0) {
   const [results, setResults] = useState<SearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<SearchError | null>(null)
   const [hasMore, setHasMore] = useState(false)
   const [totalResults, setTotalResults] = useState(0)
   const [currentQuery, setCurrentQuery] = useState<string>('')
@@ -152,7 +154,7 @@ export function useSearchWithPagination(query: string, page: number = 0) {
       try {
         const client = getSearchClient()
         if (!client) {
-          setError('Search is not configured')
+          setError('not-configured')
           if (page === 0) {
             setResults([])
           }
@@ -194,25 +196,12 @@ export function useSearchWithPagination(query: string, page: number = 0) {
         // Extract individual results
         const [postsResult, servicesResult, tribesResult] = response.results as any[]
 
-        // Add this debugging in the searchAlgolia function, right after the response:
-        console.log('Search response:', {
-          postsHits: postsResult?.hits?.length || 0,
-          servicesHits: servicesResult?.hits?.length || 0,
-          tribesHits: tribesResult?.hits?.length || 0,
-          postsTotal: postsResult?.nbHits || 0,
-          servicesTotal: servicesResult?.nbHits || 0,
-          tribesTotal: tribesResult?.nbHits || 0,
-          query: query.trim(),
-        })
-
         // Combine results from all indexes
         const newResults = [
           ...(postsResult?.hits || []),
           ...(servicesResult?.hits || []),
           ...(tribesResult?.hits || []),
         ] as SearchResult[]
-
-        console.log('Combined results:', newResults.length, newResults)
 
         // Determine if this is a new search or pagination
         const isNewSearch = page === 0 || currentQuery !== query.trim()
@@ -237,7 +226,7 @@ export function useSearchWithPagination(query: string, page: number = 0) {
         setHasMore(page < maxPages - 1)
       } catch (err) {
         console.error('Search error:', err)
-        setError('Search failed')
+        setError('request-failed')
         // Only clear results on error if it's a new search, not pagination
         if (page === 0) {
           setResults([])
@@ -253,8 +242,6 @@ export function useSearchWithPagination(query: string, page: number = 0) {
     const debounceTimer = setTimeout(searchAlgolia, query.trim() ? 300 : 0)
     return () => clearTimeout(debounceTimer)
   }, [currentQuery, query, page]) // Fixed dependencies
-
-  console.log('use search', { results, isLoading, error, hasMore, totalResults })
 
   return { results, isLoading, error, hasMore, totalResults }
 }

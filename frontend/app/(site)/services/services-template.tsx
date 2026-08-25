@@ -4,6 +4,7 @@ import { Suspense, useMemo, useState } from 'react'
 
 import { useRouter, useSearchParams } from 'next/navigation'
 
+import Breadcrumbs from '@/app/components/shared/breadcrumbs'
 import ServiceCard from '@/app/components/shared/card/service-card'
 import {
   ClearFiltersButton,
@@ -172,6 +173,7 @@ function ServicesContent({ data }: { data: AllServicesQueryResult }) {
         <div className="container flex flex-col gap-16">
           {/* Header */}
           <div className="flex flex-col gap-6">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
             <h1 className="text-h1 text-foreground-heading">Services</h1>
             <p className="max-w-[48ch] text-body text-foreground-subtle">
               Find Native and Tribal services across California offering support, advocacy, and
