@@ -12,7 +12,8 @@ import SkipLink from '@/app/components/shared/skip-link'
 import { Button } from '@/app/components/ui/button'
 import { cn } from '@/lib/utils'
 
-import { DS_NAV, isDsNavActive } from '../_lib/nav'
+import { ADMIN_NAV, isAdminNavActive } from '../_lib/nav'
+import SignOutButton from './sign-out-button'
 
 type Theme = 'light' | 'dark'
 
@@ -35,7 +36,7 @@ function readStoredTheme(): Theme | null {
   return null
 }
 
-export default function DocsShell({ children }: { children: React.ReactNode }) {
+export default function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const router = useRouter()
   const [theme, setTheme] = useState<Theme>('light')
@@ -63,17 +64,14 @@ export default function DocsShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-dvh bg-background text-foreground">
-      <SkipLink href="#ds-content">Skip to design system content</SkipLink>
+      <SkipLink href="#admin-content">Skip to admin content</SkipLink>
       <header className="sticky top-0 z-30 border-b bg-background/90 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between gap-4 px-4 lg:px-6">
-          <Link
-            href="/admin/design"
-            className="focus-ring flex min-w-0 items-center gap-3 rounded-lg"
-          >
+          <Link href="/admin" className="focus-ring flex min-w-0 items-center gap-3 rounded-lg">
             <LogoMark className="size-8" />
             <span className="flex min-w-0 flex-col leading-tight">
               <span className="truncate text-sm font-medium">Resilient Relatives</span>
-              <span className="text-xs text-foreground-muted">Design system</span>
+              <span className="text-xs text-foreground-muted">Admin</span>
             </span>
           </Link>
           <div className="flex shrink-0 items-center gap-2">
@@ -88,27 +86,25 @@ export default function DocsShell({ children }: { children: React.ReactNode }) {
               {isDark ? <LuSun aria-hidden="true" /> : <LuMoon aria-hidden="true" />}
               {isDark ? 'Light' : 'Dark'}
             </Button>
-            <Link
-              href="/"
-              className="focus-ring inline-flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-medium text-primary"
-            >
-              View site
-            </Link>
+            <SignOutButton />
+            <Button asChild variant="outline" size="sm">
+              <Link href="/">View site</Link>
+            </Button>
           </div>
         </div>
       </header>
 
       <div className="mx-auto grid max-w-screen-xl gap-8 px-4 py-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:px-6">
         <aside className="hidden lg:block">
-          <nav aria-label="Design system" className="sticky top-24 flex flex-col gap-6">
-            {DS_NAV.map(section => (
+          <nav aria-label="Admin" className="sticky top-24 flex flex-col gap-6">
+            {ADMIN_NAV.map(section => (
               <div key={section.title}>
                 <h2 className="mb-2 font-sans text-xs font-medium uppercase tracking-wide text-foreground-muted">
                   {section.title}
                 </h2>
                 <ul className="flex flex-col gap-0.5">
                   {section.items.map(item => {
-                    const active = isDsNavActive(pathname, item.href)
+                    const active = isAdminNavActive(pathname, item.href)
                     return (
                       <li key={item.href}>
                         <Link
@@ -133,16 +129,16 @@ export default function DocsShell({ children }: { children: React.ReactNode }) {
         </aside>
 
         <div className="lg:hidden">
-          <label htmlFor="ds-mobile-nav" className="mb-2 block text-sm font-medium">
-            Design system section
+          <label htmlFor="admin-mobile-nav" className="mb-2 block text-sm font-medium">
+            Admin section
           </label>
           <select
-            id="ds-mobile-nav"
+            id="admin-mobile-nav"
             className="focus-ring min-h-11 w-full rounded-lg border border-input bg-input p-3 text-base"
             value={pathname}
             onChange={event => router.push(event.target.value)}
           >
-            {DS_NAV.map(section => (
+            {ADMIN_NAV.map(section => (
               <optgroup key={section.title} label={section.title}>
                 {section.items.map(item => (
                   <option key={item.href} value={item.href}>
@@ -154,7 +150,11 @@ export default function DocsShell({ children }: { children: React.ReactNode }) {
           </select>
         </div>
 
-        <main id="ds-content" tabIndex={-1} className="flex min-w-0 flex-col gap-12 outline-none">
+        <main
+          id="admin-content"
+          tabIndex={-1}
+          className="flex min-w-0 flex-col gap-12 outline-none"
+        >
           {children}
         </main>
       </div>

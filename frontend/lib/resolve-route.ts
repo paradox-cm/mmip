@@ -1,4 +1,3 @@
-// sanity/lib/resolveRoute.ts
 import { PortableTextBlock } from 'next-sanity'
 
 import type {
@@ -79,8 +78,6 @@ export async function resolveRoute(slugParts: string[]): Promise<ResolvedRoute> 
     fetchTopics(),
     slugParts.length === 1 ? fetchPage(slugParts[0]) : Promise.resolve(null),
   ])
-
-  console.log('firstPageResult:', firstPageResult)
 
   const categories = categoriesResult || []
   const categorySlugs = categories.map(c => c.slug)

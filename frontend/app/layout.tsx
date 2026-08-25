@@ -6,11 +6,10 @@ import { Toaster } from 'sonner'
 import { AppearanceProvider } from '@/app/components/global/appearance/appearance-provider'
 import { appearanceBootScript } from '@/app/components/global/appearance/config'
 import DraftModeToast from '@/app/components/shared/draft-mode-toast'
-import { BASE_URL, SITE_NAME } from '@/lib/constants'
+import { BASE_URL, SITE_DESCRIPTION, SITE_NAME } from '@/lib/constants'
 import { handleError } from '@/lib/handle-error'
 import { resolveSocialImage } from '@/lib/social-image'
 import { cn } from '@/lib/utils'
-import * as demo from '@/sanity/lib/demo'
 import { fetchSettings } from '@/sanity/lib/fetch'
 import { SanityLive } from '@/sanity/lib/live'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
@@ -47,8 +46,8 @@ function resolveMetadataBase(value: string | undefined) {
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await fetchSettings()
 
-  const title = settings?.title || demo.title
-  const description = settings?.description || demo.description
+  const title = settings?.title || SITE_NAME
+  const description = settings?.description ? toPlainText(settings.description) : SITE_DESCRIPTION
 
   const ogImage = resolveOpenGraphImage(settings?.ogImage)
 
@@ -61,9 +60,8 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${title}`,
       default: title,
     },
-    description: toPlainText(description),
-    keywords: ['default', 'keywords'],
-    authors: [{ name: 'Default Author' }],
+    description,
+    authors: [{ name: SITE_NAME }],
     generator: 'Next.js',
     applicationName: SITE_NAME,
     publisher: SITE_NAME,
@@ -75,7 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
     manifest: `/manifest.webmanifest`,
     openGraph: {
       title: title,
-      description: toPlainText(description),
+      description,
       url: '/',
       siteName: SITE_NAME,
       images: [socialImage],
@@ -85,7 +83,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title,
-      description: toPlainText(description),
+      description,
       images: [socialImage.url],
     },
     alternates: {
@@ -134,7 +132,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/* The <SanityLive> component is responsible for making all sanityFetch calls in your application live, so should always be rendered. */}
           <SanityLive onError={handleError} />
           {children}
-          {/* Command palette stays unwired; /search is the supported entry point. */}
           <SpeedInsights />
         </AppearanceProvider>
       </body>

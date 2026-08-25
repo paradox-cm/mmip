@@ -53,7 +53,6 @@ function TribeHeader({
         <h1>{name}</h1>
         {shortDescription?.length && (
           <PortableText
-            className=""
             paragraphClassName="text-lg"
             value={shortDescription as PortableTextBlock[]}
           />

@@ -1,14 +1,19 @@
 import { type PortableTextBlock } from 'next-sanity'
 
 import PortableText from '@/app/components/shared/portable-text'
-import { InfoSection } from '@/sanity.types'
+import type { GetPageQueryResult } from '@/sanity.types'
+
+type InfoBlock = Extract<
+  NonNullable<NonNullable<GetPageQueryResult>['pageBuilder']>[number],
+  { _type: 'infoSection' }
+>
 
 type InfoProps = {
-  block: InfoSection
+  block: InfoBlock
   index: number
 }
 
-export default function CTA({ block }: InfoProps) {
+export default function Info({ block }: InfoProps) {
   return (
     <div className="container my-12">
       <div className="max-w-3xl">
@@ -24,7 +29,7 @@ export default function CTA({ block }: InfoProps) {
         )}
         <div className="mt-4">
           {block?.content?.length && (
-            <PortableText className="" value={block.content as PortableTextBlock[]} />
+            <PortableText value={block.content as PortableTextBlock[]} />
           )}
         </div>
       </div>

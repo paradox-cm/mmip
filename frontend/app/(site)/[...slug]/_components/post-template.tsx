@@ -76,7 +76,6 @@ function PostHeader({
         <h1>{title}</h1>
         {excerpt?.length && (
           <PortableText
-            className=""
             paragraphClassName="text-lg"
             value={excerpt as PortableTextBlock[]}
           />

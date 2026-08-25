@@ -2,15 +2,15 @@
  * WCAG 2.2 AA axe-core gate for public routes and the design-system catalog.
  * Add new public URLs here when they ship.
  */
-import { test } from '@playwright/test'
-
 import { expectNoAxeViolations } from './helpers/axe'
 
-const ROUTES = [
-  '/',
-  '/search',
-  '/tribes',
-  '/services',
+import { type Page, test } from '@playwright/test'
+
+const PUBLIC_ROUTES = ['/', '/search', '/tribes', '/services', '/admin/login']
+
+const ADMIN_ROUTES = [
+  '/admin',
+  '/admin/build-log',
   '/admin/design',
   '/admin/design/foundations',
   '/admin/design/brand-assets',
@@ -23,15 +23,32 @@ const ROUTES = [
   '/admin/design/patterns',
 ]
 
-for (const route of ROUTES) {
-  test(`axe: ${route}`, async ({ page }) => {
-    const response = await page.goto(route, { waitUntil: 'domcontentloaded' })
-    test.skip(response?.status() === 404, `${route} returned 404`)
-    test.skip(
-      (response?.status() ?? 0) >= 500,
-      `${route} returned ${response?.status()} (CMS/env unavailable)`,
-    )
-    await page.waitForLoadState('networkidle').catch(() => undefined)
-    await expectNoAxeViolations(page)
-  })
+async function runAxe(route: string, page: Page) {
+  const response = await page.goto(route, { waitUntil: 'domcontentloaded' })
+  test.skip(response?.status() === 404, `${route} returned 404`)
+  test.skip(response?.status() === 401, `${route} returned 401 (admin auth)`)
+  test.skip(
+    (response?.status() ?? 0) >= 500,
+    `${route} returned ${response?.status()} (CMS/env unavailable)`,
+  )
+  await page.waitForLoadState('networkidle').catch(() => undefined)
+  await expectNoAxeViolations(page)
 }
+
+test.describe('public routes', () => {
+  test.use({ storageState: { cookies: [], origins: [] } })
+
+  for (const route of PUBLIC_ROUTES) {
+    test(`axe: ${route}`, async ({ page }) => {
+      await runAxe(route, page)
+    })
+  }
+})
+
+test.describe('admin routes', () => {
+  for (const route of ADMIN_ROUTES) {
+    test(`axe: ${route}`, async ({ page }) => {
+      await runAxe(route, page)
+    })
+  }
+})

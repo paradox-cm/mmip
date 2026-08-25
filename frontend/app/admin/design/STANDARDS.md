@@ -51,7 +51,7 @@ Add to `app/components/ui/` only when two or more screens need the same primitiv
 
 ## 6. Governance
 
-- `/admin/design` is noindex and disallowed in `robots.ts`. Do not add it to the sitemap.
+- `/admin` (including `/admin/design`) is noindex, disallowed in `robots.ts`, and gated by `/admin/login` (`ADMIN_BASIC_USER` / `ADMIN_BASIC_PASSWORD` session cookie). Production fails closed if those are unset. Do not add it to the sitemap.
 - Do not wrap design-system routes in the public header/footer.
 - Do not introduce a second brand or unused shadcn primitives to “complete” the catalog.
 - Dark theme is the same brand (sand + gold), remapped under `.dark` in `globals.css`. The public site and this catalog share `AppearanceProvider` / `data-color-scheme` on `html`.

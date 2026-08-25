@@ -14,20 +14,13 @@ type PageBuilderPageProps = {
   page: GetPageQueryResult
 }
 
-type PageBuilderSection = {
-  _key: string
-  _type: string
-}
+type PageBuilderSection = NonNullable<NonNullable<GetPageQueryResult>['pageBuilder']>[number]
 
 type PageData = {
   _id: string
   _type: string
   pageBuilder?: PageBuilderSection[]
 }
-
-/**
- * The PageBuilder component is used to render the blocks from the `pageBuilder` field in the Page type in your Sanity Studio.
- */
 
 function renderSections(pageBuilderSections: PageBuilderSection[], page: GetPageQueryResult) {
   if (!page) {
@@ -41,7 +34,7 @@ function renderSections(pageBuilderSections: PageBuilderSection[], page: GetPage
         path: `pageBuilder`,
       }).toString()}
     >
-      {pageBuilderSections.map((block: any, index: number) => (
+      {pageBuilderSections.map((block, index) => (
         <BlockRenderer
           key={block._key}
           index={index}
@@ -86,15 +79,10 @@ export default function PageBuilder({ page }: PageBuilderPageProps) {
     PageBuilderSection[] | undefined,
     SanityDocument<PageData>
   >(page?.pageBuilder || [], (currentSections, action) => {
-    // The action contains updated document data from Sanity
-    // when someone makes an edit in the Studio
-
-    // If the edit was to a different document, ignore it
     if (action.id !== page?._id) {
       return currentSections
     }
 
-    // If there are sections in the updated document, use them
     if (action.document.pageBuilder) {
       // Reconcile References. https://www.sanity.io/docs/enabling-drag-and-drop#ffe728eea8c1
       return action.document.pageBuilder.map(
@@ -102,7 +90,6 @@ export default function PageBuilder({ page }: PageBuilderPageProps) {
       )
     }
 
-    // Otherwise keep the current sections
     return currentSections
   })
 

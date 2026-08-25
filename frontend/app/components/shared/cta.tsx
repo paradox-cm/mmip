@@ -1,7 +1,12 @@
-import { CallToAction } from '@/sanity.types'
+import type { GetPageQueryResult } from '@/sanity.types'
+
+type CtaBlock = Extract<
+  NonNullable<NonNullable<GetPageQueryResult>['pageBuilder']>[number],
+  { _type: 'callToAction' }
+>
 
 type CtaProps = {
-  block: CallToAction
+  block: CtaBlock
   index: number
 }
 

@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 
-import DocsShell from './_components/docs-shell'
-
 export const metadata: Metadata = {
   title: {
     default: 'Design system',
@@ -11,5 +9,5 @@ export const metadata: Metadata = {
 }
 
 export default function DesignSystemLayout({ children }: { children: React.ReactNode }) {
-  return <DocsShell>{children}</DocsShell>
+  return children
 }

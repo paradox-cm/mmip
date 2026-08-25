@@ -1,7 +1,7 @@
-import SealAnimation from '@/app/components/shared/seal-animation'
 import PostCard from '@/app/components/shared/card/post-card'
 import Categories from '@/app/components/shared/categories'
 import HeroSearch from '@/app/components/shared/hero-search'
+import SealAnimation from '@/app/components/shared/seal-animation'
 import Section from '@/app/components/shared/section'
 import Topics from '@/app/components/shared/topics'
 import { loadSealMarkup } from '@/lib/seal-markup'
@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 import { GetHomepageQueryResult } from '@/sanity.types'
 
 export default async function HomePage({ data }: { data: GetHomepageQueryResult }) {
-  const { hero, featuredPosts, featuredServices } = data ?? {}
+  const { hero, featuredPosts } = data ?? {}
   const sealMarkup = await loadSealMarkup()
   return (
     <>
@@ -45,13 +45,6 @@ export default async function HomePage({ data }: { data: GetHomepageQueryResult 
           <div className="container">
             <h2 className="mb-6 text-2xl">Featured resources</h2>
             <FeaturedPosts posts={featuredPosts} />
-          </div>
-        </Section>
-      )}
-      {featuredServices && featuredServices.length > 0 && (
-        <Section>
-          <div className="container">
-            <aside className="">{/* <FeaturedServices services={featuredServices} /> */}</aside>
           </div>
         </Section>
       )}

@@ -1,60 +1,60 @@
-import React from 'react'
+import type { ReactNode } from 'react'
 
 import Cta from '@/app/components/shared/cta'
 import Info from '@/app/components/shared/info-section'
+import type { GetPageQueryResult } from '@/sanity.types'
 import { dataAttr } from '@/sanity/lib/utils'
 
-type BlocksType = {
-  [key: string]: React.FC<any>
-}
-
-type BlockType = {
-  _type: string
-  _key: string
-}
+type PageBuilderSection = NonNullable<NonNullable<GetPageQueryResult>['pageBuilder']>[number]
 
 type BlockProps = {
   index: number
-  block: BlockType
+  block: PageBuilderSection
   pageId: string
   pageType: string
 }
 
-const Blocks: BlocksType = {
-  callToAction: Cta,
-  infoSection: Info,
+function BlockFrame({
+  block,
+  pageId,
+  pageType,
+  children,
+}: {
+  block: PageBuilderSection
+  pageId: string
+  pageType: string
+  children: ReactNode
+}) {
+  return (
+    <div
+      data-sanity={dataAttr({
+        id: pageId,
+        type: pageType,
+        path: `pageBuilder[_key=="${block._key}"]`,
+      }).toString()}
+    >
+      {children}
+    </div>
+  )
 }
 
-/**
- * Used by the <PageBuilder>, this component renders a the component that matches the block type.
- */
 export default function BlockRenderer({ block, index, pageId, pageType }: BlockProps) {
-  // Block does exist
-  if (typeof Blocks[block._type] !== 'undefined') {
-    return (
-      <div
-        key={block._key}
-        data-sanity={dataAttr({
-          id: pageId,
-          type: pageType,
-          path: `pageBuilder[_key=="${block._key}"]`,
-        }).toString()}
-      >
-        {React.createElement(Blocks[block._type], {
-          key: block._key,
-          block: block,
-          index: index,
-        })}
-      </div>
-    )
+  switch (block._type) {
+    case 'callToAction':
+      return (
+        <BlockFrame block={block} pageId={pageId} pageType={pageType}>
+          <Cta block={block} index={index} />
+        </BlockFrame>
+      )
+    case 'infoSection':
+      return (
+        <BlockFrame block={block} pageId={pageId} pageType={pageType}>
+          <Info block={block} index={index} />
+        </BlockFrame>
+      )
+    default: {
+      const _exhaustive: never = block
+      return _exhaustive
+    }
   }
-  // Block doesn't exist yet
-  return React.createElement(
-    () => (
-      <div className="w-full rounded-lg bg-background-subtle p-20 text-center text-foreground-muted">
-        A &ldquo;{block._type}&rdquo; block hasn&apos;t been created
-      </div>
-    ),
-    { key: block._key },
-  )
 }

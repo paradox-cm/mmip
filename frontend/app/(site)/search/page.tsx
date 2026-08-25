@@ -18,15 +18,13 @@ function SearchResults() {
   const [page, setPage] = useState(0)
   const { results, isLoading, error, hasMore, totalResults } = useSearchWithPagination(query, page)
 
-  // Only set initial query from URL params on mount
   useEffect(() => {
     setQuery(initialQuery)
   }, [initialQuery])
 
-  // Handle instant search from hero input - make it stable
   const handleSearch = useCallback((searchQuery: string) => {
     setQuery(searchQuery)
-    setPage(0) // Reset to first page
+    setPage(0)
   }, [])
 
   const handleLoadMore = () => {
@@ -48,18 +46,9 @@ function SearchResults() {
   const showingAllPosts = !query.trim()
   const hasResults = results.length > 0
 
-  // console.log('SearchResults render:', {
-  //   query,
-  //   page,
-  //   resultsLength: results.length,
-  //   isLoading,
-  //   hasMore,
-  //   totalResults,
-  // })
-
   return (
     <>
-      <Section className="">
+      <Section>
         <div className="container">
           <div className="flex flex-col items-center gap-8 text-center">
             <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Search' }]} />
@@ -87,7 +76,6 @@ function SearchResults() {
                   return <SearchCard key={result.objectID} post={result} />
                 })}
               </div>
-              {/* Load More Button */}
               {hasMore && (
                 <div className="flex justify-center">
                   <Button onClick={handleLoadMore} loading={isLoading} variant="outline" size="lg">
@@ -102,7 +90,7 @@ function SearchResults() {
             </div>
           ) : query ? (
             <div className="text-center">
-              <p className="">No results found for {query}</p>
+              <p>No results found for {query}</p>
               <p className="text-label text-foreground-muted">
                 Try different keywords or clear your search to see all posts
               </p>

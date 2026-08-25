@@ -158,7 +158,6 @@ export default defineConfig({
               postType: 'postType',
             },
             resolve: doc => {
-              console.log('doc category slug:', doc?.categorySlug)
               const postLocation =
                 doc?.slug && doc?.categorySlug
                   ? {

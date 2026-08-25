@@ -1,7 +1,7 @@
-// app/[...slug]/page.tsx
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { AboutHeaderImage, isAboutPage } from '@/app/components/shared/about-artwork'
 import Breadcrumbs from '@/app/components/shared/breadcrumbs'
 import PageBuilderPage from '@/app/components/shared/page-builder'
 import { POST_TYPE } from '@/lib/constants'
@@ -29,7 +29,7 @@ type Props = {
 
 /**
  * Generate the static params for the page.
- * Learn more: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
+ * https://nextjs.org/docs/app/api-reference/functions/generate-static-params
  */
 export async function generateStaticParams() {
   const [pagesResult, categoriesResult, topicsResult, postsResult] = await Promise.all([
@@ -75,11 +75,6 @@ export async function generateStaticParams() {
   return staticParams
 }
 
-/**
- * ─────────────────────────────────────────
- * Generate Metadata
- * ─────────────────────────────────────────
- */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const settings = await fetchSettings()
@@ -123,11 +118,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-/**
- * ─────────────────────────────────────────
- * Page switch
- * ─────────────────────────────────────────
- */
 export default async function Page({ params }: Props) {
   const { slug } = await params
   const resolved = await resolveRoute(slug)
@@ -203,29 +193,45 @@ export default async function Page({ params }: Props) {
       )
     case 'not-found':
       return notFound()
-    default:
-      return notFound()
+    default: {
+      const _exhaustive: never = resolved
+      return _exhaustive
+    }
   }
 }
 
-/**
- * ─────────────────────────────────────────
- * Render: One-off static page
- * ─────────────────────────────────────────
- */
 function RenderPage({ page }: { page: NonNullable<GetPageQueryResult> }) {
+  const showAboutHeader = isAboutPage(page.slug?.current)
+
   return (
     <div className="my-12 lg:my-24">
       <div className="container border-b pb-6">
-        <div className="max-w-3xl">
-          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: page.heading }]} />
-          <h2 className="mt-6 text-h1 font-bold tracking-tight text-foreground-heading sm:text-5xl lg:text-7xl">
-            {page.heading}
-          </h2>
-          <p className="mt-4 text-body-small font-light uppercase leading-relaxed text-foreground-subtle lg:text-lg">
-            {page.subheading}
-          </p>
-        </div>
+        {showAboutHeader ? (
+          <>
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: page.heading }]} />
+            <div className="mt-6 flex items-start justify-between gap-4 sm:gap-8 lg:gap-12">
+              <div className="min-w-0 max-w-3xl">
+                <h2 className="font-sans text-h1 font-bold tracking-tight text-foreground-heading sm:text-5xl lg:text-7xl">
+                  {page.heading}
+                </h2>
+                <p className="mt-4 text-body-small font-light uppercase leading-relaxed text-foreground-subtle lg:text-lg">
+                  {page.subheading}
+                </p>
+              </div>
+              <AboutHeaderImage />
+            </div>
+          </>
+        ) : (
+          <div className="max-w-3xl">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: page.heading }]} />
+            <h2 className="mt-6 font-sans text-h1 font-bold tracking-tight text-foreground-heading sm:text-5xl lg:text-7xl">
+              {page.heading}
+            </h2>
+            <p className="mt-4 text-body-small font-light uppercase leading-relaxed text-foreground-subtle lg:text-lg">
+              {page.subheading}
+            </p>
+          </div>
+        )}
       </div>
 
       <PageBuilderPage page={page} />

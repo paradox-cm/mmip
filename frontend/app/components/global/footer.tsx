@@ -19,7 +19,6 @@ export default async function Footer() {
     query: navigationQuery,
   })
 
-  // More robust data selection
   const resourcesDropdown = data?.primaryNav?.find(
     nav => nav.type === 'dropdown' && nav.dropdownLabel?.toLowerCase().includes('resource'),
   )
@@ -97,7 +96,7 @@ export default async function Footer() {
 
             <hr />
 
-            <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <div className="flex items-center justify-between gap-4">
               <p className="text-label text-foreground-muted">
                 &copy; {new Date().getFullYear()} Resilient Relatives. All rights reserved.
               </p>

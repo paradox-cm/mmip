@@ -15,10 +15,10 @@ export default function AccessibilityPage() {
 
       <DocSection title="Focus">
         <p className="max-w-reading text-foreground-subtle">
-          Interactive elements use the shared <DocCode>focus-ring</DocCode> class: a 2px gold outline
-          with 3px offset so the ring stays visible on primary gold. Invalid fields use the error
-          color for the same ring. Do not remove outlines. Do not replace them with a low-contrast
-          box-shadow.
+          Interactive elements use the shared <DocCode>focus-ring</DocCode> class: a 2px gold
+          outline with 3px offset so the ring stays visible on primary gold. Invalid fields use the
+          error color for the same ring. Do not remove outlines. Do not replace them with a
+          low-contrast box-shadow.
         </p>
         <Preview label="Focus the controls with a keyboard">
           <div className="flex flex-wrap gap-3">
@@ -67,8 +67,8 @@ export default function AccessibilityPage() {
       <DocSection title="Escape and landmarks">
         <p className="max-w-reading text-foreground-subtle">
           The public header includes a skip link, a labeled search control, and a “Hide website
-          quickly” action. Keep those names. The design system shell has its own skip link into{' '}
-          <DocCode>#ds-content</DocCode>.
+          quickly” action. Keep those names. The admin shell has its own skip link into{' '}
+          <DocCode>#admin-content</DocCode>.
         </p>
       </DocSection>
     </>
