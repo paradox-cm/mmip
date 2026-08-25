@@ -1,0 +1,186 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
+import LogoMark from '@/app/components/shared/logo-mark'
+import { DEFAULT_SOCIAL_IMAGE } from '@/lib/social-image'
+
+import PageHeader, { DocCode, DocSection } from '../_components/page-header'
+import Preview from '../_components/preview'
+
+export const metadata = { title: 'Brand assets' }
+
+const assets = [
+  ['Browser favicon', '/logo/logo.svg', 'Scalable mark for browser tabs'],
+  ['App icon SVG', '/logo/app-icon.svg', 'Rounded sand field with the header mark'],
+  ['Apple touch icon', '/logo/apple-touch-icon.png', '180 × 180 PNG, opaque field'],
+  ['PWA icon', '/logo/logo-192.png', '192 × 192 PNG'],
+  ['PWA icon', '/logo/logo-512.png', '512 × 512 PNG'],
+  ['Maskable PWA icon', '/logo/logo-maskable-512.png', '512 × 512 PNG, full safe field'],
+] as const
+
+const appIconVariants = [
+  ['App icon SVG', '/logo/app-icon.svg'],
+  ['Apple touch icon', '/logo/apple-touch-icon.png'],
+  ['PWA 192', '/logo/logo-192.png'],
+  ['PWA 512', '/logo/logo-512.png'],
+  ['Maskable PWA', '/logo/logo-maskable-512.png'],
+] as const
+
+export default function BrandAssetsPage() {
+  return (
+    <>
+      <PageHeader
+        title="Brand assets"
+        description="The header mark, install icons, and social card are one light-mode system. Generated exports stay tied to the mark used in production navigation."
+      />
+
+      <DocSection
+        title="Canonical mark"
+        description="LogoMark is the source displayed in the site header. Browser and install assets preserve the same silhouette; they are not a separate logo."
+      >
+        <Preview label="Header mark on the light surface">
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="flex size-28 items-center justify-center rounded-2xl border bg-background-subtle">
+              <LogoMark className="size-20" />
+            </div>
+            <p className="max-w-reading text-foreground-subtle">
+              The vector source is <DocCode>public/logo-mark.svg</DocCode>. Run{' '}
+              <DocCode>pnpm --filter frontend assets:brand</DocCode> after changing it.
+            </p>
+          </div>
+        </Preview>
+      </DocSection>
+
+      <DocSection
+        title="Favicon and app icon"
+        description="The browser icon remains a clean blue mark. Install icons use a warm sand field with the same mark inside the platform safe area."
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          <Preview label="Browser favicon — check it at actual small sizes">
+            <div className="flex items-end gap-6">
+              {[16, 32, 64].map(size => (
+                <div key={size} className="flex flex-col items-center gap-2">
+                  <Image
+                    src="/logo/logo.svg"
+                    width={size}
+                    height={size}
+                    alt={size === 64 ? 'Resilient Relatives browser favicon' : ''}
+                    unoptimized
+                  />
+                  <span className="text-xs text-foreground-muted">{size}px</span>
+                </div>
+              ))}
+            </div>
+          </Preview>
+
+          <Preview label="Install icon exports — all platform variants">
+            <div className="flex flex-wrap items-end gap-5">
+              {appIconVariants.map(([label, src]) => (
+                <figure key={src} className="flex flex-col items-center gap-2">
+                  <Image
+                    src={src}
+                    width={76}
+                    height={76}
+                    alt={`Resilient Relatives ${label}`}
+                    unoptimized
+                  />
+                  <figcaption className="text-center text-xs text-foreground-muted">
+                    {label}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </Preview>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <div className="rounded-xl border bg-card p-4">
+            <p className="font-medium">iOS</p>
+            <p className="mt-1 text-sm text-foreground-subtle">
+              Uses the opaque 180px source; iOS supplies its own rounded mask.
+            </p>
+          </div>
+          <div className="rounded-xl border bg-card p-4">
+            <p className="font-medium">Android</p>
+            <p className="mt-1 text-sm text-foreground-subtle">
+              Uses 192px and 512px standard PWA icons for install surfaces.
+            </p>
+          </div>
+          <div className="rounded-xl border bg-card p-4">
+            <p className="font-medium">Maskable Android</p>
+            <p className="mt-1 text-sm text-foreground-subtle">
+              Keeps the sand field edge to edge and reserves a 67% safe mark area.
+            </p>
+          </div>
+        </div>
+      </DocSection>
+
+      <DocSection
+        title="Default social card"
+        description="A 1200 × 630 light-mode image generated by Next.js. It uses the header's Helvetica Now Medium treatment for the title, Helvetica Now for supporting copy, warm sand surfaces, brand ink, and a gold accent."
+      >
+        <Preview label="/opengraph-image">
+          <Image
+            src="/opengraph-image"
+            width={1200}
+            height={630}
+            alt={DEFAULT_SOCIAL_IMAGE.alt}
+            className="h-auto w-full rounded-lg border"
+            unoptimized
+          />
+        </Preview>
+        <p className="max-w-reading text-sm text-foreground-subtle">
+          CMS artwork remains first choice. The card shown here is the fallback for pages without a
+          page-level or global Settings image, and it supplies the same image to Open Graph and X.
+        </p>
+      </DocSection>
+
+      <DocSection
+        title="Export map"
+        description="Download static assets directly or open the live social-card route."
+      >
+        <div className="overflow-x-auto rounded-xl border bg-card">
+          <table className="w-full min-w-[42rem] text-left text-sm">
+            <thead className="border-b bg-background-subtle text-xs uppercase tracking-wide text-foreground-muted">
+              <tr>
+                <th className="px-4 py-3 font-medium">Asset</th>
+                <th className="px-4 py-3 font-medium">Use</th>
+                <th className="px-4 py-3 text-right font-medium">File</th>
+              </tr>
+            </thead>
+            <tbody>
+              {assets.map(([name, href, use]) => (
+                <tr key={href} className="border-b last:border-b-0">
+                  <th className="px-4 py-3 font-medium">{name}</th>
+                  <td className="px-4 py-3 text-foreground-subtle">{use}</td>
+                  <td className="px-4 py-3 text-right">
+                    <a
+                      className="focus-ring rounded-sm text-primary hover:underline"
+                      href={href}
+                      download
+                    >
+                      Download
+                    </a>
+                  </td>
+                </tr>
+              ))}
+              <tr>
+                <th className="px-4 py-3 font-medium">Open Graph image</th>
+                <td className="px-4 py-3 text-foreground-subtle">
+                  1200 × 630 PNG generated at request time
+                </td>
+                <td className="px-4 py-3 text-right">
+                  <Link
+                    className="focus-ring rounded-sm text-primary hover:underline"
+                    href="/opengraph-image"
+                  >
+                    Open image
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </DocSection>
+    </>
+  )
+}

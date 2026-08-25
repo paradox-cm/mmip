@@ -15,19 +15,16 @@ export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:30
 
 // Card themes. Same post type -> colour mapping as before.
 //
-// In light the four tints sit at the 50 step, which share a lightness, so the
-// cards differ only in hue. The deep end of each scale is not lightness
-// aligned (gold-900 is 0.28, terracota-900 is 0.12), so dark composites the
-// 800/900 step over the page instead of using it flat. That keeps all four at
-// roughly the neutral card lightness and differing only in hue, as in light.
+// Light tints use primitives at the 50 step. Dark tints use --content-* semantics
+// in globals.css so gold, terracota, sage, and twilight primitives stay honest.
 export const CARD_THEME: Record<string, string> = {
   article:
-    'bg-twilight-50 border-twilight-200 hover:border-twilight-500 dark:bg-twilight-900/45 dark:border-twilight-800 dark:hover:border-twilight-500',
+    'bg-content-article border-content-article-border hover:border-content-article-border-hover',
   guide:
-    'bg-terracota-50 border-terracota-200 hover:border-terracota-500 dark:bg-terracota-800/45 dark:border-terracota-700 dark:hover:border-terracota-400',
-  tool: 'bg-sage-50 border-sage-200 hover:border-sage-500 dark:bg-sage-900/45 dark:border-sage-800 dark:hover:border-sage-400',
+    'bg-content-guide border-content-guide-border hover:border-content-guide-border-hover',
+  tool: 'bg-content-tool border-content-tool-border hover:border-content-tool-border-hover',
   service:
-    'bg-gold-50 border-gold-200 hover:border-gold-500 dark:bg-gold-900/35 dark:border-gold-800 dark:hover:border-gold-400',
+    'bg-content-service border-content-service-border hover:border-content-service-border-hover',
   default: 'bg-card border hover:border-strong',
 }
 

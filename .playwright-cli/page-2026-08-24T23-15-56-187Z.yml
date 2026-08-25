@@ -1,0 +1,172 @@
+- generic [active] [ref=f1e1]:
+  - region "Notifications alt+T"
+  - generic [ref=f1e2]:
+    - link "Skip to content" [ref=f1e3] [cursor=pointer]:
+      - /url: "#main-content"
+    - banner [ref=f1e4]:
+      - generic [ref=f1e6]:
+        - link "Resilient Relatives Home" [ref=f1e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f1e9]: ResilientRelatives
+        - navigation "Main" [ref=f1e11]:
+          - list [ref=f1e13]:
+            - listitem [ref=f1e14]:
+              - link "Home" [ref=f1e15] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f1e16]:
+              - button "Resources" [ref=f1e17] [cursor=pointer]
+            - listitem [ref=f1e20]:
+              - link "About" [ref=f1e21] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=f1e22]:
+          - button "Choose appearance" [disabled]
+          - link "Hide website quickly" [ref=f1e23] [cursor=pointer]:
+            - /url: /api/escape
+          - link "Search" [ref=f1e24] [cursor=pointer]:
+            - /url: /search
+    - main [ref=f1e25]:
+      - generic [ref=f1e28]:
+        - generic [ref=f1e29]:
+          - generic [ref=f1e30]:
+            - heading "Together, we protect our people." [level=1] [ref=f1e31]
+            - paragraph [ref=f1e32]: Resilient Relatives is a Native-led resource addressing the MMIP crisis—empowering California Tribal communities to respond, advocate, and heal.
+          - search [ref=f1e34]:
+            - generic [ref=f1e35]:
+              - generic [ref=f1e36]: Search articles, guides, and tools
+              - searchbox "Search articles, guides, and tools" [ref=f1e37]
+              - button "Search" [ref=f1e39] [cursor=pointer]
+        - img "Resilient Relatives seal" [ref=f1e42]
+      - generic [ref=f1e45]:
+        - heading "Explore by category" [level=2] [ref=f1e46]
+        - generic [ref=f1e47]:
+          - link [ref=f1e48] [cursor=pointer]:
+            - /url: survivors
+            - paragraph [ref=f1e51]: Survivors & Family
+          - link [ref=f1e57] [cursor=pointer]:
+            - /url: community
+            - paragraph [ref=f1e60]: Tribal Community
+          - link [ref=f1e66] [cursor=pointer]:
+            - /url: advocacy
+            - paragraph [ref=f1e69]: Advocacy & Providers
+      - generic [ref=f1e76]:
+        - heading "Featured resources" [level=2] [ref=f1e77]
+        - generic [ref=f1e78]:
+          - article [ref=f1e79]:
+            - link "Indigenous Youth Affirmation Deck" [ref=f1e80] [cursor=pointer]:
+              - /url: /survivors/indigenous-youth-affirmation-deck
+              - img "Sketch if Indigenous art with circular formations" [ref=f1e83]
+              - generic [ref=f1e84]:
+                - generic [ref=f1e85]:
+                  - generic [ref=f1e86]: tool
+                  - generic [ref=f1e87]: Healing & Wellness
+                - heading "Indigenous Youth Affirmation Deck" [level=4] [ref=f1e88]
+                - paragraph [ref=f1e90]: A collection of kind statements to inspire self-love and self-determination.
+          - article [ref=f1e91]:
+            - link "Riverside-San Bernardino County Indian Health Inc. Native Challenge" [ref=f1e92] [cursor=pointer]:
+              - /url: /community/native-challenge
+              - img "Sketch of person making traditional medicine" [ref=f1e95]
+              - generic [ref=f1e96]:
+                - generic [ref=f1e97]:
+                  - generic [ref=f1e98]: guide
+                  - generic [ref=f1e99]: Prevention & Awareness
+                - heading "Riverside-San Bernardino County Indian Health Inc. Native Challenge" [level=4] [ref=f1e100]
+                - generic [ref=f1e101]:
+                  - paragraph [ref=f1e102]: Sub-division of Riverside-San Bernardino County Indian Health Inc. That provides prevention education for children and families.
+                  - paragraph
+          - article [ref=f1e103]:
+            - 'link "Love is Respect: Warning Signs of Abuse" [ref=f1e104] [cursor=pointer]':
+              - /url: /survivors/love-is-respect-warning-signs-of-abuse
+              - img "Stylized Sketch of two Native people walking side-by-side on a dirt path" [ref=f1e107]
+              - generic [ref=f1e108]:
+                - generic [ref=f1e109]:
+                  - generic [ref=f1e110]: guide
+                  - generic [ref=f1e111]: Safety & Prevention
+                - 'heading "Love is Respect: Warning Signs of Abuse" [level=4] [ref=f1e112]'
+                - paragraph [ref=f1e114]: Webpage offering insights into how patterns of abuse perpetuate, how to address abuse in teen dating violence, and other resources.
+      - generic [ref=f1e117]:
+        - heading "Browse by topic" [level=2] [ref=f1e118]
+        - generic [ref=f1e119]:
+          - link [ref=f1e120] [cursor=pointer]:
+            - /url: prevention-and-awareness
+            - generic [ref=f1e125]:
+              - paragraph [ref=f1e126]: Prevention & Awareness
+              - paragraph [ref=f1e127]: 17 posts
+          - link [ref=f1e128] [cursor=pointer]:
+            - /url: crisis-support
+            - generic [ref=f1e133]:
+              - paragraph [ref=f1e134]: Crisis Support
+              - paragraph [ref=f1e135]: 5 posts
+          - link [ref=f1e136] [cursor=pointer]:
+            - /url: safety-and-prevention
+            - generic [ref=f1e141]:
+              - paragraph [ref=f1e142]: Safety & Prevention
+              - paragraph [ref=f1e143]: 5 posts
+          - link [ref=f1e144] [cursor=pointer]:
+            - /url: advocacy-toolkits
+            - generic [ref=f1e149]:
+              - paragraph [ref=f1e150]: Advocacy Toolkits
+              - paragraph [ref=f1e151]: 3 posts
+          - link [ref=f1e152] [cursor=pointer]:
+            - /url: community-events-and-training
+            - generic [ref=f1e157]:
+              - paragraph [ref=f1e158]: Community Events & Training
+              - paragraph [ref=f1e159]: 2 posts
+          - link [ref=f1e160] [cursor=pointer]:
+            - /url: survivor-help
+            - generic [ref=f1e165]:
+              - paragraph [ref=f1e166]: Survivor Help
+              - paragraph [ref=f1e167]: 2 posts
+          - link [ref=f1e168] [cursor=pointer]:
+            - /url: healing-and-wellness
+            - generic [ref=f1e173]:
+              - paragraph [ref=f1e174]: Healing & Wellness
+              - paragraph [ref=f1e175]: 1 post
+    - contentinfo [ref=f1e176]:
+      - generic [ref=f1e177]:
+        - img "Community background" [ref=f1e179]
+        - generic [ref=f1e180]:
+          - img "Community eagle" [ref=f1e182]
+          - generic [ref=f1e183]:
+            - heading "Built by and for Native communities." [level=2] [ref=f1e184]
+            - paragraph [ref=f1e185]: For families, advocates, and future generations.
+      - generic [ref=f1e188]:
+        - generic [ref=f1e189]:
+          - link "Resilient Relatives Home" [ref=f1e191] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f1e193]: ResilientRelatives
+          - navigation [ref=f1e194]:
+            - generic [ref=f1e195]:
+              - generic [ref=f1e196]: Resources
+              - list [ref=f1e197]:
+                - listitem [ref=f1e198]:
+                  - link "Survivors & Family" [ref=f1e199] [cursor=pointer]:
+                    - /url: /survivors
+                - listitem [ref=f1e200]:
+                  - link "Tribal Community" [ref=f1e201] [cursor=pointer]:
+                    - /url: /community
+                - listitem [ref=f1e202]:
+                  - link "Advocacy & Providers" [ref=f1e203] [cursor=pointer]:
+                    - /url: /advocacy
+                - listitem [ref=f1e204]:
+                  - link "Services" [ref=f1e205] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=f1e206]:
+                  - link "Tribes" [ref=f1e207] [cursor=pointer]:
+                    - /url: /tribes
+            - generic [ref=f1e208]:
+              - generic [ref=f1e209]: Company
+              - list [ref=f1e210]:
+                - listitem [ref=f1e211]:
+                  - link "About" [ref=f1e212] [cursor=pointer]:
+                    - /url: /about
+            - generic [ref=f1e213]:
+              - generic [ref=f1e214]: Connect
+              - list [ref=f1e215]:
+                - listitem [ref=f1e216]:
+                  - link "Email us" [ref=f1e217] [cursor=pointer]:
+                    - /url: mailto:CCVAP@cahuilla-nsn.gov
+        - separator [ref=f1e218]
+        - paragraph [ref=f1e220]: © 2026 Resilient Relatives. All rights reserved.
+    - generic [ref=f1e221]:
+      - heading "Command Palette" [level=2] [ref=f1e222]
+      - paragraph [ref=f1e223]: Search for a command to run...

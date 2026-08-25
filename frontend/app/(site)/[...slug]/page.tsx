@@ -11,6 +11,7 @@ import {
   toJsonLdScript,
 } from '@/lib/jsonld'
 import { resolveRoute } from '@/lib/resolve-route'
+import { resolveSocialImage } from '@/lib/social-image'
 import type { GetPageQueryResult } from '@/sanity.types'
 import { fetchSettings } from '@/sanity/lib/fetch'
 import { sanityFetch } from '@/sanity/lib/live'
@@ -88,12 +89,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ogImage =
     resolved.type === 'post' ? resolveOpenGraphImage(resolved.metadata.openGraphImage) : undefined
   const baseOgImage = resolveOpenGraphImage(settings?.ogImage)
+  const socialImage = resolveSocialImage(ogImage, baseOgImage)
+  const path = `/${slug.join('/')}`
 
   return {
     title: resolved.metadata.title,
     description: resolved.metadata.description,
     openGraph: {
-      images: [ogImage ?? baseOgImage ?? ''],
+      title: resolved.metadata.title,
+      description: resolved.metadata.description,
+      url: path,
+      type: 'website',
+      images: [socialImage],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: resolved.metadata.title,
+      description: resolved.metadata.description,
+      images: [socialImage.url],
     },
     robots:
       resolved.type === 'post'

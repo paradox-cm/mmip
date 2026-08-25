@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { createCollectionPageJsonLd, toJsonLdScript } from '@/lib/jsonld'
+import { resolveSocialImage } from '@/lib/social-image'
 import { fetchAllServices, fetchSettings } from '@/sanity/lib/fetch'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
@@ -16,6 +17,7 @@ const SERVICES_PAGE_DESCRIPTION =
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await fetchSettings()
   const ogImage = resolveOpenGraphImage(settings?.ogImage)
+  const socialImage = resolveSocialImage(ogImage)
 
   return {
     title: SERVICES_PAGE_TITLE,
@@ -27,8 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title: SERVICES_PAGE_TITLE,
       description: SERVICES_PAGE_DESCRIPTION,
       url: '/services',
-      images: ogImage ? [ogImage] : [],
+      images: [socialImage],
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: SERVICES_PAGE_TITLE,
+      description: SERVICES_PAGE_DESCRIPTION,
+      images: [socialImage.url],
     },
   }
 }

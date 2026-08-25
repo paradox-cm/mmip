@@ -8,6 +8,7 @@ import {
   NavigationMenuTrigger,
 } from '@/app/components/ui/navigation-menu'
 
+import NavLinkLabel from './nav-link-label'
 import { filterPrimaryNav, type PrimaryNav } from './nav-items'
 
 export default function Navigation({ primaryNav }: { primaryNav: PrimaryNav | null | undefined }) {
@@ -26,12 +27,12 @@ export default function Navigation({ primaryNav }: { primaryNav: PrimaryNav | nu
               <>
                 <NavigationMenuTrigger>{dropdownLabel}</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[330px] gap-4">
-                    {dropdownItems.map((link, idx) => (
+                  <ul className="grid w-[360px] gap-1 p-1">
+                    {dropdownItems.map((item, idx) => (
                       <li key={idx}>
-                        <NavigationMenuLink asChild>
-                          <ResolvedLink link={link}>
-                            <div className="font-medium">{link.label}</div>
+                        <NavigationMenuLink asChild className="flex-row items-center">
+                          <ResolvedLink link={item}>
+                            <NavLinkLabel link={item} />
                           </ResolvedLink>
                         </NavigationMenuLink>
                       </li>
@@ -41,8 +42,10 @@ export default function Navigation({ primaryNav }: { primaryNav: PrimaryNav | nu
               </>
             ) : (
               link && (
-                <NavigationMenuLink asChild>
-                  <ResolvedLink link={link}>{link?.label}</ResolvedLink>
+                <NavigationMenuLink asChild className="flex-row items-center">
+                  <ResolvedLink link={link}>
+                    <NavLinkLabel link={link} />
+                  </ResolvedLink>
                 </NavigationMenuLink>
               )
             )}

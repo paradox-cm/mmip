@@ -1,0 +1,133 @@
+[    5980ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_compiled_react-dom_71305ac2._.js:14537
+[   22543ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/d2dc3f7e10d0fe5961a81f538a86bbe0239536fe-244x251.svg?h=251&w=244" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   22921ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/1b609a46066fa97a7b3f17d9f73b761f00ea919d-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   23236ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/5b3d51893a6f7f58d33028ba74188b0980e71c59-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   23308ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/dccfb075ebad5c0567d00705c20430f93f203d6a-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   29221ms] [ERROR] Access to fetch at 'https://t4dq0r7i.api.sanity.io/v2024-10-28/data/live/events/production?tag=next-loader.live' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:3000/:0
+[   29241ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://t4dq0r7i.api.sanity.io/v2024-10-28/data/live/events/production?tag=next-loader.live:0
+[   31845ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[   97770ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[   99937ms] [LOG] [Fast Refresh] done in 3958ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  117712ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  117774ms] [LOG] [Fast Refresh] done in 231ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  126231ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  126500ms] [LOG] [Fast Refresh] done in 373ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  283473ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  292064ms] [LOG] [Fast Refresh] done in 8872ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  301080ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_compiled_react-dom_71305ac2._.js:14537
+[  312907ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/d2dc3f7e10d0fe5961a81f538a86bbe0239536fe-244x251.svg?h=251&w=244" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  313667ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/1b609a46066fa97a7b3f17d9f73b761f00ea919d-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  313904ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/5b3d51893a6f7f58d33028ba74188b0980e71c59-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  313906ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/dccfb075ebad5c0567d00705c20430f93f203d6a-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  318596ms] [ERROR] Access to fetch at 'https://t4dq0r7i.api.sanity.io/v2024-10-28/data/live/events/production?tag=next-loader.live' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:3000/:0
+[  318597ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://t4dq0r7i.api.sanity.io/v2024-10-28/data/live/events/production?tag=next-loader.live:0
+[  318675ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[  321990ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_compiled_react-dom_71305ac2._.js:14537
+[  326856ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/d2dc3f7e10d0fe5961a81f538a86bbe0239536fe-244x251.svg?h=251&w=244" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  326920ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/1b609a46066fa97a7b3f17d9f73b761f00ea919d-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  326962ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/5b3d51893a6f7f58d33028ba74188b0980e71c59-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  326964ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/dccfb075ebad5c0567d00705c20430f93f203d6a-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  328606ms] [ERROR] Access to fetch at 'https://t4dq0r7i.api.sanity.io/v2024-10-28/data/live/events/production?tag=next-loader.live' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:3000/:0
+[  328606ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://t4dq0r7i.api.sanity.io/v2024-10-28/data/live/events/production?tag=next-loader.live:0
+[  328607ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[  363494ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  365062ms] [LOG] [Fast Refresh] done in 547ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  365079ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  365120ms] [LOG] [Fast Refresh] done in 0ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  412368ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  418218ms] [LOG] [Fast Refresh] done in 5780ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  442105ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  442127ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  444352ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  445012ms] [LOG] [Fast Refresh] done in 411ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  450286ms] [LOG] %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {speed: 4g, metrics: Array(4), scriptVersion: 0.1.3, sdkName: @vercel/speed-insights/next, sdkVersion: 1.2.0} /_vercel/speed-insights/vitals @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[  450961ms] [WARNING] Detected `scroll-behavior: smooth` on the `<html>` element. In a future version, Next.js will no longer automatically disable smooth scrolling during route transitions. To prepare for this change, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  452330ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  455218ms] [LOG] [Fast Refresh] done in 3119ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  455338ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  455813ms] [LOG] [Fast Refresh] done in 575ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  456405ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  456409ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  457279ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  457279ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  459628ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  460510ms] [LOG] [Fast Refresh] done in 977ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  469952ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  506328ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://127.0.0.1:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js:34
+[  506793ms] [LOG] [Fast Refresh] done in 35404ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  509858ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  510931ms] [LOG] [Fast Refresh] done in 1174ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  515018ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  515039ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  515133ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  515594ms] [LOG] [Fast Refresh] done in 545ms @ http://127.0.0.1:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  515995ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  516103ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?195:264
+[  520815ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_compiled_react-dom_d86bebb8._.js:14537
+[  532902ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?76:264
+[  533190ms] [LOG] %c%s%c firstPageResult: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {_id: a14182bd-ee42-46db-a256-383fb725783a, _type: page, heading: Resilient Relatives, metadata: Object, name: About} @ about://React/Server/file:///Users/christophermena/Repos/caseykennedy-mmip/frontend/.next/server/chunks/ssr/%5Broot-of-the-server%5D__454fa88b._.js?76:264
+[  552093ms] [ERROR] Access to fetch at 'https://t4dq0r7i.api.sanity.io/v2024-10-28/data/live/events/production?tag=next-loader.live' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:3000/about:0
+[  552093ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://t4dq0r7i.api.sanity.io/v2024-10-28/data/live/events/production?tag=next-loader.live:0
+[  552165ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[  644446ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  648232ms] [LOG] [Fast Refresh] done in 3333ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  648282ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  652386ms] [ERROR] Refused to apply style from 'http://127.0.0.1:3000/_next/static/chunks/frontend_app_4892d03c._.css' because its MIME type ('') is not a supported stylesheet MIME type, and strict MIME checking is enabled. @ http://127.0.0.1:3000/about:0
+[  652508ms] [LOG] [Fast Refresh] done in 4224ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  652517ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  653231ms] [LOG] [Fast Refresh] done in 47ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  653645ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  654074ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  654675ms] [LOG] [Fast Refresh] done in 1048ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  655297ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  656371ms] [LOG] [Fast Refresh] done in 881ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  656552ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  656953ms] [LOG] [Fast Refresh] done in 11ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  657108ms] undefined
+[  657125ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  657138ms] [LOG] [Fast Refresh] done in 89ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  658477ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  659658ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  660066ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  660335ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  660673ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  660744ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  660761ms] [LOG] [Fast Refresh] done in 188ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  660867ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  660901ms] [LOG] [Fast Refresh] done in 136ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  660979ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  661042ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  661214ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  661239ms] [LOG] [Fast Refresh] done in 282ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  661484ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  661505ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  661891ms] [LOG] [Fast Refresh] done in 507ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  662003ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  662083ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  662278ms] [LOG] [Fast Refresh] done in 376ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  662406ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  662478ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about?_rsc=1stwx:0
+[  662669ms] [LOG] [Fast Refresh] done in 364ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  662800ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5949
+[  662806ms] [LOG] [Fast Refresh] done in 107ms @ http://127.0.0.1:3000/_next/static/chunks/a7681_next_dist_client_3f451686._.js:5809
+[  663285ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/about:0
+[  663807ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/favicon.ico:0

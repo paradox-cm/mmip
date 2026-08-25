@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { toPlainText } from 'next-sanity'
 
 import { createOrganizationJsonLd, toJsonLdScript } from '@/lib/jsonld'
+import { resolveSocialImage } from '@/lib/social-image'
 import { fetchAllTribes, fetchSettings, fetchTribe } from '@/sanity/lib/fetch'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
@@ -37,7 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     tribe.metadata?.metaDescription ||
     (tribe.shortDescription ? toPlainText(tribe.shortDescription) : undefined)
-  const ogImage = resolveOpenGraphImage(tribe.metadata?.ogImage ?? settings?.ogImage)
+  const socialImage = resolveSocialImage(
+    resolveOpenGraphImage(tribe.metadata?.ogImage),
+    resolveOpenGraphImage(settings?.ogImage),
+  )
   const hideSearchIndex = Boolean(tribe.metadata?.hideSearchIndex)
 
   return {
@@ -50,8 +54,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `/tribes/${tribe.slug}`,
-      images: ogImage ? [ogImage] : [],
+      images: [socialImage],
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [socialImage.url],
     },
     robots: {
       index: !hideSearchIndex,

@@ -25,12 +25,12 @@ export default function TribeCard({ className, layout = 'grid', tribe }: Props) 
     <Link
       aria-label={tribe.name}
       href={`/tribes/${tribe.slug}`}
-      className={cn('group block rounded-xl', CARD_INTERACTION)}
+      className={cn('group block min-w-0 rounded-xl', CARD_INTERACTION)}
     >
-      <article className={cn('flex size-full', layout === 'list' && 'w-full', className)}>
+      <article className={cn('flex size-full min-w-0', layout === 'list' && 'w-full', className)}>
         <Tile
           className={cn(
-            'flex flex-1',
+            'flex min-w-0 flex-1',
             layout === 'grid'
               ? 'flex-col gap-8'
               : 'w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between',

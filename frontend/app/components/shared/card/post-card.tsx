@@ -28,12 +28,12 @@ export default function PostCard({
   const themeClasses = CARD_THEME[post.postType ?? 'default']
 
   return (
-    <article className={cn('flex w-full flex-1', className)}>
+    <article className={cn('flex w-full min-w-0 flex-1', className)}>
       <Link
         aria-label={post.title}
         href={`/${post.category.slug}/${post.slug}`}
         className={cn(
-          'flex flex-1 flex-col gap-6 rounded-xl border p-4',
+          'flex min-w-0 flex-1 flex-col gap-6 rounded-xl border p-4',
           CARD_INTERACTION,
           { 'items-center md:flex-row': isHorizontal },
           themeClasses,

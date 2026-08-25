@@ -1,0 +1,133 @@
+.sealCanvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 244 / 251;
+}
+
+.sealCanvas :global(svg[data-seal-svg]) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.sealCanvas :global([data-seal-orbit]) {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.sealCanvas :global([data-seal-wordmark]) {
+  transform: rotate(-18deg);
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: ring-settle 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+.sealCanvas :global([data-seal-glyph]) {
+  fill: oklch(var(--brand-seal-wordmark));
+  opacity: 0;
+  animation: glyph-reveal 140ms ease-out var(--glyph-delay) forwards;
+}
+
+.sealCanvas :global([data-seal-mark-path]) {
+  fill: oklch(var(--brand-seal-mark));
+  fill-opacity: 0;
+  animation: mark-fill 900ms cubic-bezier(0, 0, 0.2, 1) 900ms forwards;
+}
+
+.sealCanvas :global([data-seal-outline]) {
+  stroke: oklch(var(--brand-seal-mark));
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation:
+    mark-fill 900ms cubic-bezier(0, 0, 0.2, 1) 900ms forwards,
+    outline-draw 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    outline-fade 300ms ease-out 1.5s forwards;
+}
+
+@keyframes ring-settle {
+  from {
+    transform: rotate(-18deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes glyph-reveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mark-fill {
+  from {
+    fill-opacity: 0;
+  }
+
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes outline-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes outline-fade {
+  from {
+    stroke-opacity: 1;
+  }
+
+  to {
+    stroke-opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sealCanvas :global([data-seal-orbit]),
+  .sealCanvas :global([data-seal-wordmark]),
+  .sealCanvas :global([data-seal-glyph]),
+  .sealCanvas :global([data-seal-mark-path]),
+  .sealCanvas :global([data-seal-outline]) {
+    animation: none !important;
+  }
+
+  .sealCanvas :global([data-seal-orbit]) {
+    transform: none !important;
+  }
+
+  .sealCanvas :global([data-seal-wordmark]) {
+    transform: none;
+  }
+
+  .sealCanvas :global([data-seal-glyph]) {
+    opacity: 1;
+  }
+
+  .sealCanvas :global([data-seal-mark-path]) {
+    fill-opacity: 1;
+  }
+
+  .sealCanvas :global([data-seal-outline]) {
+    stroke: none;
+    stroke-opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}

@@ -9,7 +9,7 @@ export default function Cta({ block }: CtaProps) {
   return (
     <div className="container my-12">
       <div className="max-w-3xl rounded-2xl border bg-background-subtle">
-        <div className="flex flex-col gap-6 p-12">
+        <div className="flex flex-col gap-6 p-6 md:p-12">
           <div className="flex max-w-xl flex-col gap-3">
             <h2 className="text-h2 font-bold tracking-tight text-foreground-heading sm:text-4xl">
               {block.heading}

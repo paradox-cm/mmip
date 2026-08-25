@@ -49,7 +49,7 @@ export const badgeVariants = cva(
         variant: 'article',
         appearance: 'soft',
         class:
-          'border-twilight-200 bg-twilight-100 text-twilight-900 dark:border-twilight-700 dark:bg-twilight-900 dark:text-twilight-100',
+          'border-content-article-badge-border bg-content-article-badge text-content-article-badge-foreground',
       },
       {
         variant: 'guide',
@@ -60,7 +60,7 @@ export const badgeVariants = cva(
         variant: 'guide',
         appearance: 'soft',
         class:
-          'border-terracota-200 bg-terracota-100 text-terracota-900 dark:border-terracota-700 dark:bg-terracota-900 dark:text-terracota-100',
+          'border-content-guide-badge-border bg-content-guide-badge text-content-guide-badge-foreground',
       },
       {
         variant: 'tool',
@@ -71,7 +71,7 @@ export const badgeVariants = cva(
         variant: 'tool',
         appearance: 'soft',
         class:
-          'border-sage-200 bg-sage-100 text-sage-900 dark:border-sage-700 dark:bg-sage-900 dark:text-sage-100',
+          'border-content-tool-badge-border bg-content-tool-badge text-content-tool-badge-foreground',
       },
       {
         variant: 'service',
@@ -82,7 +82,7 @@ export const badgeVariants = cva(
         variant: 'service',
         appearance: 'soft',
         class:
-          'border-gold-200 bg-gold-100 text-gold-900 dark:border-gold-700 dark:bg-gold-900 dark:text-gold-100',
+          'border-content-service-badge-border bg-content-service-badge text-content-service-badge-foreground',
       },
       {
         variant: 'tribe',

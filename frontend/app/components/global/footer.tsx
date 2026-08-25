@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import LogoMark from '@/app/components/shared/logo-mark'
 import ResolvedLink from '@/app/components/shared/resolved-link'
 import { cn } from '@/lib/utils'
 import CommunityBgImg from '@/public/images/community-bg.png'
 import CommunityEagleImg from '@/public/images/community-eagle.png'
-import LogoMark from '@/public/logo-mark.svg'
 import { sanityFetch } from '@/sanity/lib/live'
 import { navigationQuery } from '@/sanity/lib/queries'
 
@@ -31,15 +31,15 @@ export default async function Footer() {
       <BuiltBy />
       <div className="container relative z-10">
         <div className="rounded-t-2xl bg-background-subtle">
-          <div className="flex flex-col gap-16 px-8 py-12">
-            <div className="flex flex-col items-start justify-between gap-24 md:flex-row">
+          <div className="flex flex-col gap-10 px-4 py-8 md:gap-16 md:px-8 md:py-12">
+            <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:gap-24">
               <div className="flex">
                 <Link
                   className={cn('flex flex-1 items-center gap-3', FOOTER_LINK_CLASSES)}
                   href="/"
                   aria-label="Resilient Relatives Home"
                 >
-                  <Image src={LogoMark} alt="Resilient Relatives logo" className="size-12" />
+                  <LogoMark className="size-12" />
                   <span className="text-body font-medium leading-none">
                     Resilient
                     <br />
@@ -48,7 +48,7 @@ export default async function Footer() {
                 </Link>
               </div>
 
-              <nav className="grid flex-1 grid-cols-3 gap-8">
+              <nav className="grid w-full flex-1 grid-cols-1 gap-8 md:grid-cols-3">
                 {/* Resources Section */}
                 {resourcesDropdown?.dropdownItems && (
                   <div className="flex flex-col gap-4">
@@ -114,7 +114,7 @@ function BuiltBy() {
         <Image
           src={CommunityBgImg}
           alt="Community background"
-          className="min-h-[500px] object-cover"
+          className="min-h-[280px] object-cover md:min-h-[500px]"
         />
       </div>
       <div className="container relative z-10 flex flex-col items-center gap-4 py-16 md:py-20 lg:py-24 xl:py-28">
@@ -122,7 +122,7 @@ function BuiltBy() {
           <Image src={CommunityEagleImg} alt="Community eagle" />
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-center text-3xl">Built by and for Native communities.</h2>
+          <h2 className="text-center text-2xl md:text-3xl">Built by and for Native communities.</h2>
           <p className="text-center">For families, advocates, and future generations.</p>
         </div>
       </div>

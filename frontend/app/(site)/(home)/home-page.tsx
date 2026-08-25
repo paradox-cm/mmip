@@ -1,38 +1,36 @@
+import SealAnimation from '@/app/components/shared/seal-animation'
 import PostCard from '@/app/components/shared/card/post-card'
 import Categories from '@/app/components/shared/categories'
 import HeroSearch from '@/app/components/shared/hero-search'
-import SanityImage from '@/app/components/shared/sanity-image'
 import Section from '@/app/components/shared/section'
 import Topics from '@/app/components/shared/topics'
+import { loadSealMarkup } from '@/lib/seal-markup'
 import { cn } from '@/lib/utils'
 import { GetHomepageQueryResult } from '@/sanity.types'
 
 export default async function HomePage({ data }: { data: GetHomepageQueryResult }) {
   const { hero, featuredPosts, featuredServices } = data ?? {}
+  const sealMarkup = await loadSealMarkup()
   return (
     <>
       {hero && (
         <Section className="border-b lg:py-28">
           <div className="container">
-            <div className="flex flex-col items-center justify-between gap-32 md:flex-row">
-              <div className="flex flex-col gap-16">
-                <div className="flex flex-col gap-6">
-                  <h1 className="display max-w-[16ch] text-foreground-heading">{hero.heading}</h1>
-                  <p className="lead max-w-[50ch]">{hero.subheading}</p>
-                </div>
-                <div>
-                  <HeroSearch />
-                </div>
+            <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-[minmax(0,1fr)_16rem] md:items-center md:gap-x-32 md:gap-y-6">
+              <h1 className="display max-w-[16ch] text-foreground-heading md:col-start-1 md:row-start-1">
+                {hero.heading}
+              </h1>
+              <div className="w-[180px] justify-self-start md:col-start-2 md:row-span-3 md:row-start-1 md:w-64 md:justify-self-auto">
+                <SealAnimation
+                  svgMarkup={sealMarkup}
+                  showCaption={false}
+                  className="max-w-none items-start gap-0"
+                />
               </div>
-              {hero.image && (
-                <div className="shrink-0">
-                  <SanityImage
-                    source={hero.image}
-                    alt={hero.image.alt}
-                    className="w-64 max-w-full"
-                  />
-                </div>
-              )}
+              <p className="lead max-w-[50ch] md:col-start-1 md:row-start-2">{hero.subheading}</p>
+              <div className="md:col-start-1 md:row-start-3 md:mt-10">
+                <HeroSearch />
+              </div>
             </div>
           </div>
         </Section>

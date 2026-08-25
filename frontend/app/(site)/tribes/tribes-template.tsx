@@ -162,7 +162,7 @@ function TribesContent({ data }: { data: AllTribesQueryResult }) {
               <div
                 className={cn(
                   viewMode === 'grid'
-                    ? 'grid gap-6 md:grid-cols-2 lg:grid-cols-3'
+                    ? 'grid min-w-0 gap-6 md:grid-cols-2 lg:grid-cols-3'
                     : 'flex flex-col gap-4',
                 )}
               >

@@ -7,7 +7,10 @@ export default {
   content: ['./app/**/*.{ts,tsx}', './sanity/**/*.{ts,tsx}', './lib/**/*.{ts,tsx}'],
   darkMode: [
     'variant',
-    ['&:where(.dark, .dark *)', '&:where([data-color-scheme="dark"], [data-color-scheme="dark"] *)'],
+    [
+      '&:where(.dark, .dark *)',
+      '&:where([data-color-scheme="dark"], [data-color-scheme="dark"] *)',
+    ],
   ],
   theme: {
     container: {
@@ -126,6 +129,40 @@ export default {
           DEFAULT: 'oklch(var(--link) / <alpha-value>)',
           hover: 'oklch(var(--link-hover) / <alpha-value>)',
         },
+        content: {
+          article: {
+            DEFAULT: 'oklch(var(--content-article-surface) / <alpha-value>)',
+            border: 'oklch(var(--content-article-border) / <alpha-value>)',
+            'border-hover': 'oklch(var(--content-article-border-hover) / <alpha-value>)',
+            badge: 'oklch(var(--content-article-badge-surface) / <alpha-value>)',
+            'badge-border': 'oklch(var(--content-article-badge-border) / <alpha-value>)',
+            'badge-foreground': 'oklch(var(--content-article-badge-foreground) / <alpha-value>)',
+          },
+          guide: {
+            DEFAULT: 'oklch(var(--content-guide-surface) / <alpha-value>)',
+            border: 'oklch(var(--content-guide-border) / <alpha-value>)',
+            'border-hover': 'oklch(var(--content-guide-border-hover) / <alpha-value>)',
+            badge: 'oklch(var(--content-guide-badge-surface) / <alpha-value>)',
+            'badge-border': 'oklch(var(--content-guide-badge-border) / <alpha-value>)',
+            'badge-foreground': 'oklch(var(--content-guide-badge-foreground) / <alpha-value>)',
+          },
+          tool: {
+            DEFAULT: 'oklch(var(--content-tool-surface) / <alpha-value>)',
+            border: 'oklch(var(--content-tool-border) / <alpha-value>)',
+            'border-hover': 'oklch(var(--content-tool-border-hover) / <alpha-value>)',
+            badge: 'oklch(var(--content-tool-badge-surface) / <alpha-value>)',
+            'badge-border': 'oklch(var(--content-tool-badge-border) / <alpha-value>)',
+            'badge-foreground': 'oklch(var(--content-tool-badge-foreground) / <alpha-value>)',
+          },
+          service: {
+            DEFAULT: 'oklch(var(--content-service-surface) / <alpha-value>)',
+            border: 'oklch(var(--content-service-border) / <alpha-value>)',
+            'border-hover': 'oklch(var(--content-service-border-hover) / <alpha-value>)',
+            badge: 'oklch(var(--content-service-badge-surface) / <alpha-value>)',
+            'badge-border': 'oklch(var(--content-service-badge-border) / <alpha-value>)',
+            'badge-foreground': 'oklch(var(--content-service-badge-foreground) / <alpha-value>)',
+          },
+        },
         // Feedback
         success: {
           DEFAULT: 'oklch(var(--success) / <alpha-value>)',
@@ -155,6 +192,26 @@ export default {
         // Icons
         icon: {
           DEFAULT: 'oklch(var(--icon) / <alpha-value>)',
+        },
+        brand: {
+          emphasis: 'oklch(var(--brand-emphasis) / <alpha-value>)',
+          mark: 'oklch(var(--brand-mark) / <alpha-value>)',
+          ink: 'oklch(var(--color-brand-ink) / <alpha-value>)',
+          'ink-on-dark': 'oklch(var(--color-brand-ink-on-dark) / <alpha-value>)',
+        },
+        brandInk: {
+          DEFAULT: 'oklch(var(--color-brand-ink-500) / <alpha-value>)',
+          50: 'oklch(var(--color-brand-ink-50) / <alpha-value>)',
+          100: 'oklch(var(--color-brand-ink-100) / <alpha-value>)',
+          200: 'oklch(var(--color-brand-ink-200) / <alpha-value>)',
+          300: 'oklch(var(--color-brand-ink-300) / <alpha-value>)',
+          400: 'oklch(var(--color-brand-ink-400) / <alpha-value>)',
+          500: 'oklch(var(--color-brand-ink-500) / <alpha-value>)',
+          600: 'oklch(var(--color-brand-ink-600) / <alpha-value>)',
+          700: 'oklch(var(--color-brand-ink-700) / <alpha-value>)',
+          800: 'oklch(var(--color-brand-ink-800) / <alpha-value>)',
+          900: 'oklch(var(--color-brand-ink-900) / <alpha-value>)',
+          950: 'oklch(var(--color-brand-ink-950) / <alpha-value>)',
         },
         // Focus Rings
         ring: {
@@ -313,14 +370,14 @@ export default {
             '--tw-prose-headings': 'oklch(var(--foreground-heading))',
             '--tw-prose-lead': 'oklch(var(--foreground-subtle))',
             '--tw-prose-links': 'oklch(var(--link))',
-            '--tw-prose-bold': 'oklch(var(--foreground-heading))',
+            '--tw-prose-bold': 'oklch(var(--foreground))',
             '--tw-prose-counters': 'oklch(var(--foreground-muted))',
             '--tw-prose-bullets': 'oklch(var(--border-strong))',
             '--tw-prose-hr': 'oklch(var(--border))',
-            '--tw-prose-quotes': 'oklch(var(--foreground-heading))',
+            '--tw-prose-quotes': 'oklch(var(--foreground))',
             '--tw-prose-quote-borders': 'oklch(var(--border-strong))',
             '--tw-prose-captions': 'oklch(var(--foreground-muted))',
-            '--tw-prose-code': 'oklch(var(--foreground-heading))',
+            '--tw-prose-code': 'oklch(var(--foreground))',
             '--tw-prose-pre-code': 'oklch(var(--foreground))',
             '--tw-prose-pre-bg': 'oklch(var(--background-emphasis))',
             '--tw-prose-th-borders': 'oklch(var(--border-strong))',

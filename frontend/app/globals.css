@@ -86,12 +86,34 @@
   --color-twilight-200: 0.86 0.035 225; /* oklch(0.86 0.035 225) */
   --color-twilight-300: 0.78 0.04 225; /* oklch(0.78 0.04 225) */
   --color-twilight-400: 0.67 0.04 225; /* oklch(0.67 0.04 225) */
-  --color-twilight-500: 0.60 0.045 225; /* oklch(0.60 0.045 225) */
+  --color-twilight-500: 0.6 0.045 225; /* oklch(0.60 0.045 225) */
   --color-twilight-600: 0.48 0.045 225; /* oklch(0.48 0.045 225) */
   --color-twilight-700: 0.39 0.045 225; /* oklch(0.39 0.045 225) */
   --color-twilight-800: 0.29 0.045 225; /* oklch(0.29 0.045 225) */
   --color-twilight-900: 0.19 0.025 225; /* oklch(0.19 0.025 225) */
   --color-twilight-950: 0.11 0.02 225; /* oklch(0.11 0.02 225) */
+
+  /* Brand ink ramp (hue 260). 900 = logo / headline ink (#1C335B). */
+  --color-brand-ink-50: 0.96 0.01 260;
+  --color-brand-ink-100: 0.93 0.015 260;
+  --color-brand-ink-200: 0.88 0.025 260;
+  --color-brand-ink-300: 0.82 0.035 260;
+  /* Text-safe lift on dark canvases (~#A7B8D5): 6.1:1 on canvas, 5.2:1 on cards. */
+  --color-brand-ink-400: 0.78 0.045 260;
+  --color-brand-ink-500: 0.65 0.05 260;
+  --color-brand-ink-600: 0.55 0.055 260;
+  --color-brand-ink-700: 0.45 0.06 260;
+  --color-brand-ink-800: 0.37 0.065 260;
+  --color-brand-ink-900: 0.29 0.065 260;
+  --color-brand-ink-950: 0.2 0.05 260;
+
+  --color-brand-ink: var(--color-brand-ink-900);
+  --color-brand-ink-on-dark: var(--color-brand-ink-400);
+
+  /* Seal artwork. Light values match SEAL-Lg.svg exactly; dark remaps live
+     with the semantic theme aliases below. */
+  --brand-seal-wordmark: 0.4518 0.1042 30.3;
+  --brand-seal-mark: 0.5894 0.1244 74.4;
 
   /* Feedback (pastels/muted) */
   --color-success-300: 0.84 0.04 145; /* oklch(0.84 0.04 145) */
@@ -149,12 +171,14 @@
   /* ========================================================= */
   --background: var(--color-sand-50);
   --background-subtle: var(--color-sand-100);
-  --background-emphasis: var(--color-sand-200);
+  --background-emphasis: var(--color-sand-100);
   /* Complete color (not an L C H triplet) — consumed directly, not via oklch(). */
   --background-overlay: oklch(0.07 0.008 70 / 0.6);
 
   --foreground: var(--color-twilight-950);
-  --foreground-heading: var(--color-twilight-900);
+  /* One source of truth for blue headings, the logo, and category icons. */
+  --brand-emphasis: var(--color-brand-ink-900);
+  --foreground-heading: var(--brand-emphasis);
   --foreground-accent: var(--color-gold-500);
   --foreground-subtle: var(--color-zinc-700);
   --foreground-muted: var(--color-zinc-600);
@@ -207,17 +231,18 @@
   /* ========================================================= */
   --icon: var(--color-twilight-900);
 
+  /* Kept as a compatibility alias for catalog references. */
+  --brand-mark: var(--brand-emphasis);
+
   /* ========================================================= */
   /* Interactive Colors (States & Buttons)                     */
   /* ========================================================= */
-  --primary: var(--color-gold-500);
-  /* Gold sits at L 0.62; white ink on it fails AA, twilight ink clears 5:1.
-     With dark ink the state ladder has to brighten rather than deepen, or
-     hover and press lose contrast against their own label. Same direction as
-     dark, so engaging gold always reads the same way. */
-  --primary-hover: var(--color-gold-400);
-  --primary-active: var(--color-gold-300);
-  --primary-foreground: var(--color-twilight-950);
+  --primary: var(--color-gold-900);
+  /* gold-900 carries enough weight for white ink to clear AA (~5.3:1). Hover and
+     press deepen so label contrast never inverts on a brightening fill. */
+  --primary-hover: 0.25 0.085 83;
+  --primary-active: 0.22 0.08 83;
+  --primary-foreground: var(--color-white);
 
   --secondary: var(--color-twilight-900);
   --secondary-hover: var(--color-twilight-800);
@@ -257,43 +282,80 @@
   /* ========================================================= */
   --ring-focus: var(--color-gold-500);
   --ring-error: var(--color-error-500);
+
+  /* ========================================================= */
+  /* Content-type tints (labels — not new brands)              */
+  /* ========================================================= */
+  --content-article-surface: var(--color-twilight-50);
+  --content-article-border: var(--color-twilight-200);
+  --content-article-border-hover: var(--color-twilight-500);
+  --content-article-badge-surface: var(--color-twilight-100);
+  --content-article-badge-border: var(--color-twilight-200);
+  --content-article-badge-foreground: var(--color-twilight-900);
+
+  --content-guide-surface: var(--color-terracota-50);
+  --content-guide-border: var(--color-terracota-200);
+  --content-guide-border-hover: var(--color-terracota-500);
+  --content-guide-badge-surface: var(--color-terracota-100);
+  --content-guide-badge-border: var(--color-terracota-200);
+  --content-guide-badge-foreground: var(--color-terracota-900);
+
+  --content-tool-surface: var(--color-sage-50);
+  --content-tool-border: var(--color-sage-200);
+  --content-tool-border-hover: var(--color-sage-500);
+  --content-tool-badge-surface: var(--color-sage-100);
+  --content-tool-badge-border: var(--color-sage-200);
+  --content-tool-badge-foreground: var(--color-sage-900);
+
+  --content-service-surface: var(--color-gold-50);
+  --content-service-border: var(--color-gold-200);
+  --content-service-border-hover: var(--color-gold-500);
+  --content-service-badge-surface: var(--color-gold-100);
+  --content-service-badge-border: var(--color-gold-200);
+  --content-service-badge-foreground: var(--color-gold-900);
 }
 
 /* =========================================================================
  * Dark appearance
- * Remaps the same semantic aliases onto the same OKLCH scales. The raw
- * scales above are untouched; sand carries the surfaces so dark stays warm.
+ * Remaps semantic aliases onto the sand axis (hue 70). Primitives stay
+ * honest — content-type tints use --content-* semantics below.
+ * Canvas: #26231f. Surfaces, accents, and borders share hue 75 with the canvas.
  * ========================================================================= */
 .dark,
 [data-color-scheme='dark'] {
   color-scheme: dark;
 
-  --background: var(--color-sand-950);
-  --background-subtle: var(--color-sand-900);
-  --background-emphasis: var(--color-sand-800);
-  --background-overlay: oklch(0.03 0.005 70 / 0.75);
+  --brand-emphasis: var(--color-brand-ink-400);
+  --foreground-heading: var(--brand-emphasis);
+  --brand-mark: var(--brand-emphasis);
+  --brand-seal-wordmark: 0.79 0.06 25;
+  --brand-seal-mark: var(--color-gold-300);
+
+  --background: 0.258 0.009 75; /* #26231f */
+  --background-subtle: 0.213 0.009 75;
+  --background-emphasis: 0.285 0.01 75;
+  --background-overlay: oklch(0.07 0.008 75 / 0.72);
 
   --foreground: var(--color-sand-50);
-  --foreground-heading: var(--color-white);
   --foreground-accent: var(--color-gold-400);
   --foreground-subtle: var(--color-sand-300);
   --foreground-muted: var(--color-sand-400);
 
-  --surface: var(--color-sand-800);
-  --surface-hover: var(--color-sand-700);
+  --surface: 0.305 0.01 75;
+  --surface-hover: 0.345 0.011 75;
   --surface-foreground: var(--foreground);
 
-  --popover: var(--color-sand-900);
+  --popover: 0.305 0.01 75;
   --popover-foreground: var(--foreground);
 
-  --card: var(--color-sand-900);
-  --card-hover: var(--color-sand-800);
+  --card: 0.305 0.01 75;
+  --card-hover: 0.345 0.011 75;
   --card-foreground: var(--foreground);
 
-  --input: var(--color-sand-900);
+  --input: 0.213 0.009 75;
 
-  --overlay-hover: 1 0 0 / 0.06;
-  --overlay-press: 1 0 0 / 0.12;
+  --overlay-hover: 1 0 0 / 0.08;
+  --overlay-press: 1 0 0 / 0.14;
 
   --icon: var(--color-sand-100);
 
@@ -305,27 +367,56 @@
   --secondary: var(--color-sand-100);
   --secondary-hover: var(--color-white);
   --secondary-active: var(--color-sand-300);
-  --secondary-foreground: var(--color-twilight-950);
+  --secondary-foreground: var(--color-sand-950);
 
-  --accent: var(--color-sand-800);
-  --accent-hover: var(--color-sand-700);
-  --accent-active: var(--color-sand-600);
+  --accent: 0.318 0.011 75;
+  --accent-hover: 0.345 0.011 75;
+  --accent-active: 0.375 0.012 75;
   --accent-foreground: var(--foreground);
 
-  --destructive-strong: var(--color-terracota-300);
+  --destructive-strong: 0.79 0.06 25;
 
-  --muted: var(--color-sand-800);
+  --muted: 0.295 0.01 75;
   --muted-foreground: var(--foreground-muted);
 
   --link: var(--color-gold-300);
   --link-hover: var(--color-gold-200);
 
-  --border: var(--color-sand-800);
-  --border-strong: var(--color-sand-500);
-  --border-input: var(--color-sand-500);
+  --border: 0.37 0.01 75;
+  --border-strong: 0.46 0.012 75;
+  --border-input: 0.42 0.011 75;
 
   --ring-focus: var(--color-gold-400);
   --ring-error: var(--color-error-400);
+
+  /* Content-type dark tints — baked for legibility on #26231f canvas. */
+  --content-article-surface: 0.33 0.022 225;
+  --content-article-border: 0.48 0.032 225;
+  --content-article-border-hover: 0.64 0.038 225;
+  --content-article-badge-surface: 0.42 0.028 225;
+  --content-article-badge-border: 0.52 0.03 225;
+  --content-article-badge-foreground: 0.88 0.025 225;
+
+  --content-guide-surface: 0.33 0.024 25;
+  --content-guide-border: 0.52 0.038 25;
+  --content-guide-border-hover: 0.64 0.052 25;
+  --content-guide-badge-surface: 0.42 0.032 25;
+  --content-guide-badge-border: 0.52 0.036 25;
+  --content-guide-badge-foreground: 0.9 0.04 25;
+
+  --content-tool-surface: 0.33 0.019 135;
+  --content-tool-border: 0.48 0.024 135;
+  --content-tool-border-hover: 0.58 0.028 135;
+  --content-tool-badge-surface: 0.42 0.02 135;
+  --content-tool-badge-border: 0.52 0.022 135;
+  --content-tool-badge-foreground: 0.88 0.022 135;
+
+  --content-service-surface: 0.32 0.028 83;
+  --content-service-border: 0.48 0.065 83;
+  --content-service-border-hover: var(--color-gold-400);
+  --content-service-badge-surface: 0.42 0.055 83;
+  --content-service-badge-border: 0.52 0.06 83;
+  --content-service-badge-foreground: 0.9 0.05 83;
 }
 
 @layer base {
@@ -376,29 +467,102 @@
   h4,
   h5,
   h6 {
-    @apply scroll-mt-36 font-heading font-medium leading-normal;
+    @apply scroll-mt-36 font-heading font-medium leading-normal text-foreground-heading;
   }
 
-  /* Named roles below resolve to the same values these rules always used. */
+  /* Mobile-first type: smaller defaults, current desktop sizes from md up. */
   .display {
-    @apply text-display md:text-6xl md:leading-heading;
+    @apply text-4xl leading-heading text-foreground-heading md:text-6xl md:leading-heading;
   }
 
   h1 {
-    @apply text-h1 md:text-5xl;
+    @apply text-3xl leading-heading md:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl leading-heading md:text-h2;
+  }
+
+  h3 {
+    @apply text-xl leading-snug md:text-h3;
   }
 
   .lead {
-    @apply text-xl leading-body;
+    @apply text-lg leading-body md:text-xl;
   }
 
   p {
-    @apply text-body;
+    @apply text-base leading-body md:text-body;
   }
 }
 
 @layer components {
   .container {
     @apply w-full max-w-screen-xl;
+  }
+
+  .logo-mark {
+    @apply inline-block shrink-0 bg-brand-emphasis transition-colors duration-fast ease-standard;
+    mask-image: url('/logo-mark.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: url('/logo-mark.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+
+  .taxonomy-icon {
+    @apply inline-block shrink-0 bg-brand-emphasis transition-colors duration-fast ease-standard;
+    mask-image: var(--taxonomy-icon-source);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: var(--taxonomy-icon-source);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+
+  .brand-artwork img {
+    @apply transition-[filter] duration-fast ease-standard;
+  }
+
+  /* CMS-provided artwork can still arrive as a fixed-color image. Local logo
+     and category icons use CSS masks above, so they resolve from the shared token. */
+  :is(.dark, [data-color-scheme='dark']) .brand-artwork img {
+    filter: brightness(2.4) contrast(0.92);
+  }
+}
+
+/* Named type utilities (text-h1, text-body, …) otherwise ignore the element
+   scale above. Cap them below md so page titles and body copy shrink; md+
+   keeps the token sizes unchanged. */
+@media (max-width: 767px) {
+  .display,
+  .text-display {
+    font-size: 2.25rem;
+    line-height: 1.125;
+  }
+
+  .text-h1 {
+    font-size: 1.875rem;
+    line-height: 1.125;
+  }
+
+  .text-h2 {
+    font-size: 1.5rem;
+    line-height: 1.125;
+  }
+
+  .text-h3 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p.text-body {
+    font-size: 1rem;
+    line-height: 1.414;
   }
 }

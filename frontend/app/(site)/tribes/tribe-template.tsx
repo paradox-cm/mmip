@@ -36,9 +36,9 @@ function TribeHeader({
   coverImage,
 }: Pick<NonNullable<GetTribeQueryResult>, 'name' | 'shortDescription' | 'region' | 'coverImage'>) {
   return (
-    <div className="flex flex-col gap-16 md:flex-row md:items-center">
+    <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
       <div className="flex w-full flex-[2] flex-col gap-6">
-        <div className="flex flex-row items-center gap-1">
+        <div className="flex flex-row flex-wrap items-center gap-1">
           <Link href="/tribes" className="rounded-md">
             <Badge variant="tribe" className="capitalize">
               Tribe
@@ -70,7 +70,7 @@ function TribeBody({
   contactInfo,
 }: Pick<NonNullable<GetTribeQueryResult>, 'description' | 'contactInfo'>) {
   return (
-    <div className="flex flex-col gap-16 md:flex-row">
+    <div className="flex flex-col-reverse gap-8 md:flex-row md:gap-16">
       <aside className="flex-1">
         <div className="flex max-w-80 flex-col gap-6 md:sticky md:top-36 lg:top-40">
           {/* Contact Information */}

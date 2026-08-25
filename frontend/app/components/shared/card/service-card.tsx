@@ -24,22 +24,23 @@ export default function ServiceCard({ className, layout = 'grid', service }: Pro
     <Link
       aria-label={service.name}
       href={`/services/${service.slug}`}
-      className={cn('group block rounded-xl', CARD_INTERACTION)}
+      className={cn('group block min-w-0 rounded-xl', CARD_INTERACTION)}
     >
-      <article className={cn('flex size-full', layout === 'list' && 'w-full', className)}>
+      <article className={cn('flex size-full min-w-0', layout === 'list' && 'w-full', className)}>
         <Tile
           className={cn(
-            'flex flex-1',
+            'flex min-w-0 flex-1',
             layout === 'grid'
               ? 'flex-col gap-8'
               : 'w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between',
             className,
           )}
         >
-          <div className="flex grow flex-col gap-2">
-            <h3 className="font-sans text-lg font-medium">{service.name}</h3>
+          <div className="flex min-w-0 grow flex-col gap-2">
+            <h3 className="break-words font-sans text-lg font-medium">{service.name}</h3>
             {layout === 'grid' && service.shortDescription && (
               <CustomPortableText
+                className="min-w-0"
                 paragraphClassName="line-clamp-3 text-sm text-foreground-subtle"
                 value={service.shortDescription as PortableTextBlock[]}
               />
@@ -56,8 +57,8 @@ export default function ServiceCard({ className, layout = 'grid', service }: Pro
 
           <div
             className={cn(
-              'flex flex-row items-center',
-              layout === 'grid' ? 'justify-between' : 'justify-between gap-4 sm:justify-end',
+              'flex min-w-0 flex-row flex-wrap items-center',
+              layout === 'grid' ? 'justify-between gap-2' : 'justify-between gap-4 sm:justify-end',
             )}
           >
             {layout === 'grid' && service.contactInfo?.city && (

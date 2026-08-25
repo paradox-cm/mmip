@@ -1,8 +1,10 @@
 import Link from 'next/link'
 
 import SanityImage from '@/app/components/shared/sanity-image'
+import TaxonomyIcon from '@/app/components/shared/taxonomy-icon'
 import Tile from '@/app/components/ui/tile'
 import { CARD_INTERACTION } from '@/lib/constants'
+import { getTaxonomyIconSrc } from '@/lib/taxonomy-icons'
 import { cn } from '@/lib/utils'
 import { fetchAllPosts, fetchTopics } from '@/sanity/lib/fetch'
 
@@ -47,6 +49,8 @@ export default async function Topics() {
       <h2 className="mb-6 text-h3">Browse by topic</h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         {topicsWithPosts.map(topic => {
+          const iconSrc = getTaxonomyIconSrc('topic', topic.slug, topic.name)
+
           return (
             <Link
               key={topic._id}
@@ -54,16 +58,22 @@ export default async function Topics() {
               className={cn('group block rounded-xl', CARD_INTERACTION)}
             >
               <Tile className="flex flex-col gap-2">
-                {topic.image && topic.image.metadata && (
-                  <div className="relative flex items-center justify-center py-6">
-                    <SanityImage
-                      source={topic.image}
-                      alt={topic.image?.alt}
-                      fill={false}
-                      sizes="100vw"
-                    />
-                  </div>
-                )}
+                <div className="flex h-24 items-center justify-center">
+                  {iconSrc ? (
+                    <TaxonomyIcon kind="topic" slug={topic.slug} name={topic.name} />
+                  ) : (
+                    topic.image &&
+                    topic.image.metadata && (
+                      <SanityImage
+                        source={topic.image}
+                        alt={topic.image?.alt}
+                        fill={false}
+                        sizes="100vw"
+                        className="mx-auto size-16 object-contain"
+                      />
+                    )
+                  )}
+                </div>
                 <div className="flex flex-row justify-center">
                   <div className="text-center">
                     <p className="text-body font-medium">{topic.name}</p>

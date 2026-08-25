@@ -1,0 +1,15 @@
+[    9279ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_compiled_react-dom_71305ac2._.js:14537
+[   22491ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/d2dc3f7e10d0fe5961a81f538a86bbe0239536fe-244x251.svg?h=251&w=244" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   22766ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/1b609a46066fa97a7b3f17d9f73b761f00ea919d-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   22941ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/5b3d51893a6f7f58d33028ba74188b0980e71c59-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   22952ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/dccfb075ebad5c0567d00705c20430f93f203d6a-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   38988ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[   40197ms] [INFO] Sanity is live with automatic revalidation of published content @ http://localhost:3000/_next/static/chunks/node_modules__pnpm_41366cb1._.js:18951
+[  154404ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  157819ms] [LOG] [Fast Refresh] done in 4742ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  158366ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  158718ms] [LOG] [Fast Refresh] done in 453ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809

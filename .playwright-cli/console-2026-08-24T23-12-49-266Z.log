@@ -1,0 +1,86 @@
+[    7464ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_compiled_react-dom_71305ac2._.js:14537
+[   26165ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/d2dc3f7e10d0fe5961a81f538a86bbe0239536fe-244x251.svg?h=251&w=244" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   26691ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/1b609a46066fa97a7b3f17d9f73b761f00ea919d-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   26892ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/5b3d51893a6f7f58d33028ba74188b0980e71c59-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   27003ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/dccfb075ebad5c0567d00705c20430f93f203d6a-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[   35186ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[   35293ms] [INFO] Sanity is live with automatic revalidation of published content @ http://localhost:3000/_next/static/chunks/node_modules__pnpm_41366cb1._.js:18951
+[   44267ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[   44433ms] [LOG] [Fast Refresh] done in 273ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[   54399ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[   54579ms] [LOG] [Fast Refresh] done in 156ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[   77486ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[   77668ms] [LOG] [Fast Refresh] done in 1667ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  117966ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  118087ms] [ERROR] ./frontend/app/components/ui/navigation-menu.tsx:101:123
+Parsing ecmascript source code failed
+   99 |         'left-0 top-0 w-full p-2 pr-2.5 md:absolute md:w-auto',
+  100 |         'data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in-0 data-[motion^=to-]:fade-out-0 data-[motion=from-end]:slide-in-from-right-2 data-[motion=from-start]:slide-in-from-left-2 data-[motion=to-end]:slide-out-to-right-2 data-[motion=to-start]:slide-out-to-left-2',
+> 101 |         'duration-fast ease-standard [animation-duration:var(--motion-fast)]', group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-lg group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:bg-popover',
+      |                                                                                                                           ^
+  102 |         className,
+  103 |       )}
+  104 |       {...props}
+
+Expected ',', got ':'
+
+Import trace:
+  Server Component:
+    ./frontend/app/components/ui/navigation-menu.tsx
+    ./frontend/app/components/global/header/navigation.tsx
+    ./frontend/app/components/global/header/index.tsx
+    ./frontend/app/(site)/layout.tsx @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:2359
+[  118200ms] [ERROR] ./frontend/app/components/ui/navigation-menu.tsx:101:123
+Parsing ecmascript source code failed
+   99 |         'left-0 top-0 w-full p-2 pr-2.5 md:absolute md:w-auto',
+  100 |         'data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in-0 data-[motion^=to-]:fade-out-0 data-[motion=from-end]:slide-in-from-right-2 data-[motion=from-start]:slide-in-from-left-2 data-[motion=to-end]:slide-out-to-right-2 data-[motion=to-start]:slide-out-to-left-2',
+> 101 |         'duration-fast ease-standard [animation-duration:var(--motion-fast)]', group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-lg group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:bg-popover',
+      |                                                                                                                           ^
+  102 |         className,
+  103 |       )}
+  104 |       {...props}
+
+Expected ',', got ':'
+
+Import trace:
+  Server Component:
+    ./frontend/app/components/ui/navigation-menu.tsx
+    ./frontend/app/components/global/header/navigation.tsx
+    ./frontend/app/components/global/header/index.tsx
+    ./frontend/app/(site)/layout.tsx @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:2359
+[  119142ms] [LOG] {file: Object} @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_compiled_next-devtools_index_43c3d7d0.js:16058
+[  127632ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  140718ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  142316ms] [LOG] [Fast Refresh] done in 1761ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  142731ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  144200ms] [LOG] [Fast Refresh] done in 1836ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  158595ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  158694ms] [LOG] [Fast Refresh] done in 183ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  165450ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_compiled_react-dom_71305ac2._.js:14537
+[  182220ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/d2dc3f7e10d0fe5961a81f538a86bbe0239536fe-244x251.svg?h=251&w=244" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  182336ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/1b609a46066fa97a7b3f17d9f73b761f00ea919d-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  182399ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/5b3d51893a6f7f58d33028ba74188b0980e71c59-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  182403ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/dccfb075ebad5c0567d00705c20430f93f203d6a-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  187017ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[  188130ms] [INFO] Sanity is live with automatic revalidation of published content @ http://localhost:3000/_next/static/chunks/node_modules__pnpm_41366cb1._.js:18951
+[  296616ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5949
+[  306373ms] [LOG] [Fast Refresh] done in 9813ms @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_client_ec174711._.js:5809
+[  322172ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_compiled_react-dom_71305ac2._.js:14537
+[  337823ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/d2dc3f7e10d0fe5961a81f538a86bbe0239536fe-244x251.svg?h=251&w=244" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  338520ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/1b609a46066fa97a7b3f17d9f73b761f00ea919d-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  338646ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/5b3d51893a6f7f58d33028ba74188b0980e71c59-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  338647ms] [WARNING] Image with src "https://cdn.sanity.io/images/t4dq0r7i/production/dccfb075ebad5c0567d00705c20430f93f203d6a-900x600.png?w=900&h=600&fit=max&auto=format" is using quality "80" which is not configured in images.qualities. This config will be required starting in Next.js 16.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities @ http://localhost:3000/_next/static/chunks/4cb28_next_dist_3c1657bb._.js:968
+[  342547ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[  343099ms] [INFO] Sanity is live with automatic revalidation of published content @ http://localhost:3000/_next/static/chunks/node_modules__pnpm_41366cb1._.js:18951

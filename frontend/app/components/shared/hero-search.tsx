@@ -53,25 +53,30 @@ export default function HeroSearch({ onSearch, initialValue = '' }: HeroSearchPr
 
   return (
     <form onSubmit={handleSubmit} role="search" className="w-full max-w-2xl">
-      <div className="relative flex items-center gap-2">
+      <div className="relative flex flex-col gap-2 md:block">
         <label htmlFor="hero-search" className="sr-only">
           Search articles, guides, and tools
         </label>
-        <LuSearch
-          aria-hidden="true"
-          className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-foreground-heading"
-        />
-        <Input
-          id="hero-search"
-          type="search"
-          value={query}
-          onChange={handleInputChange}
-          placeholder="Search articles, guides, and tools..."
-          className="h-14 pl-12 pr-28 md:text-lg"
-        />
-        <div className="absolute right-2 top-1/2 -translate-y-1/2">
-          <Button type="submit">Search</Button>
+        <div className="relative">
+          <LuSearch
+            aria-hidden="true"
+            className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-foreground-heading"
+          />
+          <Input
+            id="hero-search"
+            type="search"
+            value={query}
+            onChange={handleInputChange}
+            placeholder="Search articles, guides, and tools..."
+            className="h-14 pl-12 pr-4 md:pr-28 md:text-lg"
+          />
         </div>
+        <Button
+          type="submit"
+          className="h-14 w-full md:absolute md:right-2 md:top-1/2 md:h-10 md:w-auto md:-translate-y-1/2"
+        >
+          Search
+        </Button>
       </div>
     </form>
   )

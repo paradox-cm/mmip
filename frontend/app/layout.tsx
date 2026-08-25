@@ -1,15 +1,14 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { draftMode } from 'next/headers'
 import { toPlainText, VisualEditing } from 'next-sanity'
 import { Toaster } from 'sonner'
 
 import { AppearanceProvider } from '@/app/components/global/appearance/appearance-provider'
 import { appearanceBootScript } from '@/app/components/global/appearance/config'
-import Footer from '@/app/components/global/footer'
-import Header from '@/app/components/global/header'
 import DraftModeToast from '@/app/components/shared/draft-mode-toast'
-import { SITE_NAME } from '@/lib/constants'
+import { BASE_URL, SITE_NAME } from '@/lib/constants'
 import { handleError } from '@/lib/handle-error'
+import { resolveSocialImage } from '@/lib/social-image'
 import { cn } from '@/lib/utils'
 import * as demo from '@/sanity/lib/demo'
 import { fetchSettings } from '@/sanity/lib/fetch'
@@ -21,6 +20,30 @@ import { HelveticaNowFont, RealHeadFont } from './fonts'
 import './globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
+export const viewport: Viewport = {
+  colorScheme: 'light dark',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FCF8F3' },
+    { media: '(prefers-color-scheme: dark)', color: '#26231F' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+}
+
+function resolveMetadataBase(value: string | undefined) {
+  for (const candidate of [value, BASE_URL]) {
+    if (!candidate) continue
+
+    try {
+      return new URL(candidate)
+    } catch {
+      // Try the next known base URL.
+    }
+  }
+
+  return undefined
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await fetchSettings()
 
@@ -29,14 +52,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const ogImage = resolveOpenGraphImage(settings?.ogImage)
 
-  let metadataBase: URL | undefined = undefined
-  try {
-    metadataBase = settings?.ogImage?.metadataBase
-      ? new URL(settings.ogImage.metadataBase)
-      : undefined
-  } catch {
-    // ignore invalid URL
-  }
+  const metadataBase = resolveMetadataBase(settings?.ogImage?.metadataBase)
+  const socialImage = resolveSocialImage(ogImage)
 
   return {
     metadataBase,
@@ -50,15 +67,26 @@ export async function generateMetadata(): Promise<Metadata> {
     generator: 'Next.js',
     applicationName: SITE_NAME,
     publisher: SITE_NAME,
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: 'default',
+      title: SITE_NAME,
+    },
     manifest: `/manifest.webmanifest`,
     openGraph: {
       title: title,
       description: toPlainText(description),
       url: '/',
       siteName: SITE_NAME,
-      images: ogImage ? [ogImage] : [],
+      images: [socialImage],
       locale: 'en_US',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: toPlainText(description),
+      images: [socialImage.url],
     },
     alternates: {
       canonical: '/',
@@ -69,9 +97,9 @@ export async function generateMetadata(): Promise<Metadata> {
       nocache: false,
     },
     icons: {
-      icon: '/favicon.ico',
-      shortcut: '/favicon-16x16.png',
-      apple: '/apple-touch-icon.png',
+      icon: '/logo/logo.svg',
+      shortcut: '/logo/logo.svg',
+      apple: '/logo/apple-touch-icon.png',
     },
   }
 }
@@ -94,22 +122,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body>
         <AppearanceProvider>
-          <section className="min-h-screen pt-20">
-            {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
-            <Toaster />
-            {isDraftMode && (
-              <>
-                <DraftModeToast />
-                {/*  Enable Visual Editing, only to be rendered when Draft Mode is enabled */}
-                <VisualEditing />
-              </>
-            )}
-            {/* The <SanityLive> component is responsible for making all sanityFetch calls in your application live, so should always be rendered. */}
-            <SanityLive onError={handleError} />
-            <Header />
-            <main className="">{children}</main>
-            <Footer />
-          </section>
+          {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
+          <Toaster />
+          {isDraftMode && (
+            <>
+              <DraftModeToast />
+              {/*  Enable Visual Editing, only to be rendered when Draft Mode is enabled */}
+              <VisualEditing />
+            </>
+          )}
+          {/* The <SanityLive> component is responsible for making all sanityFetch calls in your application live, so should always be rendered. */}
+          <SanityLive onError={handleError} />
+          {children}
           {/* Command palette stays unwired; /search is the supported entry point. */}
           <SpeedInsights />
         </AppearanceProvider>

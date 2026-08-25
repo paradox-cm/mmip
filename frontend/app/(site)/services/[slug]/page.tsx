@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { toPlainText } from 'next-sanity'
 
 import { createServiceJsonLd, toJsonLdScript } from '@/lib/jsonld'
+import { resolveSocialImage } from '@/lib/social-image'
 import { fetchAllServices, fetchService, fetchSettings } from '@/sanity/lib/fetch'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
@@ -37,7 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     service.metadata?.metaDescription ||
     (service.shortDescription ? toPlainText(service.shortDescription) : undefined)
-  const ogImage = resolveOpenGraphImage(service.metadata?.ogImage ?? settings?.ogImage)
+  const socialImage = resolveSocialImage(
+    resolveOpenGraphImage(service.metadata?.ogImage),
+    resolveOpenGraphImage(settings?.ogImage),
+  )
   const hideSearchIndex = Boolean(service.metadata?.hideSearchIndex)
 
   return {
@@ -50,8 +54,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `/services/${service.slug}`,
-      images: ogImage ? [ogImage] : [],
+      images: [socialImage],
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [socialImage.url],
     },
     robots: {
       index: !hideSearchIndex,

@@ -57,9 +57,9 @@ function PostHeader({
   'title' | 'excerpt' | 'category' | 'topic' | 'postType' | 'authors' | 'date' | 'coverImage'
 >) {
   return (
-    <div className="flex flex-col gap-16 md:flex-row md:items-center">
+    <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
       <div className="flex w-full flex-[2] flex-col gap-6">
-        <div className="flex flex-row items-center gap-1">
+        <div className="flex flex-row flex-wrap items-center gap-1">
           <Link href={`/${pluralize(postType)}`} className="rounded-md">
             <Badge variant={postType} className="capitalize">
               {postType}
@@ -100,7 +100,7 @@ function PostBody({
   'body' | 'headings' | 'postType' | 'toolFile' | 'externalLink'
 >) {
   return (
-    <div className="flex flex-col gap-16 md:flex-row">
+    <div className="flex flex-col-reverse gap-8 md:flex-row md:gap-16">
       <aside className="flex-1">
         <div className="flex max-w-80 flex-col gap-6 md:sticky md:top-36 lg:top-40">
           {postType === 'tool' && toolFile !== null && (
@@ -141,7 +141,7 @@ async function MorePosts({ skip, limit }: { skip: string; limit: number }) {
 
   const postGrid =
     data.length > 0 ? (
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid min-w-0 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {data.map(post => (
           <PostCard key={post._id} post={post} />
         ))}
