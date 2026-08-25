@@ -1,6 +1,6 @@
 'use client'
 
-import { type PointerEvent, useCallback, useEffect, useRef, useState } from 'react'
+import { type PointerEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -14,7 +14,18 @@ const SEAL_CENTER_X = 122
 const SEAL_CENTER_Y = 125.5
 
 function setOrbitRotation(orbit: SVGGElement, angle: number) {
-  orbit.setAttribute('transform', `rotate(${angle} ${SEAL_CENTER_X} ${SEAL_CENTER_Y})`)
+  const radians = (angle * Math.PI) / 180
+  const cosine = Math.cos(radians)
+  const sine = Math.sin(radians)
+  const translateX = SEAL_CENTER_X - cosine * SEAL_CENTER_X + sine * SEAL_CENTER_Y
+  const translateY = SEAL_CENTER_Y - sine * SEAL_CENTER_X - cosine * SEAL_CENTER_Y
+  const matrix = [cosine, sine, -sine, cosine, translateX, translateY]
+    .map(value => Number(value.toFixed(8)))
+    .join(' ')
+
+  // Encode the pivot directly into the SVG matrix. This keeps the source
+  // viewBox center fixed regardless of responsive size or group bounds.
+  orbit.setAttribute('transform', `matrix(${matrix})`)
 }
 
 function usePrefersReducedMotion() {
@@ -42,8 +53,8 @@ export default function SealAnimation({
   showCaption?: boolean
 }) {
   const reducedMotion = usePrefersReducedMotion()
+  const svgInnerHtml = useMemo(() => ({ __html: svgMarkup }), [svgMarkup])
   const [cycle, setCycle] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(true)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const sealRef = useRef<HTMLSpanElement>(null)
   const hoveringRef = useRef(false)
@@ -161,7 +172,8 @@ export default function SealAnimation({
 
   const updatePlaying = useCallback((playing: boolean) => {
     isPlayingRef.current = playing
-    setIsPlaying(playing)
+    if (playing) buttonRef.current?.setAttribute('data-playing', 'true')
+    else buttonRef.current?.removeAttribute('data-playing')
   }, [])
 
   useEffect(() => {
@@ -217,7 +229,6 @@ export default function SealAnimation({
         type="button"
         aria-label="Replay the Resilient Relatives seal entry animation"
         disabled={reducedMotion}
-        data-playing={isPlaying || undefined}
         onClick={replay}
         onPointerEnter={handlePointerEnter}
         onPointerLeave={handlePointerLeave}
@@ -232,7 +243,7 @@ export default function SealAnimation({
           className={styles.sealCanvas}
           // The source is a trusted, repository-owned SVG. Injecting it keeps every
           // original path coordinate intact while allowing catalog-only animation hooks.
-          dangerouslySetInnerHTML={{ __html: svgMarkup }}
+          dangerouslySetInnerHTML={svgInnerHtml}
         />
       </button>
       {showCaption ? (

@@ -109,21 +109,25 @@ export default async function Footer() {
 
 function BuiltBy() {
   return (
-    <div className="relative">
-      <div className="absolute inset-x-0 z-0 mx-auto max-w-[1640px]">
+    <div className="relative max-md:min-h-[280px]">
+      <div className="absolute inset-x-0 top-0 z-0 mx-auto max-w-[1640px] max-md:bottom-0">
         <Image
           src={CommunityBgImg}
           alt="Community background"
-          className="min-h-[280px] object-cover md:min-h-[500px]"
+          className="min-h-[280px] w-full object-cover max-md:h-full md:min-h-[500px]"
         />
       </div>
-      <div className="container relative z-10 flex flex-col items-center gap-4 py-16 md:py-20 lg:py-24 xl:py-28">
-        <div className="w-[207px]">
+      <div className="container relative z-10 flex flex-col items-center gap-1 pt-3 pb-8 md:gap-4 md:py-20 lg:py-24 xl:py-28">
+        <div className="w-[156px] md:w-[207px]">
           <Image src={CommunityEagleImg} alt="Community eagle" />
         </div>
-        <div className="flex flex-col gap-2">
-          <h2 className="text-center text-2xl md:text-3xl">Built by and for Native communities.</h2>
-          <p className="text-center">For families, advocates, and future generations.</p>
+        <div className="-mt-1 flex flex-col gap-0.5 md:mt-0 md:gap-2">
+          <h2 className="text-center text-base leading-tight md:text-3xl md:leading-heading">
+            Built by and for Native communities.
+          </h2>
+          <p className="text-center text-xs leading-snug md:text-body">
+            For families, advocates, and future generations.
+          </p>
         </div>
       </div>
     </div>

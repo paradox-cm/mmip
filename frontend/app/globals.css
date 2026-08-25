@@ -110,9 +110,8 @@
   --color-brand-ink: var(--color-brand-ink-900);
   --color-brand-ink-on-dark: var(--color-brand-ink-400);
 
-  /* Seal artwork. Light values match SEAL-Lg.svg exactly; dark remaps live
-     with the semantic theme aliases below. */
-  --brand-seal-wordmark: 0.4518 0.1042 30.3;
+  /* Seal artwork. The word ring follows the mark's gold in both themes. */
+  --brand-seal-wordmark: var(--brand-seal-mark);
   --brand-seal-mark: 0.5894 0.1244 74.4;
 
   /* Feedback (pastels/muted) */
@@ -328,7 +327,7 @@
   --brand-emphasis: var(--color-brand-ink-400);
   --foreground-heading: var(--brand-emphasis);
   --brand-mark: var(--brand-emphasis);
-  --brand-seal-wordmark: 0.79 0.06 25;
+  --brand-seal-wordmark: var(--brand-seal-mark);
   --brand-seal-mark: var(--color-gold-300);
 
   --background: 0.258 0.009 75; /* #26231f */

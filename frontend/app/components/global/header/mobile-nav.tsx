@@ -73,10 +73,13 @@ export default function MobileNav({
                 Relatives
               </span>
             </Link>
-            <SheetClose className={CLOSE_CLASSES}>
-              <LuX className="size-5" aria-hidden="true" />
-              <span className="sr-only">Close menu</span>
-            </SheetClose>
+            <div className="flex items-center gap-2">
+              <AppearanceToggle className="size-11" />
+              <SheetClose className={CLOSE_CLASSES}>
+                <LuX className="size-5" aria-hidden="true" />
+                <span className="sr-only">Close menu</span>
+              </SheetClose>
+            </div>
           </div>
         </SheetHeader>
 
@@ -124,11 +127,6 @@ export default function MobileNav({
             })}
           </nav>
         )}
-
-        <div className="mt-auto flex min-h-12 items-center justify-between border-t pt-6">
-          <span className="text-label text-foreground-muted">Appearance</span>
-          <AppearanceToggle className="size-11" />
-        </div>
       </SheetContent>
     </Sheet>
   )

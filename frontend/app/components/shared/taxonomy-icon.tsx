@@ -12,7 +12,7 @@ type TaxonomyIconProps = {
 }
 
 const ICON_SIZE_BY_KIND: Record<TaxonomyIconKind, string> = {
-  category: 'size-24',
+  category: 'size-32',
   topic: 'size-16',
 }
 

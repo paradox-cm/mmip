@@ -12,8 +12,6 @@
 }
 
 .sealCanvas :global([data-seal-orbit]) {
-  transform-box: view-box;
-  transform-origin: 50% 50%;
   will-change: transform;
 }
 
@@ -101,16 +99,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sealCanvas :global([data-seal-orbit]),
   .sealCanvas :global([data-seal-wordmark]),
   .sealCanvas :global([data-seal-glyph]),
   .sealCanvas :global([data-seal-mark-path]),
   .sealCanvas :global([data-seal-outline]) {
     animation: none !important;
-  }
-
-  .sealCanvas :global([data-seal-orbit]) {
-    transform: none !important;
   }
 
   .sealCanvas :global([data-seal-wordmark]) {
