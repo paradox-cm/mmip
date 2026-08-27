@@ -16,7 +16,14 @@ const OPTION_LABELS: Record<Appearance, string> = {
   system: 'System',
 }
 
-export default function AppearanceToggle({ className }: { className?: string }) {
+export default function AppearanceToggle({
+  className,
+  container,
+}: {
+  className?: string
+  /** Portal target. Pass the open sheet so the menu stays above it. */
+  container?: HTMLElement | null
+}) {
   const { appearance, resolvedAppearance, setAppearance, ready } = useAppearance()
   const [open, setOpen] = useState(false)
 
@@ -29,7 +36,7 @@ export default function AppearanceToggle({ className }: { className?: string }) 
   }
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover modal open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
           type="button"
@@ -46,7 +53,13 @@ export default function AppearanceToggle({ className }: { className?: string }) 
           <Icon className="size-5" aria-hidden="true" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="end" side="bottom">
+      <PopoverContent
+        align="end"
+        side="bottom"
+        container={container}
+        className="min-w-40"
+        onCloseAutoFocus={event => event.preventDefault()}
+      >
         <p className="px-2 py-1.5 text-caption font-medium uppercase tracking-wide text-foreground-muted">
           Appearance
         </p>

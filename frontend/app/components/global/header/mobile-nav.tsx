@@ -36,6 +36,7 @@ export default function MobileNav({
   className?: string
 }) {
   const [open, setOpen] = useState(false)
+  const [sheetContent, setSheetContent] = useState<HTMLElement | null>(null)
   const pathname = usePathname()
   const items = filterPrimaryNav(primaryNav)
 
@@ -52,10 +53,23 @@ export default function MobileNav({
         </Button>
       </SheetTrigger>
       <SheetContent
+        ref={setSheetContent}
         side="right"
         showCloseButton={false}
         aria-describedby={undefined}
-        className="max-w-none gap-6 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))] sm:max-w-sm sm:p-6"
+        className="max-w-none gap-6 overflow-visible p-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))] sm:max-w-sm sm:p-6"
+        onPointerDownOutside={event => {
+          const target = event.target as HTMLElement | null
+          if (target?.closest('[data-slot="popover-content"]')) {
+            event.preventDefault()
+          }
+        }}
+        onFocusOutside={event => {
+          const target = event.target as HTMLElement | null
+          if (target?.closest('[data-slot="popover-content"]')) {
+            event.preventDefault()
+          }
+        }}
       >
         <SheetHeader>
           <SheetTitle className="sr-only">Menu</SheetTitle>
@@ -74,7 +88,7 @@ export default function MobileNav({
               </span>
             </Link>
             <div className="flex items-center gap-2">
-              <AppearanceToggle className="size-11" />
+              <AppearanceToggle className="size-11" container={sheetContent} />
               <SheetClose className={CLOSE_CLASSES}>
                 <LuX className="size-5" aria-hidden="true" />
                 <span className="sr-only">Close menu</span>

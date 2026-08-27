@@ -43,6 +43,7 @@ function SheetContent({
   children,
   side = 'right',
   showCloseButton = true,
+  ref,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: SheetSide
@@ -52,6 +53,7 @@ function SheetContent({
     <SheetPortal>
       <SheetOverlay />
       <SheetPrimitive.Content
+        ref={ref}
         data-slot="sheet-content"
         className={cn(
           'fixed z-50 flex flex-col gap-6 bg-background p-6 shadow-layer outline-none',
