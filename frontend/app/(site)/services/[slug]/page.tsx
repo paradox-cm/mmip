@@ -3,9 +3,8 @@ import { notFound } from 'next/navigation'
 import { toPlainText } from 'next-sanity'
 
 import { createServiceJsonLd, toJsonLdScript } from '@/lib/jsonld'
-import { resolveSocialImage } from '@/lib/social-image'
-import { fetchAllServices, fetchService, fetchSettings } from '@/sanity/lib/fetch'
-import { resolveOpenGraphImage } from '@/sanity/lib/utils'
+import { DEFAULT_SOCIAL_IMAGES } from '@/lib/social-image'
+import { fetchAllServices, fetchService } from '@/sanity/lib/fetch'
 
 import ServiceTemplate from '../service-template'
 
@@ -28,7 +27,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const [service, settings] = await Promise.all([fetchService(slug), fetchSettings()])
+  const service = await fetchService(slug)
 
   if (!service) {
     return {}
@@ -38,10 +37,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     service.metadata?.metaDescription ||
     (service.shortDescription ? toPlainText(service.shortDescription) : undefined)
-  const socialImage = resolveSocialImage(
-    resolveOpenGraphImage(service.metadata?.ogImage),
-    resolveOpenGraphImage(settings?.ogImage),
-  )
   const hideSearchIndex = Boolean(service.metadata?.hideSearchIndex)
 
   return {
@@ -54,14 +49,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `/services/${service.slug}`,
-      images: [socialImage],
+      images: DEFAULT_SOCIAL_IMAGES,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [socialImage.url],
+      images: DEFAULT_SOCIAL_IMAGES,
     },
     robots: {
       index: !hideSearchIndex,

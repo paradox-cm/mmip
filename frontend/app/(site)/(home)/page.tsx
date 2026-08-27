@@ -4,12 +4,10 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { BASE_URL, SITE_DESCRIPTION, SITE_NAME } from '@/lib/constants'
-import { resolveSocialImage } from '@/lib/social-image'
+import { DEFAULT_SOCIAL_IMAGES } from '@/lib/social-image'
 import type { GetHomepageQueryResult } from '@/sanity.types'
 import { client } from '@/sanity/lib/client'
-import { fetchSettings } from '@/sanity/lib/fetch'
 import { getHomepageQuery } from '@/sanity/lib/queries'
-import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
 import HomePage from './home-page'
 
@@ -67,26 +65,19 @@ function getHomeJsonLd({
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const [data, settings] = await Promise.all([
-    client.fetch<GetHomepageQueryResult>(
-      getHomepageQuery,
-      {},
-      {
-        stega: false,
-        perspective: 'published',
-      },
-    ),
-    fetchSettings(),
-  ])
+  const data = await client.fetch<GetHomepageQueryResult>(
+    getHomepageQuery,
+    {},
+    {
+      stega: false,
+      perspective: 'published',
+    },
+  )
 
   const { seo, hero } = data ?? {}
 
   const title = seo?.metaTitle || hero?.heading
   const description = seo?.metaDescription || hero?.subheading
-  const socialImage = resolveSocialImage(
-    resolveOpenGraphImage(seo?.ogImage),
-    resolveOpenGraphImage(settings?.ogImage),
-  )
   const hideSearchIndex = Boolean(seo?.hideSearchIndex)
 
   return {
@@ -100,13 +91,13 @@ export async function generateMetadata(): Promise<Metadata> {
       description: description ?? SITE_DESCRIPTION,
       url: '/',
       type: 'website',
-      images: [socialImage],
+      images: DEFAULT_SOCIAL_IMAGES,
     },
     twitter: {
       card: 'summary_large_image',
       title: title ?? SITE_NAME,
       description: description ?? SITE_DESCRIPTION,
-      images: [socialImage.url],
+      images: DEFAULT_SOCIAL_IMAGES,
     },
     robots: {
       index: !hideSearchIndex,

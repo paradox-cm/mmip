@@ -12,12 +12,10 @@ import {
   toJsonLdScript,
 } from '@/lib/jsonld'
 import { resolveRoute } from '@/lib/resolve-route'
-import { resolveSocialImage } from '@/lib/social-image'
+import { DEFAULT_SOCIAL_IMAGES } from '@/lib/social-image'
 import type { GetPageQueryResult } from '@/sanity.types'
-import { fetchSettings } from '@/sanity/lib/fetch'
 import { sanityFetch } from '@/sanity/lib/live'
 import { categoriesSlugs, pagesSlugs, postRoutesSlugs, topicsSlugs } from '@/sanity/lib/queries'
-import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
 import CategoryTemplate from './_components/category-template'
 import PostTemplate from './_components/post-template'
@@ -77,15 +75,10 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const settings = await fetchSettings()
   const resolved = await resolveRoute(slug)
 
   if (resolved.type === 'not-found') return {}
 
-  const ogImage =
-    resolved.type === 'post' ? resolveOpenGraphImage(resolved.metadata.openGraphImage) : undefined
-  const baseOgImage = resolveOpenGraphImage(settings?.ogImage)
-  const socialImage = resolveSocialImage(ogImage, baseOgImage)
   const path = `/${slug.join('/')}`
 
   return {
@@ -96,13 +89,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: resolved.metadata.description,
       url: path,
       type: 'website',
-      images: [socialImage],
+      images: DEFAULT_SOCIAL_IMAGES,
     },
     twitter: {
       card: 'summary_large_image',
       title: resolved.metadata.title,
       description: resolved.metadata.description,
-      images: [socialImage.url],
+      images: DEFAULT_SOCIAL_IMAGES,
     },
     robots:
       resolved.type === 'post'

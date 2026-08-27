@@ -59,7 +59,8 @@ export const settings = defineType({
       name: 'ogImage',
       title: 'Open Graph Image',
       type: 'image',
-      description: 'Displayed on social cards and search engine results.',
+      description:
+        'Not used for sharing. iMessage, Open Graph, and X use the generated brand card. Set metadataBase to the public site URL (https://…).',
       options: {
         hotspot: true,
       },

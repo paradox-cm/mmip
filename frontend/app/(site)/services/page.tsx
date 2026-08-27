@@ -2,9 +2,8 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { createCollectionPageJsonLd, toJsonLdScript } from '@/lib/jsonld'
-import { resolveSocialImage } from '@/lib/social-image'
-import { fetchAllServices, fetchSettings } from '@/sanity/lib/fetch'
-import { resolveOpenGraphImage } from '@/sanity/lib/utils'
+import { DEFAULT_SOCIAL_IMAGES } from '@/lib/social-image'
+import { fetchAllServices } from '@/sanity/lib/fetch'
 
 import ServicesTemplate from './services-template'
 
@@ -15,10 +14,6 @@ const SERVICES_PAGE_DESCRIPTION =
   'Browse verified MMIP support services across California, including advocacy, emergency response, healing, legal, and community resources.'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await fetchSettings()
-  const ogImage = resolveOpenGraphImage(settings?.ogImage)
-  const socialImage = resolveSocialImage(ogImage)
-
   return {
     title: SERVICES_PAGE_TITLE,
     description: SERVICES_PAGE_DESCRIPTION,
@@ -29,14 +24,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title: SERVICES_PAGE_TITLE,
       description: SERVICES_PAGE_DESCRIPTION,
       url: '/services',
-      images: [socialImage],
+      images: DEFAULT_SOCIAL_IMAGES,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title: SERVICES_PAGE_TITLE,
       description: SERVICES_PAGE_DESCRIPTION,
-      images: [socialImage.url],
+      images: DEFAULT_SOCIAL_IMAGES,
     },
   }
 }

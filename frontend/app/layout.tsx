@@ -6,13 +6,12 @@ import { Toaster } from 'sonner'
 import { AppearanceProvider } from '@/app/components/global/appearance/appearance-provider'
 import { appearanceBootScript } from '@/app/components/global/appearance/config'
 import DraftModeToast from '@/app/components/shared/draft-mode-toast'
-import { BASE_URL, SITE_DESCRIPTION, SITE_NAME } from '@/lib/constants'
+import { SITE_DESCRIPTION, SITE_NAME } from '@/lib/constants'
 import { handleError } from '@/lib/handle-error'
-import { resolveSocialImage } from '@/lib/social-image'
+import { DEFAULT_SOCIAL_IMAGES, resolveMetadataBase } from '@/lib/social-image'
 import { cn } from '@/lib/utils'
 import { fetchSettings } from '@/sanity/lib/fetch'
 import { SanityLive } from '@/sanity/lib/live'
-import { resolveOpenGraphImage } from '@/sanity/lib/utils'
 
 import { HelveticaNowFont, RealHeadFont } from './fonts'
 
@@ -29,30 +28,12 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-function resolveMetadataBase(value: string | undefined) {
-  for (const candidate of [value, BASE_URL]) {
-    if (!candidate) continue
-
-    try {
-      return new URL(candidate)
-    } catch {
-      // Try the next known base URL.
-    }
-  }
-
-  return undefined
-}
-
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await fetchSettings()
 
   const title = settings?.title || SITE_NAME
   const description = settings?.description ? toPlainText(settings.description) : SITE_DESCRIPTION
-
-  const ogImage = resolveOpenGraphImage(settings?.ogImage)
-
   const metadataBase = resolveMetadataBase(settings?.ogImage?.metadataBase)
-  const socialImage = resolveSocialImage(ogImage)
 
   return {
     metadataBase,
@@ -76,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       url: '/',
       siteName: SITE_NAME,
-      images: [socialImage],
+      images: DEFAULT_SOCIAL_IMAGES,
       locale: 'en_US',
       type: 'website',
     },
@@ -84,7 +65,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title,
       description,
-      images: [socialImage.url],
+      images: DEFAULT_SOCIAL_IMAGES,
     },
     alternates: {
       canonical: '/',

@@ -2,9 +2,8 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { createCollectionPageJsonLd, toJsonLdScript } from '@/lib/jsonld'
-import { resolveSocialImage } from '@/lib/social-image'
-import { fetchAllTribes, fetchSettings } from '@/sanity/lib/fetch'
-import { resolveOpenGraphImage } from '@/sanity/lib/utils'
+import { DEFAULT_SOCIAL_IMAGES } from '@/lib/social-image'
+import { fetchAllTribes } from '@/sanity/lib/fetch'
 
 import TribesTemplate from './tribes-template'
 
@@ -15,10 +14,6 @@ const TRIBES_PAGE_DESCRIPTION =
   'Browse California Tribal communities and find culturally grounded MMIP-related support, services, and contact information.'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await fetchSettings()
-  const ogImage = resolveOpenGraphImage(settings?.ogImage)
-  const socialImage = resolveSocialImage(ogImage)
-
   return {
     title: TRIBES_PAGE_TITLE,
     description: TRIBES_PAGE_DESCRIPTION,
@@ -29,14 +24,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title: TRIBES_PAGE_TITLE,
       description: TRIBES_PAGE_DESCRIPTION,
       url: '/tribes',
-      images: [socialImage],
+      images: DEFAULT_SOCIAL_IMAGES,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title: TRIBES_PAGE_TITLE,
       description: TRIBES_PAGE_DESCRIPTION,
-      images: [socialImage.url],
+      images: DEFAULT_SOCIAL_IMAGES,
     },
   }
 }

@@ -27,7 +27,8 @@ export const metadata = defineType({
       name: 'ogImage',
       title: 'Open Graph Image',
       type: 'image',
-      description: 'Used when sharing on social media platforms like Facebook or X (Twitter)',
+      description:
+        'Not used for sharing. Social previews use the generated site brand card from the design system.',
       options: {
         hotspot: true,
       },

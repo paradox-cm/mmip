@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
   },
   trailingSlash: false,
+  async rewrites() {
+    return [
+      {
+        source: '/og.png',
+        destination: '/opengraph-image',
+      },
+    ]
+  },
   logging: {
     fetches: {
       fullUrl: true,

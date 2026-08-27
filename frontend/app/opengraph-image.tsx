@@ -6,8 +6,9 @@ import { ImageResponse } from 'next/og'
 import { DEFAULT_SOCIAL_IMAGE, DEFAULT_SOCIAL_MISSION } from '@/lib/social-image'
 
 export const alt = DEFAULT_SOCIAL_IMAGE.alt
-export const size = { width: 1200, height: 630 }
-export const contentType = 'image/png'
+export const size = { width: DEFAULT_SOCIAL_IMAGE.width, height: DEFAULT_SOCIAL_IMAGE.height }
+export const contentType = DEFAULT_SOCIAL_IMAGE.type
+export const runtime = 'nodejs'
 
 const assetDirectory = join(process.cwd(), 'public', 'logo')
 const fontDirectory = join(process.cwd(), 'app', 'fonts')
@@ -46,27 +47,27 @@ export default async function OpenGraphImage() {
             top: 0,
             right: 0,
             bottom: 0,
-            width: 332,
+            width: 380,
             background: '#F5EDE4',
             overflow: 'hidden',
           }}
         >
           <img
             src={illustrationSource}
-            width="470"
-            height="360"
+            width="328"
+            height="251"
             alt=""
             style={{
               position: 'absolute',
-              right: -88,
-              objectFit: 'contain',
+              top: 190,
+              left: 18,
             }}
           />
         </div>
 
         <div
           style={{
-            width: 820,
+            width: 780,
             height: '100%',
             display: 'flex',
             flexDirection: 'column',
