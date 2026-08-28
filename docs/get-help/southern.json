@@ -1,0 +1,816 @@
+{
+  "region": "Southern California",
+  "cities": [
+    {
+      "name": "Los Angeles",
+      "county": "Los Angeles County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Los Angeles Police Department",
+          "description": "City police for Los Angeles; call the non-emergency line to request police response or report a crime that is not in progress.",
+          "phones": [
+            {
+              "label": "Non-emergency (1-877-ASK-LAPD)",
+              "number": "1-877-275-5273"
+            }
+          ],
+          "address": "100 W 1st St, Los Angeles, CA 90012",
+          "website": "https://www.lapdonline.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.lapdonline.org/contact-us/",
+          "confidence": "high"
+        },
+        {
+          "category": "missing-persons",
+          "name": "LAPD Adult Missing Persons Unit",
+          "description": "Investigates missing-adult cases in the City of Los Angeles; file the initial report at any LAPD station or by phone, then call the unit with questions about an adult case.",
+          "phones": [
+            {
+              "label": "Adult Missing Persons Unit",
+              "number": "(213) 996-1800"
+            }
+          ],
+          "address": null,
+          "website": "https://www.lapdonline.org/how-to-report-a-missing-person/",
+          "hours": "7:00 a.m.-4:00 p.m. (leave a message after hours)",
+          "native": false,
+          "source": "https://www.lapdonline.org/how-to-report-a-missing-person/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Los Angeles County Sheriff's Department",
+          "description": "County sheriff serving unincorporated LA County and contract cities; the Homicide Bureau's Missing Persons Detail handles county missing-person cases.",
+          "phones": [
+            { "label": "Headquarters", "number": "(213) 229-1700" },
+            {
+              "label": "Homicide Bureau (Missing Persons Detail)",
+              "number": "(323) 890-5500"
+            }
+          ],
+          "address": "211 W Temple St, Los Angeles, CA 90012",
+          "website": "https://lasd.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://lasd.org/contact-us/ and https://lasd.org/lasd-phone-directory/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Los Angeles Field Office",
+          "description": "Federal law enforcement for Central California including Los Angeles, Riverside, and San Bernardino counties; takes tips and reports of federal crimes, including cases on tribal land, 24/7.",
+          "phones": [{ "label": "Main (24/7)", "number": "(310) 477-6565" }],
+          "address": "11000 Wilshire Blvd, Suite 1700, Los Angeles, CA 90024",
+          "website": "https://www.fbi.gov/contact-us/field-offices/losangeles",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/losangeles",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "United American Indian Involvement (UAII)",
+          "description": "Native-led center providing health, behavioral health, and community services for American Indians and Alaska Natives across Los Angeles.",
+          "phones": [{ "label": "Main", "number": "(213) 202-3970" }],
+          "address": "1453 W Temple St, Los Angeles, CA 90026",
+          "website": "https://uaii.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://uaii.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "American Indian Counseling Center (LA County Dept. of Mental Health)",
+          "description": "County mental-health clinic for American Indian and Alaska Native people of all ages, offering counseling, crisis intervention, and culturally relevant support; call and ask for the on-duty worker.",
+          "phones": [{ "label": "Main", "number": "(562) 402-0677" }],
+          "address": "10330 Pioneer Blvd, Suite 215, Santa Fe Springs, CA 90670",
+          "website": "https://dmh.lacounty.gov/about/service-areas/service-area-7/american-indian-counseling-center/",
+          "hours": "Mon-Fri 8 a.m.-5 p.m.",
+          "native": true,
+          "source": "https://dmh.lacounty.gov/about/service-areas/service-area-7/american-indian-counseling-center/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Peace Over Violence",
+          "description": "Sexual assault and domestic violence services with 24/7 LA Rape & Battering hotlines, counseling, legal services, and emergency response advocacy.",
+          "phones": [
+            {
+              "label": "24/7 Hotline (Central LA)",
+              "number": "(213) 626-3393"
+            },
+            { "label": "24/7 Hotline (West LA)", "number": "(310) 392-8381" },
+            {
+              "label": "24/7 Hotline (San Gabriel Valley)",
+              "number": "(626) 793-3385"
+            },
+            { "label": "Office", "number": "(213) 955-9090" }
+          ],
+          "address": "1541 Wilshire Blvd, 3rd Floor, Los Angeles, CA 90017",
+          "website": "https://www.peaceoverviolence.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.peaceoverviolence.org/contact",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "LA County District Attorney - Bureau of Victim Services",
+          "description": "Free victim advocates who help crime victims and families with safety, court support, and California Victim Compensation claims.",
+          "phones": [
+            { "label": "Request victim services", "number": "1-800-380-3811" },
+            {
+              "label": "Claims Verification Unit (CalVCB)",
+              "number": "1-800-492-5944"
+            }
+          ],
+          "address": null,
+          "website": "https://da.lacounty.gov/victims/",
+          "hours": null,
+          "native": false,
+          "source": "https://da.lacounty.gov/victims/",
+          "confidence": "high"
+        },
+        {
+          "category": "crisis-hotlines",
+          "name": "LA County Dept. of Mental Health 24/7 Help Line",
+          "description": "County crisis and mental-health line for anyone in Los Angeles County; connects callers to crisis support and local service providers around the clock.",
+          "phones": [{ "label": "24/7 Help Line", "number": "1-800-854-7771" }],
+          "address": null,
+          "website": "https://dmh.lacounty.gov/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://dmh.lacounty.gov/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "San Diego",
+      "county": "San Diego County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "San Diego Police Department",
+          "description": "City police for San Diego; call the non-emergency line to report crimes that are not in progress or request police assistance.",
+          "phones": [
+            { "label": "Non-emergency", "number": "(619) 531-2000" },
+            { "label": "Non-emergency (alternate)", "number": "(858) 484-3154" }
+          ],
+          "address": "1401 Broadway, San Diego, CA 92101",
+          "website": "https://www.sandiego.gov/police",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sandiego.gov/police and https://www.sandiego.gov/police/services/get-police-report",
+          "confidence": "high"
+        },
+        {
+          "category": "missing-persons",
+          "name": "SDPD Missing Persons Unit",
+          "description": "Call 911 if the missing person is under 12 or the circumstances are suspicious; otherwise call the SDPD line to file a missing-person report - there is no waiting period, and adult cases go to the Missing Persons Unit.",
+          "phones": [
+            { "label": "Report a missing person", "number": "(619) 531-2000" }
+          ],
+          "address": null,
+          "website": "https://www.sandiego.gov/police/services/missing-persons",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sandiego.gov/police/services/missing-persons",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "San Diego County Sheriff's Office",
+          "description": "County sheriff serving unincorporated San Diego County and nine contract cities; use the non-emergency line for situations that do not require an immediate response.",
+          "phones": [
+            { "label": "Non-emergency", "number": "(858) 868-3200" },
+            { "label": "Main office", "number": "(858) 974-2222" }
+          ],
+          "address": "9621 Ridgehaven Ct, San Diego, CA 92123",
+          "website": "https://www.sdsheriff.gov/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sdsheriff.gov/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Sycuan Tribal Police Department",
+          "description": "Full-service tribal law enforcement for the Sycuan Reservation and surrounding Dehesa Valley, working with the San Diego County Sheriff and BIA; call dispatch for assistance on or near the reservation.",
+          "phones": [
+            { "label": "Dispatch", "number": "(619) 445-2172" },
+            { "label": "Main office", "number": "(619) 445-8710" }
+          ],
+          "address": "4 Kwaapaay Ct, El Cajon, CA 92019",
+          "website": "https://sycuantribe.com/police-department/",
+          "hours": null,
+          "native": true,
+          "source": "https://sycuantribe.com/police-department/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI San Diego Field Office",
+          "description": "Federal law enforcement for San Diego and Imperial counties; takes tips and reports of federal crimes, including cases on tribal land, 24/7.",
+          "phones": [{ "label": "Main (24/7)", "number": "(858) 320-1800" }],
+          "address": "10385 Vista Sorrento Pkwy, San Diego, CA 92121",
+          "website": "https://www.fbi.gov/contact-us/field-offices/sandiego",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sandiego",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "San Diego American Indian Health Center",
+          "description": "Urban Indian health center in Bankers Hill offering medical, dental, and behavioral health care; after hours, call and press 1 to reach a nurse for advice.",
+          "phones": [
+            {
+              "label": "Main (after-hours nurse: press 1)",
+              "number": "(619) 234-2158"
+            }
+          ],
+          "address": "2630 First Ave, San Diego, CA 92103",
+          "website": "https://sdaihc.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://sdaihc.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Center for Community Solutions",
+          "description": "Serves all victims of relationship violence and sexual assault in San Diego County with a confidential 24/7 crisis hotline, shelter, counseling, and legal services.",
+          "phones": [
+            { "label": "24/7 Crisis Hotline", "number": "1-888-385-4657" },
+            { "label": "Office", "number": "(858) 272-5777" }
+          ],
+          "address": "4508 Mission Bay Dr, San Diego, CA 92109",
+          "website": "https://www.ccssd.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.ccssd.org/contact-us",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "San Diego County District Attorney - Victim Services",
+          "description": "Free victim advocates who help crime victims with support, court accompaniment, and compensation claims; no citizenship requirement.",
+          "phones": [
+            { "label": "Victim assistance", "number": "(619) 531-4041" }
+          ],
+          "address": "330 W Broadway, 7th Floor, San Diego, CA 92101",
+          "website": "https://www.sdcda.org/helping/victims/victim-services",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sdcda.org/helping/victims/contact_info and https://www.sdcda.org/helping/victims/victim-assistance-locations",
+          "confidence": "high"
+        },
+        {
+          "category": "crisis-hotlines",
+          "name": "San Diego Access & Crisis Line",
+          "description": "County behavioral-health crisis and referral line, part of the 988 network, with counselors available around the clock in 200+ languages.",
+          "phones": [
+            { "label": "24/7 Crisis Line", "number": "1-888-724-7240" }
+          ],
+          "address": null,
+          "website": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/bhs/ACL.html",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/bhs/ACL.html",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Riverside",
+      "county": "Riverside County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Riverside Police Department",
+          "description": "City police for Riverside; call the 24-hour non-emergency dispatch center to report a crime or request an officer. (The Orange Street station closed in May 2026; Magnolia Station is the main public station.)",
+          "phones": [
+            {
+              "label": "24-hour non-emergency dispatch",
+              "number": "(951) 354-2007"
+            },
+            { "label": "General information", "number": "(951) 826-5700" }
+          ],
+          "address": "10540 Magnolia Ave, Riverside, CA 92505",
+          "website": "https://www.riversideca.gov/rpd/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.riversideca.gov/rpd/about-contact",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Riverside County Sheriff's Office",
+          "description": "County sheriff for Riverside County; dispatch centers are staffed 24 hours a day - use the West-End non-emergency line for the Riverside area or the toll-free county line.",
+          "phones": [
+            {
+              "label": "Non-emergency dispatch (West-End)",
+              "number": "(951) 776-1099"
+            },
+            {
+              "label": "Non-emergency dispatch (toll-free)",
+              "number": "1-800-950-2444"
+            },
+            { "label": "Executive office", "number": "(951) 955-2400" }
+          ],
+          "address": "4095 Lemon St, Riverside, CA 92501",
+          "website": "https://www.riversidesheriff.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.riversidesheriff.org/528/Contact-Us",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Pechanga Tribal Rangers",
+          "description": "Armed tribal public-safety department serving the Pechanga Reservation near Temecula 24 hours a day, enforcing tribal ordinances and working with local law enforcement.",
+          "phones": [
+            { "label": "Ranger Department", "number": "(951) 770-6196" }
+          ],
+          "address": "48245 Pechanga Rd, Temecula, CA 92592",
+          "website": "https://www.pechanga-nsn.gov/index.php/tribal-government/services/tribal-rangers",
+          "hours": "24/7",
+          "native": true,
+          "source": "https://www.pechanga-nsn.gov/index.php/tribal-government/services/tribal-rangers",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Soboba Department of Public Safety",
+          "description": "Tribal public-safety department for the Soboba Reservation near San Jacinto, with its own dispatch center and an MMIW awareness program.",
+          "phones": [
+            { "label": "Dispatch center", "number": "(951) 654-6168" },
+            { "label": "Dispatch (alternate)", "number": "(951) 654-5544" }
+          ],
+          "address": "23333 Soboba Rd, San Jacinto, CA 92583",
+          "website": "https://sdps.soboba-nsn.gov/",
+          "hours": null,
+          "native": true,
+          "source": "https://sdps.soboba-nsn.gov/contact-us",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Los Angeles Field Office (serves Riverside County)",
+          "description": "Federal law enforcement covering Riverside County through the Los Angeles field office and local resident agencies; takes tips and reports 24/7.",
+          "phones": [{ "label": "Main (24/7)", "number": "(310) 477-6565" }],
+          "address": "11000 Wilshire Blvd, Suite 1700, Los Angeles, CA 90024",
+          "website": "https://www.fbi.gov/contact-us/field-offices/losangeles",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/losangeles",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Riverside-San Bernardino County Indian Health - San Manuel Indian Health Clinic",
+          "description": "Headquarters clinic of the largest tribal health program in the region, offering medical, dental, and behavioral health care to Native families; nearest full-service clinic to the city of Riverside.",
+          "phones": [
+            {
+              "label": "San Manuel Clinic (Grand Terrace)",
+              "number": "(909) 864-1097"
+            }
+          ],
+          "address": "11980 Mt Vernon Ave, Grand Terrace, CA 92313",
+          "website": "https://www.rsbcihi.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.rsbcihi.org/contact-us/clinics/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Alternatives to Domestic Violence (ADV)",
+          "description": "Western Riverside County's domestic violence agency since 1978, with 24-hour crisis lines, emergency shelter, counseling, and outreach.",
+          "phones": [
+            {
+              "label": "24-hour crisis line (Riverside city area)",
+              "number": "(951) 683-0829"
+            },
+            {
+              "label": "24-hour crisis line (rest of county)",
+              "number": "1-800-339-7233"
+            },
+            { "label": "Office", "number": "(951) 425-8900" }
+          ],
+          "address": null,
+          "website": "https://www.alternativestodomesticviolence.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.alternativestodomesticviolence.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Riverside County District Attorney - Division of Victim Services",
+          "description": "Victim services specialists who support crime victims through the court process and help with victim compensation applications.",
+          "phones": [
+            { "label": "Riverside office", "number": "(951) 955-5450" },
+            { "label": "Toll-free", "number": "1-866-217-3766" }
+          ],
+          "address": "3960 Orange St, Riverside, CA 92501",
+          "website": "https://rivcoda.org/victim-services",
+          "hours": null,
+          "native": false,
+          "source": "https://rivcoda.org/division-victim-services-locations",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "San Bernardino",
+      "county": "San Bernardino County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "San Bernardino Police Department",
+          "description": "City police for San Bernardino; the non-emergency line is answered 24 hours a day (station lobby open 9 a.m.-4 p.m.).",
+          "phones": [
+            { "label": "Non-emergency (24-hour)", "number": "(909) 383-5311" },
+            { "label": "Main", "number": "(909) 384-5742" }
+          ],
+          "address": "710 N D St, San Bernardino, CA 92401",
+          "website": "https://www.sbcity.org/Police",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.sbcity.org/Police",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "San Bernardino County Sheriff's Department",
+          "description": "County sheriff for San Bernardino County; use the Valley non-emergency dispatch line for the San Bernardino area or the Desert line for High Desert communities.",
+          "phones": [
+            {
+              "label": "Non-emergency dispatch (Valley)",
+              "number": "(909) 387-8313"
+            },
+            {
+              "label": "Non-emergency dispatch (Desert)",
+              "number": "(760) 956-5001"
+            }
+          ],
+          "address": "655 E Third St, San Bernardino, CA 92415",
+          "website": "https://wp.sbcounty.gov/sheriff/",
+          "hours": null,
+          "native": false,
+          "source": "https://wp.sbcounty.gov/sheriff/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Los Angeles Field Office (serves San Bernardino County)",
+          "description": "Federal law enforcement covering San Bernardino County through the Los Angeles field office and local resident agencies; takes tips and reports 24/7.",
+          "phones": [{ "label": "Main (24/7)", "number": "(310) 477-6565" }],
+          "address": "11000 Wilshire Blvd, Suite 1700, Los Angeles, CA 90024",
+          "website": "https://www.fbi.gov/contact-us/field-offices/losangeles",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/losangeles",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Riverside-San Bernardino County Indian Health - San Manuel Indian Health Clinic",
+          "description": "Headquarters clinic of the region's tribal health program in nearby Grand Terrace, offering medical, dental, and behavioral health care to Native families since 1968.",
+          "phones": [
+            {
+              "label": "San Manuel Clinic (Grand Terrace)",
+              "number": "(909) 864-1097"
+            }
+          ],
+          "address": "11980 Mt Vernon Ave, Grand Terrace, CA 92313",
+          "website": "https://www.rsbcihi.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.rsbcihi.org/contact-us/clinics/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Option House, Inc.",
+          "description": "San Bernardino domestic violence agency with a 24-hour crisis hotline, emergency shelter, legal advocacy, restraining-order help, and support groups.",
+          "phones": [
+            { "label": "24-hour crisis hotline", "number": "(909) 381-3471" },
+            { "label": "Office", "number": "(909) 383-1602" }
+          ],
+          "address": "813 N D St, Suite A, San Bernardino, CA 92401",
+          "website": "https://www.optionhouseinc.com/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.optionhouseinc.com/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "San Bernardino County District Attorney - Bureau of Victim Services",
+          "description": "Victim advocates who help crime victims with court support, victim rights, and financial assistance; San Bernardino Victim Services Center listed here.",
+          "phones": [
+            {
+              "label": "San Bernardino Victim Services Center",
+              "number": "(909) 382-3846"
+            }
+          ],
+          "address": "303 W 3rd St, San Bernardino, CA 92415",
+          "website": "https://sbcountyda.org/victim-services/",
+          "hours": null,
+          "native": false,
+          "source": "https://sbcountyda.org/victim-services/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Palm Springs & Coachella Valley",
+      "county": "Riverside County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Palm Springs Police Department",
+          "description": "City police for Palm Springs, including the Agua Caliente Reservation checkerboard within city limits; call the non-emergency line for crimes and incidents that are not emergencies.",
+          "phones": [
+            { "label": "Non-emergency", "number": "(760) 327-1441" },
+            {
+              "label": "General info / police report",
+              "number": "(760) 323-8116"
+            }
+          ],
+          "address": "200 S Civic Dr, Palm Springs, CA 92262",
+          "website": "https://www.palmspringsca.gov/government/departments/police",
+          "hours": null,
+          "native": false,
+          "source": "https://www.palmspringsca.gov/government/departments/police/contact-us",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Riverside County Sheriff's Office - Coachella Valley stations",
+          "description": "County sheriff patrol for most Coachella Valley cities and unincorporated areas (including the Torres Martinez area via the Thermal station); dispatch is staffed 24 hours a day.",
+          "phones": [
+            { "label": "Palm Desert Station", "number": "(760) 836-1600" },
+            { "label": "Thermal Station", "number": "(760) 863-8990" },
+            {
+              "label": "Non-emergency dispatch (toll-free)",
+              "number": "1-800-950-2444"
+            }
+          ],
+          "address": null,
+          "website": "https://www.riversidesheriff.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.riversidesheriff.org/528/Contact-Us",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Morongo Tribal Police Department",
+          "description": "Tribal police for the Morongo Indian Reservation at the west end of the San Gorgonio Pass (Banning), with 24-hour dispatch; a valid photo ID is required to enter the reservation.",
+          "phones": [
+            { "label": "24-hour dispatch", "number": "(951) 634-4810" }
+          ],
+          "address": "47350 Foothill Rd, Banning, CA 92220",
+          "website": "https://morongonation.org/tribal-police/",
+          "hours": "24/7",
+          "native": true,
+          "source": "https://morongonation.org/tribal-police/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Los Angeles Field Office (serves the Coachella Valley)",
+          "description": "Federal law enforcement covering Riverside County, including the Coachella Valley, through the Los Angeles field office; takes tips and reports 24/7.",
+          "phones": [{ "label": "Main (24/7)", "number": "(310) 477-6565" }],
+          "address": "11000 Wilshire Blvd, Suite 1700, Los Angeles, CA 90024",
+          "website": "https://www.fbi.gov/contact-us/field-offices/losangeles",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/losangeles",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Riverside-San Bernardino County Indian Health - Torres Martinez Indian Health Clinic",
+          "description": "Tribal health clinic in the eastern Coachella Valley (Thermal) offering medical, dental, and behavioral health services to Native families.",
+          "phones": [
+            { "label": "Torres Martinez Clinic", "number": "(760) 397-4476" }
+          ],
+          "address": "66655 Martinez Rd, Thermal, CA 92274",
+          "website": "https://www.rsbcihi.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.rsbcihi.org/contact-us/clinics/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Shelter From The Storm",
+          "description": "The Coachella Valley's shelter-based domestic violence provider, with 24-hour crisis lines staffed by advocates (many bilingual), emergency shelter, and safety planning.",
+          "phones": [
+            { "label": "24-hour crisis line", "number": "(760) 328-7233" },
+            {
+              "label": "24-hour crisis line (toll-free)",
+              "number": "1-800-775-6055"
+            },
+            { "label": "Office", "number": "(760) 674-0400" }
+          ],
+          "address": "73-550 Alessandro Dr, Suite 103, Palm Desert, CA 92260",
+          "website": "https://shelterfromthestorm.com/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://shelterfromthestorm.com/ and https://shelterfromthestorm.com/who-we-are/our-services/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Morongo Victim Services Program",
+          "description": "Free, confidential, culturally sensitive advocacy for victims of domestic violence, sexual assault, and stalking on and around the Morongo Reservation, with an attorney, case manager, and legal advocate on staff.",
+          "phones": [
+            {
+              "label": "24-hour helpline (DV, SA & stalking)",
+              "number": "(951) 851-9051"
+            },
+            { "label": "Program office", "number": "(951) 755-5221" }
+          ],
+          "address": null,
+          "website": "https://morongonation.org/victim-services-program/",
+          "hours": "24/7",
+          "native": true,
+          "source": "https://morongonation.org/victim-services-program/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Riverside County District Attorney - Victim Services (Indio office)",
+          "description": "Victim services specialists for the Coachella Valley who support crime victims through the court process and help with compensation applications.",
+          "phones": [
+            { "label": "Indio office", "number": "(760) 863-8408" },
+            { "label": "Toll-free", "number": "1-866-217-3769" }
+          ],
+          "address": "82-995 Highway 111, Suite 101, Indio, CA 92201",
+          "website": "https://rivcoda.org/victim-services",
+          "hours": null,
+          "native": false,
+          "source": "https://rivcoda.org/division-victim-services-locations",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Escondido & North San Diego County",
+      "county": "San Diego County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Escondido Police Department",
+          "description": "City police for Escondido; call the non-emergency line to report crimes that are not in progress or request assistance.",
+          "phones": [{ "label": "Non-emergency", "number": "(760) 839-4722" }],
+          "address": "1163 N Centre City Pkwy, Escondido, CA 92026",
+          "website": "https://www.escondido.gov/173/About-Us",
+          "hours": null,
+          "native": false,
+          "source": "https://www.escondido.gov/555/Calling-the-Police-Department and https://www.escondido.gov/173/About-Us",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "San Diego County Sheriff - Valley Center Substation",
+          "description": "Sheriff's substation providing law enforcement for Valley Center, Pauma Valley, Palomar Mountain, and the La Jolla, Pala, Pauma, Rincon, and San Pasqual Indian Reservations.",
+          "phones": [
+            { "label": "Business line", "number": "(760) 751-4400" },
+            {
+              "label": "24-hour dispatch (non-emergency)",
+              "number": "(858) 868-3200"
+            }
+          ],
+          "address": "28201 N Lake Wohlford Rd, Valley Center, CA 92082",
+          "website": "https://www.sdsheriff.gov/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sdsheriff.gov/Home/Components/FacilityDirectory/FacilityDirectory/44/34",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Rincon Band of Luiseno Indians - Tribal Law Enforcement",
+          "description": "Tribal law enforcement department for the Rincon Reservation in Valley Center, enforcing tribal ordinances and assisting the community, with security reachable 24 hours a day.",
+          "phones": [
+            { "label": "Main", "number": "(760) 749-1051" },
+            { "label": "Security (24 hours)", "number": "(760) 297-2611" }
+          ],
+          "address": "One Government Center Ln, Valley Center, CA 92082",
+          "website": "https://rincon-nsn.gov/government/government-departments/tribal-law/",
+          "hours": null,
+          "native": true,
+          "source": "https://rincon-nsn.gov/government/government-departments/tribal-law/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI San Diego Field Office (serves North San Diego County)",
+          "description": "Federal law enforcement for all of San Diego County, including North County reservations; takes tips and reports of federal crimes 24/7.",
+          "phones": [{ "label": "Main (24/7)", "number": "(858) 320-1800" }],
+          "address": "10385 Vista Sorrento Pkwy, San Diego, CA 92121",
+          "website": "https://www.fbi.gov/contact-us/field-offices/sandiego",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sandiego",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Indian Health Council",
+          "description": "Tribally governed health center on the Rincon Reservation in Valley Center serving North San Diego County tribes with medical, dental, behavioral health, and community wellness services.",
+          "phones": [
+            { "label": "Main (Rincon campus)", "number": "(760) 749-1410" }
+          ],
+          "address": "50100 Golsh Rd, Valley Center, CA 92082",
+          "website": "https://www.indianhealth.com/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.indianhealth.com/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Strong Hearted Native Women's Coalition",
+          "description": "Native-led coalition based in Valley Center working against domestic violence, sexual assault, trafficking, and MMIP in California tribal communities; offers victim support, advocacy, and a missing-persons bulletin, and refers to the 24/7 national StrongHearts Native Helpline.",
+          "phones": [
+            {
+              "label": "Office (Mon-Fri 8:30 a.m.-4 p.m.)",
+              "number": "(760) 644-4781"
+            },
+            {
+              "label": "StrongHearts Native Helpline (24/7, call or text)",
+              "number": "1-844-762-8483"
+            }
+          ],
+          "address": null,
+          "website": "https://strongheartednativewomen.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://strongheartednativewomen.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Community Resource Center",
+          "description": "North San Diego County nonprofit in Encinitas providing domestic violence hotline support, safe housing, and therapeutic services.",
+          "phones": [
+            {
+              "label": "Domestic violence hotline",
+              "number": "1-877-633-1112"
+            },
+            { "label": "Office", "number": "(760) 753-1156" }
+          ],
+          "address": "650 2nd St, Encinitas, CA 92024",
+          "website": "https://www.crcncc.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.crcncc.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services - Southern Office (Escondido)",
+          "description": "Nonprofit legal aid for Native individuals and tribes across Southern California, including free legal advocacy for Native survivors of domestic violence, sexual assault, and stalking in San Diego, Riverside, and San Bernardino counties.",
+          "phones": [
+            { "label": "Escondido office", "number": "(760) 746-8941" },
+            { "label": "Toll-free", "number": "1-800-743-8941" }
+          ],
+          "address": "609 S Escondido Blvd, Escondido, CA 92025",
+          "website": "https://www.calindian.org/southernoffice/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/southernoffice/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "San Diego County District Attorney - Victim Services (North County)",
+          "description": "Free victim advocates for North County crime victims, offering support, court accompaniment, and help with compensation claims.",
+          "phones": [
+            {
+              "label": "North County office (Vista)",
+              "number": "(760) 806-4079"
+            }
+          ],
+          "address": "325 S Melrose Dr, Suite 5000, Vista, CA 92083",
+          "website": "https://www.sdcda.org/helping/victims/victim-services",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sdcda.org/helping/victims/victim-assistance-locations",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

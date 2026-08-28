@@ -1,0 +1,915 @@
+{
+  "region": "Northern California",
+  "cities": [
+    {
+      "name": "Sacramento",
+      "county": "Sacramento County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Sacramento Police Department",
+          "description": "City police for Sacramento; call the non-emergency dispatch line to reach an officer or report a crime that is not in progress.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(916) 808-5471"
+            }
+          ],
+          "address": "5770 Freeport Blvd, Sacramento, CA 95822",
+          "website": "https://www.cityofsacramento.gov/police",
+          "hours": null,
+          "native": false,
+          "source": "https://www.cityofsacramento.gov/police/your-sacpd/about/contact-us/department-directory",
+          "confidence": "high"
+        },
+        {
+          "category": "missing-persons",
+          "name": "Sacramento Police Department - Missing Persons Unit",
+          "description": "SPD investigations unit that handles missing person cases; there is no waiting period to report someone missing.",
+          "phones": [
+            {
+              "label": "Missing Persons Unit",
+              "number": "(916) 808-0560"
+            },
+            {
+              "label": "Non-emergency (to file a report)",
+              "number": "(916) 808-5471"
+            }
+          ],
+          "address": "5770 Freeport Blvd, Sacramento, CA 95822",
+          "website": "https://www.cityofsacramento.gov/police",
+          "hours": null,
+          "native": false,
+          "source": "https://www.cityofsacramento.gov/police/your-sacpd/about/contact-us/department-directory",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Sacramento County Sheriff's Office",
+          "description": "County sheriff serving unincorporated Sacramento County; call the non-emergency line for reports and assistance outside city limits.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(916) 874-5115"
+            }
+          ],
+          "address": "4500 Orange Grove Ave, Sacramento, CA 95841",
+          "website": "https://www.sacsheriff.com/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sacsheriff.com/pages/locations.php",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Sacramento Field Office",
+          "description": "Federal field office covering the Eastern District of California (including Sacramento); takes reports of suspicious activity and crime 24/7 and works missing person and MMIP cases on federal and tribal lands.",
+          "phones": [
+            {
+              "label": "Main (24/7)",
+              "number": "(916) 746-7000"
+            }
+          ],
+          "address": "2001 Freedom Way, Roseville, CA 95678",
+          "website": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Sacramento Native American Health Center",
+          "description": "Urban Indian health center offering medical, dental, behavioral health, and traditional healing services to the Native community and others.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(916) 341-0575"
+            }
+          ],
+          "address": "2020 J Street, Sacramento, CA 95811",
+          "website": "https://www.snahc.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.snahc.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "WEAVE",
+          "description": "Sacramento County's primary crisis service for survivors of domestic violence and sexual assault, with a 24/7 support and information line staffed by trained peer counselors.",
+          "phones": [
+            {
+              "label": "24/7 support line",
+              "number": "(916) 920-2952"
+            },
+            {
+              "label": "Business line",
+              "number": "(916) 448-2321"
+            }
+          ],
+          "address": "1900 K Street, Sacramento, CA 95811",
+          "website": "https://www.weaveinc.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.weaveinc.org/get-help",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services - Sacramento (Central Office)",
+          "description": "Nonprofit law firm protecting Indian rights; provides legal help to Native individuals and tribes across central California, including family, ICWA, and victim-rights matters.",
+          "phones": [
+            {
+              "label": "Main office",
+              "number": "(916) 978-0960"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-829-0284"
+            }
+          ],
+          "address": "106 K Street, Suite 300, Sacramento, CA 95814",
+          "website": "https://www.calindian.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/centraloffice/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Sacramento County DA Victim/Witness Assistance Program",
+          "description": "District Attorney program offering crisis intervention, court accompaniment, advocacy, and help applying for state victim compensation; the line is monitored daily.",
+          "phones": [
+            {
+              "label": "Victim/Witness line",
+              "number": "(916) 874-5701"
+            }
+          ],
+          "address": null,
+          "website": "https://www.sacda.org/victim-services/victim-witness-assistance-program/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.cityofsacramento.gov/police/your-sacpd/about/contact-us/department-directory",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "San Francisco",
+      "county": "San Francisco County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "San Francisco Police Department",
+          "description": "City police for San Francisco; use the non-emergency line for situations that need police but not an immediate response.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(415) 553-0123"
+            },
+            {
+              "label": "Headquarters",
+              "number": "(415) 837-7000"
+            }
+          ],
+          "address": "1245 3rd Street, San Francisco, CA 94158",
+          "website": "https://www.sanfranciscopolice.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sanfranciscopolice.org/contact-and-directory",
+          "confidence": "high"
+        },
+        {
+          "category": "missing-persons",
+          "name": "SFPD Missing Persons Unit",
+          "description": "Dedicated SFPD unit for missing person cases; you can report a missing person right away, with no waiting period.",
+          "phones": [
+            {
+              "label": "Missing Persons",
+              "number": "(415) 734-3070"
+            }
+          ],
+          "address": "1245 3rd Street, San Francisco, CA 94158",
+          "website": "https://www.sanfranciscopolice.org/get-service/police-reports/missing-person",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sanfranciscopolice.org/contact-and-directory",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "San Francisco Sheriff's Office",
+          "description": "County sheriff for the City and County of San Francisco; handles jails, civil process, and court and building security.",
+          "phones": [
+            {
+              "label": "Main office",
+              "number": "(415) 554-7225"
+            }
+          ],
+          "address": "City Hall, Room 456, 1 Dr. Carlton B. Goodlett Place, San Francisco, CA 94102",
+          "website": "https://www.sfsheriff.com/",
+          "hours": "Mon-Fri 8:00am-5:00pm",
+          "native": false,
+          "source": "https://sfsheriff.com/contact-us-1",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI San Francisco Field Office",
+          "description": "Federal field office covering 15 northern California counties including San Francisco; takes reports of suspicious activity and crime 24/7 and assists on missing person and MMIP cases.",
+          "phones": [
+            {
+              "label": "Main (24/7)",
+              "number": "(415) 553-7400"
+            }
+          ],
+          "address": "450 Golden Gate Avenue, 13th Floor, San Francisco, CA 94102",
+          "website": "https://www.fbi.gov/contact-us/field-offices/sanfrancisco",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sanfrancisco",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Native American Health Center - San Francisco",
+          "description": "Community health center serving the urban Native community with medical, dental, behavioral health, and community wellness services.",
+          "phones": [
+            {
+              "label": "Medical",
+              "number": "(415) 417-3501"
+            },
+            {
+              "label": "Behavioral health",
+              "number": "(415) 417-3503"
+            }
+          ],
+          "address": "160 Capp St., San Francisco, CA 94110",
+          "website": "https://www.nativehealth.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.nativehealth.org/locations/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "La Casa de las Madres",
+          "description": "San Francisco domestic violence agency with 24/7 hotlines, emergency shelter, and drop-in support for adults and teens.",
+          "phones": [
+            {
+              "label": "24/7 adult hotline",
+              "number": "1-877-503-1850"
+            },
+            {
+              "label": "24/7 teen hotline",
+              "number": "1-877-923-0700"
+            },
+            {
+              "label": "Text line",
+              "number": "(415) 200-3575"
+            }
+          ],
+          "address": "1269 Howard Street, San Francisco, CA 94103",
+          "website": "https://www.lacasa.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.lacasa.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "San Francisco Women Against Rape",
+          "description": "Rape crisis center offering a 24-hour hotline, counseling, accompaniment to hospitals and police, and advocacy for sexual assault survivors.",
+          "phones": [
+            {
+              "label": "24-hour hotline",
+              "number": "(415) 647-7273"
+            },
+            {
+              "label": "Office",
+              "number": "(415) 861-2024"
+            }
+          ],
+          "address": "3543 18th Street, Suite 7, San Francisco, CA 94110",
+          "website": "https://www.sfwar.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.sfwar.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "San Francisco District Attorney - Victim Services Division",
+          "description": "DA division providing advocates who guide victims and families through the criminal justice process, restitution, and victim compensation.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(628) 652-4100"
+            }
+          ],
+          "address": "350 Rhode Island Street, Suite 400N, San Francisco, CA 94103",
+          "website": "https://sfdistrictattorney.org/victim-services/",
+          "hours": null,
+          "native": false,
+          "source": "https://sfdistrictattorney.org/victim-services/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Oakland",
+      "county": "Alameda County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Oakland Police Department",
+          "description": "City police for Oakland; the non-emergency line is answered 24 hours a day, and the Police Administration Building front desk is open around the clock.",
+          "phones": [
+            {
+              "label": "Non-emergency (24/7)",
+              "number": "(510) 777-3333"
+            }
+          ],
+          "address": "455 7th Street, Oakland, CA 94607",
+          "website": "https://www.oaklandca.gov/departments/police",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.oaklandca.gov/Public-Safety-Streets/Report-a-Crime/Report-a-Crime-in-Person-or-Phone",
+          "confidence": "high"
+        },
+        {
+          "category": "missing-persons",
+          "name": "Oakland Police Department - Missing Persons Unit",
+          "description": "OPD unit that manages roughly 1,500 missing person cases a year; call to follow up on a report or share information (call or text 911 to make the initial report).",
+          "phones": [
+            {
+              "label": "Missing Persons Unit",
+              "number": "(510) 238-3641"
+            }
+          ],
+          "address": "455 7th Street, Oakland, CA 94607",
+          "website": "https://www.oaklandca.gov/Public-Safety-Streets/Crime-Prevention/Missing-Persons",
+          "hours": null,
+          "native": false,
+          "source": "https://www.oaklandca.gov/Public-Safety-Streets/Crime-Prevention/Missing-Persons",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Alameda County Sheriff's Office",
+          "description": "County sheriff serving unincorporated Alameda County; call the non-emergency line to report a crime or request assistance outside city police jurisdictions.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(510) 667-7721"
+            },
+            {
+              "label": "Administration",
+              "number": "(510) 272-6878"
+            }
+          ],
+          "address": "1401 Lakeside Drive, 12th Floor, Oakland, CA 94612",
+          "website": "https://www.alamedasheriff.gov/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.alamedasheriff.gov/about-us/contact-us",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI San Francisco Field Office (serves Oakland)",
+          "description": "Federal field office whose territory includes Alameda County and Oakland; takes reports of suspicious activity and crime 24/7 and assists on missing person and MMIP cases.",
+          "phones": [
+            {
+              "label": "Main (24/7)",
+              "number": "(415) 553-7400"
+            }
+          ],
+          "address": "450 Golden Gate Avenue, 13th Floor, San Francisco, CA 94102",
+          "website": "https://www.fbi.gov/contact-us/field-offices/sanfrancisco",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sanfrancisco",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Native American Health Center - Oakland (7 Directions)",
+          "description": "Flagship Oakland clinic of the Native American Health Center, offering medical, dental, behavioral health, and community wellness services rooted in Native culture.",
+          "phones": [
+            {
+              "label": "Medical",
+              "number": "(510) 535-4410"
+            },
+            {
+              "label": "Dental",
+              "number": "(510) 535-4450"
+            },
+            {
+              "label": "Community wellness",
+              "number": "(510) 434-5421"
+            }
+          ],
+          "address": "2950 International Blvd., Oakland, CA 94601",
+          "website": "https://www.nativehealth.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.nativehealth.org/locations/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Alameda Health System - SARRT (Sexual Assault Response and Recovery Team)",
+          "description": "Hospital-based program at the Wilma Chan Highland Hospital Campus in Oakland; now the county's responding agency for sexual assault forensic exams and advocacy, with a 24/7 crisis line for sexual assault, domestic violence, and trafficking survivors.",
+          "phones": [
+            {
+              "label": "24/7 crisis line",
+              "number": "(510) 534-9290"
+            }
+          ],
+          "address": null,
+          "website": "https://alamedahealthsystem.org/sarrt/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.alamedahealthsystem.org/get-help-sarrt/",
+          "confidence": "high"
+        },
+        {
+          "category": "crisis-hotlines",
+          "name": "Tri-Valley Haven - Alameda County 24-Hour Crisis Hotline",
+          "description": "Operates the 24-hour crisis hotline serving survivors of domestic violence and sexual assault county-wide (in partnership with Alameda Health System after BAWAR's 2025 closure), plus shelter and counseling from its Livermore center.",
+          "phones": [
+            {
+              "label": "24-hour hotline (toll-free)",
+              "number": "1-800-884-8119"
+            },
+            {
+              "label": "24-hour hotline (local)",
+              "number": "(925) 449-5842"
+            }
+          ],
+          "address": "3663 Pacific Avenue, Livermore, CA 94550",
+          "website": "https://www.trivalleyhaven.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.trivalleyhaven.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Family Violence Law Center",
+          "description": "Alameda County nonprofit providing free legal help (restraining orders, family law) and 24/7 crisis intervention for domestic violence survivors.",
+          "phones": [
+            {
+              "label": "24/7 crisis line",
+              "number": "1-800-947-8301"
+            },
+            {
+              "label": "Office",
+              "number": "(510) 208-3557"
+            }
+          ],
+          "address": "470 27th Street, Oakland, CA 94612",
+          "website": "https://fvlc.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://fvlc.org/get-help",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Alameda County DA Victim-Witness Assistance Division",
+          "description": "District Attorney advocates who help crime victims and witnesses with their rights, safety, court support, and connections to services.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(510) 272-6180"
+            }
+          ],
+          "address": "1401 Lakeside Drive, Suite 802, Oakland, CA 94612",
+          "website": "https://www.alcoda.org/victim-witness/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.alcoda.org/victim-witness/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "San Jose",
+      "county": "Santa Clara County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "San Jose Police Department",
+          "description": "City police for San Jose; call the non-emergency line for police matters that do not need an immediate response.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(408) 277-8900"
+            }
+          ],
+          "address": "201 W Mission Street, San Jose, CA 95110",
+          "website": "https://www.sjpd.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sjpd.org/i-want-to/contact-us/phone-directory",
+          "confidence": "high"
+        },
+        {
+          "category": "missing-persons",
+          "name": "San Jose Police Department - Missing Persons Unit",
+          "description": "SJPD detail handling both adult and juvenile missing person cases; reports can be filed immediately.",
+          "phones": [
+            {
+              "label": "Missing Persons (adult & juvenile)",
+              "number": "(408) 277-4786"
+            }
+          ],
+          "address": "201 W Mission Street, San Jose, CA 95110",
+          "website": "https://www.sjpd.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.sjpd.org/i-want-to/contact-us/phone-directory",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Santa Clara County Sheriff's Office",
+          "description": "County sheriff serving unincorporated Santa Clara County and several contract cities; use the non-emergency dispatch line to reach a deputy.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(408) 299-2311"
+            },
+            {
+              "label": "Main",
+              "number": "(408) 808-4400"
+            }
+          ],
+          "address": "55 W Younger Ave, San Jose, CA 95110",
+          "website": "https://sheriff.santaclaracounty.gov/",
+          "hours": null,
+          "native": false,
+          "source": "https://sheriff.santaclaracounty.gov/contact-us; https://www.saratoga.ca.us/195/Sheriffs-Office",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI San Francisco Field Office (serves San Jose)",
+          "description": "Federal field office whose Bay Area territory includes Santa Clara County and San Jose; takes reports of suspicious activity and crime 24/7 and assists on missing person and MMIP cases.",
+          "phones": [
+            {
+              "label": "Main (24/7)",
+              "number": "(415) 553-7400"
+            }
+          ],
+          "address": "450 Golden Gate Avenue, 13th Floor, San Francisco, CA 94102",
+          "website": "https://www.fbi.gov/contact-us/field-offices/sanfrancisco",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sanfrancisco",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Indian Health Center of Santa Clara Valley",
+          "description": "Native-led community health center offering medical, dental, behavioral health, and wellness services for Native families and the wider community.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(408) 445-3400"
+            }
+          ],
+          "address": "1333 Meridian Avenue, San Jose, CA 95125",
+          "website": "https://indianhealthcenter.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://indianhealthcenter.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "YWCA Golden Gate Silicon Valley",
+          "description": "Santa Clara County's crisis agency for domestic violence, sexual assault, and trafficking survivors, with a 24/7 bilingual support line, shelter, therapy, and legal services.",
+          "phones": [
+            {
+              "label": "24/7 support line",
+              "number": "1-800-572-2782"
+            },
+            {
+              "label": "Main office",
+              "number": "(408) 295-4011"
+            }
+          ],
+          "address": "375 S. Third St., San Jose, CA 95112",
+          "website": "https://yourywca.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://yourywca.org/contact-us/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Eureka & Humboldt County",
+      "county": "Humboldt County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Eureka Police Department",
+          "description": "City police for Eureka; call non-emergency dispatch to reach an officer or report a crime that is not in progress.",
+          "phones": [
+            {
+              "label": "Non-emergency dispatch",
+              "number": "(707) 441-4044"
+            },
+            {
+              "label": "Business office",
+              "number": "(707) 441-4060"
+            }
+          ],
+          "address": "604 C Street, Eureka, CA 95501",
+          "website": "https://www.eurekaca.gov/172/Police-Department",
+          "hours": null,
+          "native": false,
+          "source": "https://www.eurekaca.gov/172/Police-Department",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Humboldt County Sheriff's Office",
+          "description": "County sheriff serving Humboldt County's unincorporated communities, including much of the rural north coast; call the non-emergency line for reports and assistance.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(707) 445-7251"
+            }
+          ],
+          "address": "826 4th Street, Eureka, CA 95501",
+          "website": "https://humboldtgov.org/2545/Sheriffs-Office",
+          "hours": null,
+          "native": false,
+          "source": "https://humboldtgov.org/2545/Sheriffs-Office",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Yurok Tribal Police",
+          "description": "Tribal law enforcement for the Yurok Reservation and Klamath River communities; a first call for incidents and missing relatives on Yurok lands.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(707) 482-8185"
+            }
+          ],
+          "address": "230 Klamath Blvd, Ste. B, Klamath, CA 95548",
+          "website": "https://www.yuroktribe.org/yurok-tribal-police",
+          "hours": null,
+          "native": true,
+          "source": "https://www.yuroktribe.org/yurok-tribal-police",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Hoopa Valley Tribal Police",
+          "description": "Tribal law enforcement for the Hoopa Valley Reservation; a first call for incidents and missing relatives on Hoopa lands (mailing address PO Box 1341, Hoopa, CA 95546).",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(530) 625-4202"
+            }
+          ],
+          "address": null,
+          "website": "https://www.hoopa-nsn.gov/departments/1490-2/emergency-service-departments/hoopa-valley-tribal-police-department/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.hoopa-nsn.gov/departments/1490-2/emergency-service-departments/hoopa-valley-tribal-police-department/",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "United Indian Health Services - Potawot Health Village",
+          "description": "Tribally governed health system for Native people of Humboldt and Del Norte counties, with medical, dental, behavioral health, and community programs at its Potawot Health Village campus in Arcata.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(707) 825-5000"
+            }
+          ],
+          "address": "1600 Weeot Way, Arcata, CA 95521",
+          "website": "https://unitedindianhealthservices.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://unitedindianhealthservices.org/contact/",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Two Feathers Native American Family Services",
+          "description": "Native-led family services agency for Humboldt County offering culturally grounded mental health counseling, youth programs, and family support.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(707) 839-1933"
+            }
+          ],
+          "address": "1560 Betty Court, Suite A, McKinleyville, CA 95519",
+          "website": "https://twofeathers-nafs.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://twofeathers-nafs.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "North Coast Rape Crisis Team",
+          "description": "Rape crisis center for Humboldt and Del Norte counties with 24/7 hotlines, accompaniment, and advocacy for survivors of sexual violence.",
+          "phones": [
+            {
+              "label": "24/7 hotline (Humboldt)",
+              "number": "(707) 445-2881"
+            },
+            {
+              "label": "24/7 hotline (Del Norte)",
+              "number": "(707) 465-2851"
+            },
+            {
+              "label": "Text line (Mon-Fri 8:30am-4:30pm)",
+              "number": "(707) 382-5174"
+            }
+          ],
+          "address": null,
+          "website": "https://www.ncrct.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.ncrct.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Humboldt Domestic Violence Services",
+          "description": "Humboldt County domestic violence agency with a 24/7 support line, safety planning, shelter, and advocacy.",
+          "phones": [
+            {
+              "label": "24/7 support line",
+              "number": "(707) 443-6042"
+            },
+            {
+              "label": "24/7 support line (toll-free)",
+              "number": "1-833-507-2331"
+            }
+          ],
+          "address": null,
+          "website": "https://www.hdvs.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.hdvs.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services - Northern Office (McKinleyville)",
+          "description": "CILS office serving Del Norte, Humboldt, Mendocino, Siskiyou, and Trinity counties with free or low-cost legal help for Native individuals and tribes (formerly located in Eureka).",
+          "phones": [
+            {
+              "label": "Main office",
+              "number": "(707) 443-8397"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-347-2402"
+            }
+          ],
+          "address": "2355 Central Avenue, Suite C, McKinleyville, CA 95519",
+          "website": "https://www.calindian.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/northern-office/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Humboldt County DA Victim Witness Assistance Program",
+          "description": "District Attorney program offering crisis intervention, emergency assistance, court support, and help with victim compensation for crime victims and their families.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(707) 445-7411"
+            }
+          ],
+          "address": "825 5th Street, Fourth Floor, Eureka, CA 95501",
+          "website": "https://humboldtgov.org/1360/Victim-Witness-Assistance-Program",
+          "hours": "Mon-Fri 8am-12pm, 1pm-4pm",
+          "native": false,
+          "source": "https://humboldtgov.org/1360/Victim-Witness-Assistance-Program",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Redding",
+      "county": "Shasta County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Redding Police Department",
+          "description": "City police for Redding; dial the main number and press 1 to be routed to SHASCOM dispatch for non-emergencies.",
+          "phones": [
+            {
+              "label": "Non-emergency (press 1 for dispatch)",
+              "number": "(530) 225-4200"
+            }
+          ],
+          "address": "777 Cypress Avenue, Redding, CA 96001",
+          "website": "https://www.cityofredding.gov/government/departments/police/index.php",
+          "hours": null,
+          "native": false,
+          "source": "https://cityofredding.gov/government/departments/police/contact_us.php",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Shasta County Sheriff's Office",
+          "description": "County sheriff serving Shasta County's unincorporated communities; call to speak with a deputy about non-emergency reports and assistance.",
+          "phones": [
+            {
+              "label": "Non-emergency (speak to a deputy)",
+              "number": "(530) 245-6540"
+            },
+            {
+              "label": "Main office",
+              "number": "(530) 245-6000"
+            }
+          ],
+          "address": "300 Park Marina Circle, Redding, CA 96001",
+          "website": "https://www.shastacounty.gov/sheriff",
+          "hours": "Lobby: Mon-Thu 8:00am-5:00pm (closed Fri)",
+          "native": false,
+          "source": "https://www.shastacounty.gov/sheriff",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Sacramento Field Office (serves Redding)",
+          "description": "Federal field office covering the Eastern District of California, which includes Shasta County and Redding; takes reports of suspicious activity and crime 24/7 and assists on missing person and MMIP cases.",
+          "phones": [
+            {
+              "label": "Main (24/7)",
+              "number": "(916) 746-7000"
+            }
+          ],
+          "address": "2001 Freedom Way, Roseville, CA 95678",
+          "website": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Redding Rancheria Tribal Health System",
+          "description": "Tribally operated health system offering medical, dental, and behavioral health care at its Redding clinics, including the Tribal Health Center and Churn Creek Healthcare.",
+          "phones": [
+            {
+              "label": "Tribal Health Center",
+              "number": "(530) 224-2700"
+            },
+            {
+              "label": "Churn Creek Healthcare",
+              "number": "(530) 768-2436"
+            }
+          ],
+          "address": "1441 Liberty St, Redding, CA 96001",
+          "website": "https://www.rrths.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.rrths.org/contact-us/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "One SAFE Place",
+          "description": "Shasta County's center for survivors of domestic violence and sexual assault, with a 24/7 crisis line, emergency shelter, advocacy, and support services.",
+          "phones": [
+            {
+              "label": "24/7 crisis line",
+              "number": "(530) 429-0055"
+            },
+            {
+              "label": "Business office",
+              "number": "(530) 244-0117"
+            }
+          ],
+          "address": "2250 Benton Drive, Redding, CA 96003",
+          "website": "https://www.ospshasta.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.ospshasta.org/our-services",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

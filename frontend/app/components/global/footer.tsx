@@ -1,6 +1,7 @@
+import { LuArrowUp, LuLifeBuoy } from 'react-icons/lu'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { LuArrowUp } from 'react-icons/lu'
 
 import LogoMark from '@/app/components/shared/logo-mark'
 import ResolvedLink from '@/app/components/shared/resolved-link'
@@ -34,7 +35,7 @@ export default async function Footer() {
         <div className="rounded-t-2xl bg-background-subtle">
           <div className="flex flex-col gap-10 px-4 py-8 md:gap-16 md:px-8 md:py-12">
             <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:gap-24">
-              <div className="flex">
+              <div className="flex flex-col items-start gap-6">
                 <Link
                   className={cn('flex flex-1 items-center gap-3', FOOTER_LINK_CLASSES)}
                   href="/"
@@ -47,6 +48,24 @@ export default async function Footer() {
                     Relatives
                   </span>
                 </Link>
+                <div className="flex flex-col gap-3">
+                  <Button asChild variant="help">
+                    <Link href="/get-help">
+                      <LuLifeBuoy aria-hidden="true" className="size-5" />
+                      Get Help
+                    </Link>
+                  </Button>
+                  <p className="text-label text-foreground-muted">
+                    In an emergency, call{' '}
+                    <a
+                      href="tel:911"
+                      className="font-semibold text-foreground underline-offset-4 hover:underline"
+                    >
+                      911
+                    </a>
+                    .
+                  </p>
+                </div>
               </div>
 
               <nav className="grid w-full flex-1 grid-cols-1 gap-8 md:grid-cols-3">

@@ -1,0 +1,998 @@
+{
+  "region": "Central California",
+  "cities": [
+    {
+      "name": "Fresno",
+      "county": "Fresno County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Fresno Police Department",
+          "description": "City police for Fresno; call the non-emergency line to reach an officer, file a report, or report a missing person inside city limits (call 911 in an emergency).",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(559) 621-7000"
+            },
+            {
+              "label": "Investigative Services Division",
+              "number": "(559) 621-2400"
+            }
+          ],
+          "address": "2323 Mariposa Mall, Fresno, CA 93721",
+          "website": "https://www.fresno.gov/police/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.fresno.gov/police/police-contacts/ ; https://www.fresno.courts.ca.gov/system/files?file=physical-and-mailing-addresses-lea.pdf",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Fresno County Sheriff's Office",
+          "description": "County sheriff for unincorporated Fresno County; call the non-emergency dispatch line for incidents outside city limits or to report a missing person in the county.",
+          "phones": [
+            {
+              "label": "Non-emergency dispatch",
+              "number": "(559) 600-3111"
+            },
+            {
+              "label": "Records",
+              "number": "(559) 600-8400"
+            }
+          ],
+          "address": "2200 Fresno Street, Fresno, CA 93721",
+          "website": "https://www.fresnosheriff.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.fresnosheriff.org/admin/contact-us.html",
+          "confidence": "high"
+        },
+        {
+          "category": "missing-persons",
+          "name": "Fresno County Sheriff's Office – Missing Persons Unit",
+          "description": "Detective bureau unit for missing person and runaway cases; report first to the agency where the person was last seen (city of Fresno (559) 621-7000, county areas (559) 600-3111).",
+          "phones": [
+            {
+              "label": "Missing persons detective",
+              "number": "(559) 600-8200"
+            },
+            {
+              "label": "County reporting line",
+              "number": "(559) 600-3111"
+            }
+          ],
+          "address": "2200 Fresno Street, Fresno, CA 93721",
+          "website": "https://www.fresnosheriff.org/units/detective-bureau/missing-persons-runaways.html",
+          "hours": null,
+          "native": false,
+          "source": "https://www.fresnosheriff.org/units/detective-bureau/missing-persons-runaways.html",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Sacramento Field Office – Fresno Resident Agency",
+          "description": "Federal investigators for crimes on tribal land, kidnappings, and cases crossing county or state lines; the Fresno satellite office serves Fresno, Kings, Madera, Mariposa, Merced, and Tulare counties through the 24/7 field office line.",
+          "phones": [
+            {
+              "label": "24/7 field office line",
+              "number": "(916) 746-7000"
+            }
+          ],
+          "address": null,
+          "website": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sacramento/about",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Fresno American Indian Health Project (FAIHP)",
+          "description": "Urban Indian health program offering culturally based health, wellness, youth, and community support services for Native people in the Fresno area.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(559) 320-0490"
+            }
+          ],
+          "address": "1551 E. Shaw Ave., Suite 139, Fresno, CA 93710",
+          "website": "https://www.faihp.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.faihp.org/contact-us/",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Central Valley Indian Health, Inc.",
+          "description": "Tribal health program providing medical, dental, and behavioral health care to Native American families in the Fresno/Clovis area.",
+          "phones": [
+            {
+              "label": "Main (Clovis clinic)",
+              "number": "(559) 299-2578"
+            }
+          ],
+          "address": "2740 Herndon Avenue, Clovis, CA 93611",
+          "website": "https://cvih.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://cvih.org/contact",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Marjaree Mason Center",
+          "description": "Fresno County's domestic violence agency with emergency safe housing, legal advocacy, and counseling; call the 24/7 hotline for help or shelter.",
+          "phones": [
+            {
+              "label": "24/7 hotline (233-HELP)",
+              "number": "(559) 233-4357"
+            }
+          ],
+          "address": "255 W. Bullard Ave., Fresno, CA 93704",
+          "website": "https://mmcenter.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://mmcenter.org/what-we-do/crisis-support",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "RCS Fresno (Rape Counseling Service of Fresno)",
+          "description": "Free, confidential sexual assault crisis center for Fresno County with counseling, advocacy, and hospital accompaniment; the crisis line answers 24 hours a day.",
+          "phones": [
+            {
+              "label": "24/7 crisis line (222-RAPE)",
+              "number": "(559) 222-7273"
+            },
+            {
+              "label": "Office",
+              "number": "(559) 497-2900"
+            }
+          ],
+          "address": "259 N. Blackstone Ave., Fresno, CA 93701",
+          "website": "https://rcsfresno.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://rcsfresno.org/services/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "James Rowland Crime Victim Assistance Center (Fresno County)",
+          "description": "County victim advocates who help crime victims and their families with crisis intervention, court support, restitution, and California victim compensation claims at no cost.",
+          "phones": [
+            {
+              "label": "Main (600-CVAC)",
+              "number": "(559) 600-2822"
+            }
+          ],
+          "address": "2220 Tulare St., Suite 1111, Fresno, CA 93721",
+          "website": "https://www.fresnocountyca.gov/Departments/Probation/Crime-Victim-Services",
+          "hours": "Mon-Fri 8am-12pm, 1pm-5pm",
+          "native": false,
+          "source": "https://www.fresnocountyca.gov/Departments/Probation/Crime-Victim-Services",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services – Central Office",
+          "description": "Nonprofit law firm for Native individuals and tribes; the Sacramento-based Central Office serves Fresno, Kings, Madera, Mariposa, and Merced counties by phone and appointment.",
+          "phones": [
+            {
+              "label": "Office",
+              "number": "(916) 978-0960"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-829-0284"
+            }
+          ],
+          "address": "106 K Street, Suite 300, Sacramento, CA 95814",
+          "website": "https://www.calindian.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/centraloffice/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Bakersfield",
+      "county": "Kern County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Bakersfield Police Department",
+          "description": "City police for Bakersfield; call the non-emergency line to reach an officer or file a report, including missing person reports inside city limits (911 in an emergency).",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(661) 327-7111"
+            },
+            {
+              "label": "Investigations Division",
+              "number": "(661) 326-3846"
+            }
+          ],
+          "address": "1601 Truxtun Avenue, Bakersfield, CA 93301",
+          "website": "https://www.bakersfieldcity.us/257/Police",
+          "hours": null,
+          "native": false,
+          "source": "https://www.bakersfieldcity.us/542/Headquarters",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Kern County Sheriff's Office",
+          "description": "County sheriff for unincorporated Kern County; call the non-emergency line for incidents or missing person reports outside city limits.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(661) 861-3110"
+            },
+            {
+              "label": "Toll-free (Kern County only)",
+              "number": "1-800-861-3110"
+            },
+            {
+              "label": "Main office",
+              "number": "(661) 391-7500"
+            }
+          ],
+          "address": "1350 Norris Road, Bakersfield, CA 93308",
+          "website": "https://www.kernsheriff.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.kernsheriff.org/Contact",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Sacramento Field Office – Bakersfield Resident Agency",
+          "description": "Federal investigators for crimes on tribal land, kidnappings, and multi-jurisdiction cases; the Bakersfield satellite office serves Kern and Inyo counties through the 24/7 field office line.",
+          "phones": [
+            {
+              "label": "24/7 field office line",
+              "number": "(916) 746-7000"
+            }
+          ],
+          "address": null,
+          "website": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sacramento/about",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Bakersfield American Indian Health Project",
+          "description": "Kern County's urban Indian health organization, offering health, behavioral health, and community services for Native families in Bakersfield and at a Lake Isabella site.",
+          "phones": [
+            {
+              "label": "Bakersfield office",
+              "number": "(661) 327-4030"
+            },
+            {
+              "label": "Lake Isabella office",
+              "number": "(760) 549-0001"
+            }
+          ],
+          "address": "501 40th Street, Bakersfield, CA 93301",
+          "website": "https://bakersfieldaihp.org/",
+          "hours": "Mon 8am-6pm; Tue-Thu 8am-8pm; Fri 8am-5pm",
+          "native": true,
+          "source": "https://bakersfieldaihp.org/contact/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "The Open Door Network (formerly Alliance Against Family Violence & Sexual Assault)",
+          "description": "Kern County services for survivors of domestic violence, sexual assault, and human trafficking, including emergency shelter and advocacy; call the 24-hour crisis hotline for immediate help.",
+          "phones": [
+            {
+              "label": "24/7 crisis hotline",
+              "number": "(661) 327-1091"
+            },
+            {
+              "label": "Office",
+              "number": "(661) 322-9199"
+            }
+          ],
+          "address": null,
+          "website": "https://opendoorhelps.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://opendoorhelps.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Kern County Family Justice Center",
+          "description": "A safe, confidential one-stop center where victims of domestic violence, sexual assault, human trafficking, child abuse, and elder abuse get help from many agencies at no cost.",
+          "phones": [
+            {
+              "label": "Bakersfield center",
+              "number": "(661) 868-5950"
+            },
+            {
+              "label": "Lamont center",
+              "number": "(661) 868-5820"
+            }
+          ],
+          "address": "1300 18th Street, Bakersfield, CA 93301",
+          "website": "https://kcfjc.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://kcfjc.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Kern County District Attorney – Victim Services Unit",
+          "description": "DA advocates who guide crime victims through the court process and help with victim compensation, restitution, and safety planning.",
+          "phones": [
+            {
+              "label": "Victim services",
+              "number": "(661) 868-2400"
+            }
+          ],
+          "address": "1415 Truxtun Ave, Bakersfield, CA 93301",
+          "website": "https://www.kerncounty.com/government/departments/district-attorney/about/divisions/victim-services",
+          "hours": null,
+          "native": false,
+          "source": "https://victims.ca.gov/for-victims/get-help/?vcb_resource_location=kern",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services – Eastern Office (serves Kern County)",
+          "description": "Nonprofit Native legal aid; the Bishop-based Eastern Office handles Indian law and legal assistance for Alpine, Inyo, Kern, Mono, and Tuolumne counties.",
+          "phones": [
+            {
+              "label": "Office",
+              "number": "(760) 873-3581"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-736-3582"
+            }
+          ],
+          "address": "873 N. Main Street, Suite 120, Bishop, CA 93514",
+          "website": "https://www.calindian.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/easternoffice/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Stockton",
+      "county": "San Joaquin County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Stockton Police Department",
+          "description": "City police for Stockton; call the non-emergency line to reach an officer, file a report, or report a missing person inside city limits (911 in an emergency).",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(209) 937-8377"
+            },
+            {
+              "label": "Records",
+              "number": "(209) 937-8495"
+            }
+          ],
+          "address": "22 E. Market Street, Stockton, CA 95202",
+          "website": "https://www.stocktonca.gov/services/police_department/index.php",
+          "hours": null,
+          "native": false,
+          "source": "https://www.stocktonca.gov/services/police_department/index.php",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "San Joaquin County Sheriff's Office",
+          "description": "County sheriff for unincorporated San Joaquin County; call the non-emergency line for incidents or missing person reports outside city limits.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(209) 468-4400"
+            }
+          ],
+          "address": "7000 Michael Canlis Blvd., French Camp, CA 95231",
+          "website": "https://sjsheriff.org/",
+          "hours": null,
+          "native": false,
+          "source": "https://sjsheriff.org/contact-us",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Sacramento Field Office – Stockton Resident Agency",
+          "description": "Federal investigators for kidnappings and multi-jurisdiction cases; the Stockton satellite office serves San Joaquin, Stanislaus, Amador, Calaveras, and Tuolumne counties through the 24/7 field office line.",
+          "phones": [
+            {
+              "label": "24/7 field office line",
+              "number": "(916) 746-7000"
+            }
+          ],
+          "address": null,
+          "website": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sacramento/about",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "PREVAIL (formerly Women's Center – Youth & Family Services)",
+          "description": "San Joaquin County's provider of free, confidential services and shelter for survivors of domestic violence, sexual assault, and trafficking, plus youth services; crisis lines answer 24 hours a day.",
+          "phones": [
+            {
+              "label": "24/7 crisis line",
+              "number": "(209) 465-4878"
+            },
+            {
+              "label": "24/7 youth crisis line",
+              "number": "(209) 948-1911"
+            },
+            {
+              "label": "Office",
+              "number": "(209) 941-2611"
+            }
+          ],
+          "address": "620 N. San Joaquin Street, Stockton, CA 95202",
+          "website": "https://weshallprevail.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://weshallprevail.org/contact",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Native Directions, Inc. – Three Rivers Indian Lodge",
+          "description": "Native-run nonprofit near Manteca offering a culturally based 90-day residential alcohol and drug treatment program for Native American men, serving the San Joaquin Valley.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(209) 858-2421"
+            }
+          ],
+          "address": "13505 S. Union Road, Manteca, CA 95336",
+          "website": "https://www.nativedirections.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.nativedirections.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "San Joaquin County District Attorney – Victim-Witness Services",
+          "description": "DA advocates offering crisis intervention, court support, emergency assistance, and help filing victim compensation claims for crime victims and witnesses.",
+          "phones": [
+            {
+              "label": "Victim-witness",
+              "number": "(209) 468-2500"
+            }
+          ],
+          "address": "222 E. Weber Avenue, Stockton, CA 95202",
+          "website": "https://sjcda.org/victim-witness/vws",
+          "hours": "Mon-Fri 8am-5pm",
+          "native": false,
+          "source": "https://sjcda.org/victim-witness/vws",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services – Central Office",
+          "description": "Nonprofit law firm for Native individuals and tribes; the Sacramento-based Central Office serves San Joaquin County by phone and appointment.",
+          "phones": [
+            {
+              "label": "Office",
+              "number": "(916) 978-0960"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-829-0284"
+            }
+          ],
+          "address": "106 K Street, Suite 300, Sacramento, CA 95814",
+          "website": "https://www.calindian.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/centraloffice/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Modesto",
+      "county": "Stanislaus County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Modesto Police Department",
+          "description": "City police for Modesto; call non-emergency dispatch to reach an officer, file a report, or report a missing person inside city limits (911 in an emergency).",
+          "phones": [
+            {
+              "label": "Non-emergency dispatch",
+              "number": "(209) 552-2470"
+            },
+            {
+              "label": "Main",
+              "number": "(209) 572-9500"
+            }
+          ],
+          "address": "600 10th Street, Modesto, CA 95354",
+          "website": "https://www.modestogov.com/223/Police-Department",
+          "hours": null,
+          "native": false,
+          "source": "https://www.modestogov.com/223/Police-Department",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Stanislaus County Sheriff's Office",
+          "description": "County sheriff for unincorporated Stanislaus County; call the non-emergency line for incidents or missing person reports outside city limits.",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(209) 552-2468"
+            }
+          ],
+          "address": "250 E. Hackett Road, Modesto, CA 95358",
+          "website": "https://www.scsdonline.com/",
+          "hours": null,
+          "native": false,
+          "source": "https://www.scsdonline.com/administration/contact-information/sheriff-s-department-contacts",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Sacramento Field Office (Stockton Resident Agency serves Stanislaus County)",
+          "description": "Federal investigators for kidnappings and multi-jurisdiction cases; Stanislaus County is covered by the Stockton satellite office, reached through the 24/7 Sacramento field office line.",
+          "phones": [
+            {
+              "label": "24/7 field office line",
+              "number": "(916) 746-7000"
+            }
+          ],
+          "address": null,
+          "website": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sacramento/about",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "HAVEN (formerly Haven Women's Center of Stanislaus)",
+          "description": "Stanislaus County's agency for survivors of domestic violence, sexual assault, and human trafficking, with shelter, advocacy, and counseling; call the 24-hour crisis line for immediate help.",
+          "phones": [
+            {
+              "label": "24/7 crisis line",
+              "number": "(209) 577-5980"
+            },
+            {
+              "label": "Toll-free crisis (1-888-45-HAVEN)",
+              "number": "1-888-454-2836"
+            },
+            {
+              "label": "Office",
+              "number": "(209) 524-4331"
+            }
+          ],
+          "address": "618 13th Street, Modesto, CA 95354",
+          "website": "https://www.havenstan.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.havenstan.org/haven",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Native Directions, Inc. – Three Rivers Indian Lodge",
+          "description": "Native-run nonprofit in nearby Manteca (about 20 miles from Modesto) offering a culturally based 90-day residential alcohol and drug treatment program for Native American men; the closest Native-run recovery organization serving the area.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(209) 858-2421"
+            }
+          ],
+          "address": "13505 S. Union Road, Manteca, CA 95336",
+          "website": "https://www.nativedirections.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.nativedirections.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Stanislaus County District Attorney – Victim Services",
+          "description": "DA victim advocates who provide court support, case information, and help with victim compensation for crime victims throughout justice proceedings.",
+          "phones": [
+            {
+              "label": "Victim services",
+              "number": "(209) 525-5541"
+            }
+          ],
+          "address": "832 12th Street, Suite 300, Modesto, CA 95354",
+          "website": "https://www.stanislaus-da.org/victim-services/",
+          "hours": "Mon-Fri 9am-5pm",
+          "native": false,
+          "source": "https://www.stanislaus-da.org/victim-services/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services – Central Office",
+          "description": "Nonprofit law firm for Native individuals and tribes; the Sacramento-based Central Office serves Stanislaus County by phone and appointment.",
+          "phones": [
+            {
+              "label": "Office",
+              "number": "(916) 978-0960"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-829-0284"
+            }
+          ],
+          "address": "106 K Street, Suite 300, Sacramento, CA 95814",
+          "website": "https://www.calindian.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/centraloffice/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Visalia & Tulare County",
+      "county": "Tulare County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Visalia Police Department",
+          "description": "City police for Visalia; call the non-emergency line to reach an officer, file a report, or report a missing person inside city limits (call or text 911 in an emergency).",
+          "phones": [
+            {
+              "label": "Non-emergency",
+              "number": "(559) 734-8117"
+            },
+            {
+              "label": "Administration",
+              "number": "(559) 734-8116"
+            }
+          ],
+          "address": "303 S. Johnson Street, Visalia, CA 93291",
+          "website": "https://www.visalia.gov/201/Police",
+          "hours": null,
+          "native": false,
+          "source": "https://www.visalia.gov/201/Police",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Tulare County Sheriff's Office",
+          "description": "County sheriff for unincorporated Tulare County, including communities around the Tule River Reservation; dispatch answers around the clock for emergencies, with office hours Mon-Fri 8am-5pm.",
+          "phones": [
+            {
+              "label": "Non-emergency dispatch",
+              "number": "(559) 733-6218"
+            },
+            {
+              "label": "Headquarters",
+              "number": "(559) 802-9400"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-808-0488"
+            }
+          ],
+          "address": "833 S. Akers Street, Visalia, CA 93277",
+          "website": "https://tularecounty.ca.gov/sheriff/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://tularecounty.ca.gov/sheriff/about-us/contact-us",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Tule River Tribal Police Department",
+          "description": "Tribal law enforcement for the Tule River Reservation near Porterville, protecting tribal members and working with county, state, and federal agencies.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(559) 781-4271"
+            }
+          ],
+          "address": "340 N. Reservation Road, Porterville, CA 93257",
+          "website": "https://tulerivertribe-nsn.gov/dps-2/",
+          "hours": null,
+          "native": true,
+          "source": "https://tulerivertribe-nsn.gov/dps-2/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Santa Rosa Rancheria Tachi Yokut Tribe – Department of Public Safety",
+          "description": "Tribal public safety and law enforcement for the Santa Rosa Rancheria in Lemoore (Kings County, west of Visalia), serving tribal members, residents, and visitors.",
+          "phones": [
+            {
+              "label": "DPS dispatch",
+              "number": "(559) 925-2835"
+            },
+            {
+              "label": "Tribal main line",
+              "number": "(559) 924-1278"
+            }
+          ],
+          "address": "16835 Alkali Drive, Lemoore, CA 93245",
+          "website": "https://www.tachi-yokut-nsn.gov/public-safety",
+          "hours": null,
+          "native": true,
+          "source": "https://www.tachi-yokut-nsn.gov/public-safety",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Sacramento Field Office – Fresno Resident Agency (serves Tulare & Kings Counties)",
+          "description": "Federal investigators for crimes on tribal land, kidnappings, and multi-jurisdiction cases; Tulare and Kings counties are covered by the Fresno satellite office through the 24/7 field office line.",
+          "phones": [
+            {
+              "label": "24/7 field office line",
+              "number": "(916) 746-7000"
+            }
+          ],
+          "address": null,
+          "website": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sacramento/about",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Tule River Indian Health Center",
+          "description": "Tribal health center on the Tule River Reservation providing medical, dental, and behavioral health care to Native families in the Porterville area.",
+          "phones": [
+            {
+              "label": "Main",
+              "number": "(559) 784-2316"
+            }
+          ],
+          "address": "380 N. Reservation Road, Porterville, CA 93257",
+          "website": "https://www.trihci.org/",
+          "hours": "Mon-Fri 7:30am-5:30pm",
+          "native": true,
+          "source": "https://www.trihci.org/contact-us/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Family Services of Tulare County",
+          "description": "Tulare County's provider of domestic violence and sexual assault services, including emergency shelter, counseling, and advocacy; both hotlines answer 24 hours a day.",
+          "phones": [
+            {
+              "label": "24/7 domestic violence hotline",
+              "number": "(559) 732-5941"
+            },
+            {
+              "label": "24/7 rape crisis hotline",
+              "number": "(559) 732-7273"
+            },
+            {
+              "label": "General information",
+              "number": "(559) 741-7310"
+            }
+          ],
+          "address": null,
+          "website": "https://fstc.net/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://fstc.net/help/hotlines.html",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Tulare County District Attorney – Victim/Witness Assistance",
+          "description": "DA advocates offering crisis intervention, court support, case status, and help applying for California victim compensation, with offices in Visalia and Porterville.",
+          "phones": [
+            {
+              "label": "Visalia office",
+              "number": "(559) 636-5471"
+            },
+            {
+              "label": "Porterville office",
+              "number": "(559) 701-2020"
+            }
+          ],
+          "address": "221 S. Mooney Blvd., Room 264, Visalia, CA 93291",
+          "website": "https://tulareda.org/victim-witness/",
+          "hours": null,
+          "native": false,
+          "source": "https://tulareda.org/victim-witness/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services – Central Office",
+          "description": "Nonprofit law firm for Native individuals and tribes; the Sacramento-based Central Office serves Tulare and Kings counties by phone and appointment.",
+          "phones": [
+            {
+              "label": "Office",
+              "number": "(916) 978-0960"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-829-0284"
+            }
+          ],
+          "address": "106 K Street, Suite 300, Sacramento, CA 95814",
+          "website": "https://www.calindian.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/centraloffice/",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "name": "Bishop & Eastern Sierra",
+      "county": "Inyo County",
+      "services": [
+        {
+          "category": "law-enforcement",
+          "name": "Bishop Police Department",
+          "description": "City police for Bishop; call the main line and select option 2 to request an officer or report a non-emergency, including missing person reports inside city limits (911 in an emergency).",
+          "phones": [
+            {
+              "label": "Non-emergency (select option 2)",
+              "number": "(760) 873-5866"
+            }
+          ],
+          "address": "207 W. Line Street, Bishop, CA 93514",
+          "website": "https://cityofbishop.ca.gov/departments/police/",
+          "hours": null,
+          "native": false,
+          "source": "https://cityofbishop.ca.gov/departments/police/contact_police.php",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Inyo County Sheriff's Office",
+          "description": "County sheriff for Inyo County and the Eastern Sierra outside Bishop city limits; call the main line for non-emergencies and missing person reports (911 in an emergency).",
+          "phones": [
+            {
+              "label": "Main / non-emergency",
+              "number": "(760) 878-0383"
+            }
+          ],
+          "address": "550 S. Clay Street, Independence, CA 93526",
+          "website": "https://www.inyocounty.us/services/sheriff",
+          "hours": "Office Mon-Fri 8am-5pm",
+          "native": false,
+          "source": "https://www.inyocounty.us/services/sheriff",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "Bishop Paiute Tribal Police Department",
+          "description": "Tribal police for the Bishop Paiute Reservation; dispatch is staffed Monday-Friday 8am-5pm, so call 911 for emergencies or after hours.",
+          "phones": [
+            {
+              "label": "Dispatch (Mon-Fri 8am-5pm)",
+              "number": "(760) 873-4477"
+            }
+          ],
+          "address": "50 Tu Su Lane, Bishop, CA 93514",
+          "website": "https://bishoppaiute.net/departments/tribal-police/",
+          "hours": "Mon-Fri 8am-5pm",
+          "native": true,
+          "source": "https://bishoppaiute.net/departments/tribal-police/",
+          "confidence": "high"
+        },
+        {
+          "category": "law-enforcement",
+          "name": "FBI Sacramento Field Office – Bakersfield Resident Agency (serves Inyo County)",
+          "description": "Federal investigators for crimes on tribal land, kidnappings, and multi-jurisdiction cases; Inyo County is covered by the Bakersfield satellite office through the 24/7 field office line.",
+          "phones": [
+            {
+              "label": "24/7 field office line",
+              "number": "(916) 746-7000"
+            }
+          ],
+          "address": null,
+          "website": "https://www.fbi.gov/contact-us/field-offices/sacramento",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.fbi.gov/contact-us/field-offices/sacramento/about",
+          "confidence": "high"
+        },
+        {
+          "category": "native-health",
+          "name": "Toiyabe Indian Health Project",
+          "description": "Tribal health organization serving Native communities across the Eastern Sierra with medical, dental, behavioral health, and family services from its Bishop clinic.",
+          "phones": [
+            {
+              "label": "Main (Bishop clinic)",
+              "number": "(760) 873-8464"
+            }
+          ],
+          "address": "250 N. See Vee Lane, Bishop, CA 93514",
+          "website": "https://www.toiyabe.us/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.toiyabe.us/",
+          "confidence": "high"
+        },
+        {
+          "category": "dv-sa",
+          "name": "Wild Iris Family Counseling & Crisis Center",
+          "description": "Free, confidential support for victims of domestic violence, sexual assault, and child abuse across Inyo and Mono counties; the crisis line takes calls or texts 24/7.",
+          "phones": [
+            {
+              "label": "24/7 crisis line (call/text)",
+              "number": "1-877-873-7384"
+            },
+            {
+              "label": "Bishop office",
+              "number": "(760) 873-6601"
+            }
+          ],
+          "address": "150 N. Main Street, Bishop, CA 93514",
+          "website": "https://www.wild-iris.org/",
+          "hours": "24/7",
+          "native": false,
+          "source": "https://www.wild-iris.org/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "California Indian Legal Services – Eastern Office (Bishop)",
+          "description": "Nonprofit Native legal aid office in Bishop handling Indian law and legal assistance for Alpine, Inyo, Kern, Mono, and Tuolumne counties.",
+          "phones": [
+            {
+              "label": "Office",
+              "number": "(760) 873-3581"
+            },
+            {
+              "label": "Toll-free",
+              "number": "1-800-736-3582"
+            }
+          ],
+          "address": "873 N. Main Street, Suite 120, Bishop, CA 93514",
+          "website": "https://www.calindian.org/",
+          "hours": null,
+          "native": true,
+          "source": "https://www.calindian.org/easternoffice/",
+          "confidence": "high"
+        },
+        {
+          "category": "legal-advocacy",
+          "name": "Inyo County District Attorney – Victim/Witness Assistance Program",
+          "description": "DA advocates who support crime victims through the criminal justice system, including compensation claims, crisis intervention, court orientation, and emergency assistance.",
+          "phones": [
+            {
+              "label": "Bishop office",
+              "number": "(760) 873-6669"
+            },
+            {
+              "label": "Independence office",
+              "number": "(760) 878-0299"
+            }
+          ],
+          "address": "168 N. Edwards Street, Independence, CA 93526",
+          "website": "https://www.inyocounty.us/services/district-attorney/victim-witness",
+          "hours": null,
+          "native": false,
+          "source": "https://www.inyocounty.us/services/district-attorney/victim-witness",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

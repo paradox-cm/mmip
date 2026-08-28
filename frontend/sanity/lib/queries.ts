@@ -158,7 +158,7 @@ export const getHomepageQuery = defineQuery(`
 // Sitemap
 
 export const sitemapData = defineQuery(`
-  *[_type == "page" || _type == "post" || _type == "service" && defined(slug.current)] | order(_type asc) {
+  *[_type in ["page", "post", "service", "tribe"] && defined(slug.current)] | order(_type asc) {
     "slug": slug.current,
     "categorySlug": category->slug.current,
     _type,

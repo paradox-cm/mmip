@@ -22,8 +22,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 1,
     changeFrequency: 'monthly',
   })
+  sitemap.push({
+    url: `${domain}/get-help`,
+    lastModified: new Date(),
+    priority: 0.9,
+    changeFrequency: 'monthly',
+  })
+  sitemap.push({
+    url: `${domain}/services`,
+    lastModified: new Date(),
+    priority: 0.8,
+    changeFrequency: 'monthly',
+  })
+  sitemap.push({
+    url: `${domain}/tribes`,
+    lastModified: new Date(),
+    priority: 0.8,
+    changeFrequency: 'monthly',
+  })
 
   if (allPostsAndPages != null && allPostsAndPages.data.length != 0) {
+    // CMS pages can share a slug with the code-defined routes above (e.g. a
+    // "services" page document); the static route wins, so skip duplicates.
+    const seenUrls = new Set(sitemap.map(entry => entry.url))
     let priority: number
     let url: string
     let changeFrequency:
@@ -48,9 +69,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           changeFrequency = 'never'
           url = `${domain}/${p.categorySlug}/${p.slug}`
           break
+        case 'service':
+          priority = 0.7
+          changeFrequency = 'monthly'
+          url = `${domain}/services/${p.slug}`
+          break
+        case 'tribe':
+          priority = 0.7
+          changeFrequency = 'monthly'
+          url = `${domain}/tribes/${p.slug}`
+          break
         default:
           continue
       }
+      if (seenUrls.has(url)) {
+        continue
+      }
+      seenUrls.add(url)
       sitemap.push({
         lastModified: p._updatedAt || new Date(),
         priority,

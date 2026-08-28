@@ -6,7 +6,7 @@ import { expectNoAxeViolations } from './helpers/axe'
 
 import { type Page, test } from '@playwright/test'
 
-const PUBLIC_ROUTES = ['/', '/search', '/tribes', '/services', '/admin/login']
+const PUBLIC_ROUTES = ['/', '/search', '/tribes', '/services', '/get-help', '/admin/login']
 
 const ADMIN_ROUTES = [
   '/admin',

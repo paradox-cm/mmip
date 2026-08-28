@@ -129,6 +129,12 @@ export default {
           DEFAULT: 'oklch(var(--link) / <alpha-value>)',
           hover: 'oklch(var(--link-hover) / <alpha-value>)',
         },
+        help: {
+          DEFAULT: 'oklch(var(--help) / <alpha-value>)',
+          hover: 'oklch(var(--help-hover) / <alpha-value>)',
+          active: 'oklch(var(--help-active) / <alpha-value>)',
+          foreground: 'oklch(var(--help-foreground) / <alpha-value>)',
+        },
         content: {
           article: {
             DEFAULT: 'oklch(var(--content-article-surface) / <alpha-value>)',

@@ -29,3 +29,5 @@ next-env.d.ts
 
 # VS Code
 .vscode
+# playwright-cli debug artifacts
+.playwright-cli/

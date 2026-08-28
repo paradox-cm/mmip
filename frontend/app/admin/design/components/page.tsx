@@ -53,12 +53,13 @@ export default function ComponentsPage() {
       <DocSection
         id="button"
         title="Button"
-        description="Variants: default, outline, ghost, link. Sizes include a 44px default and dedicated icon sizes."
+        description="Variants: default, help, outline, ghost, link. Sizes include a 44px default and dedicated icon sizes."
       >
         <div className="grid gap-4">
           <Preview label="Variants">
             <div className="flex flex-wrap gap-3">
               <Button>Primary</Button>
+              <Button variant="help">Get Help</Button>
               <Button variant="outline">Outline</Button>
               <Button variant="ghost">Ghost</Button>
               <Button variant="link">Link</Button>
@@ -86,7 +87,9 @@ export default function ComponentsPage() {
         <p className="text-sm text-foreground-subtle">
           Use <DocCode>asChild</DocCode> with Next.js <DocCode>Link</DocCode> for navigation. Prefer
           submit type only inside forms — the default type is button. Default, outline, and ghost
-          press with <DocCode>interactive-press</DocCode>; the link variant does not scale.
+          press with <DocCode>interactive-press</DocCode>; the link variant does not scale. The
+          terracotta <DocCode>help</DocCode> variant is reserved for the Get Help crisis CTA (header,
+          footer, and <DocCode>/get-help</DocCode>) — do not reuse it for ordinary actions.
         </p>
       </DocSection>
 

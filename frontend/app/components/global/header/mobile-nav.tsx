@@ -1,7 +1,7 @@
 'use client'
 
 import { Fragment, useEffect, useState } from 'react'
-import { LuMenu, LuX } from 'react-icons/lu'
+import { LuLifeBuoy, LuMenu, LuX } from 'react-icons/lu'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -19,8 +19,8 @@ import {
   SheetTrigger,
 } from '@/app/components/ui/sheet'
 
-import NavLinkLabel from './nav-link-label'
 import { filterPrimaryNav, matchesNavLabel, navItemLabel, type PrimaryNav } from './nav-items'
+import NavLinkLabel from './nav-link-label'
 
 const LINK_CLASSES =
   'flex min-h-14 items-center rounded-lg px-4 py-3 text-body text-foreground outline-none touch-manipulation transition-colors duration-fast ease-standard hover:bg-accent active:bg-accent-active focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background'
@@ -96,6 +96,13 @@ export default function MobileNav({
             </div>
           </div>
         </SheetHeader>
+
+        <Button asChild variant="help" size="lg" className="w-full">
+          <Link href="/get-help" onClick={() => setOpen(false)}>
+            <LuLifeBuoy aria-hidden="true" className="size-5" />
+            Get Help
+          </Link>
+        </Button>
 
         {items.length > 0 && (
           <nav

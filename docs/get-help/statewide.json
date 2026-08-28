@@ -1,0 +1,291 @@
+{
+  "national": [
+    {
+      "category": "dv-sa",
+      "name": "StrongHearts Native Helpline",
+      "description": "24/7 confidential helpline by and for Native Americans and Alaska Natives affected by domestic, dating, and sexual violence.",
+      "phones": [{ "label": "Call or text, 24/7", "number": "1-844-762-8483" }],
+      "text": "Text START to 1-844-762-8483, or chat via strongheartshelpline.org",
+      "address": null,
+      "website": "https://strongheartshelpline.org/",
+      "hours": "24/7",
+      "native": true,
+      "source": "https://strongheartshelpline.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "crisis-hotlines",
+      "name": "988 Suicide & Crisis Lifeline",
+      "description": "Free, confidential support for anyone in suicidal crisis or emotional distress, and for people worried about a loved one.",
+      "phones": [{ "label": "Call or text, 24/7", "number": "988" }],
+      "text": "Text 988, or chat at chat.988lifeline.org (Spanish, LGBTQI+, and Deaf/HoH options available)",
+      "address": null,
+      "website": "https://988lifeline.org/",
+      "hours": "24/7",
+      "native": false,
+      "source": "https://988lifeline.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "crisis-hotlines",
+      "name": "Crisis Text Line",
+      "description": "Free 24/7 text-based support with a trained crisis counselor for any kind of crisis.",
+      "phones": [],
+      "text": "Text HOME to 741741 (HOLA for Spanish); WhatsApp 1-443-787-7678; chat at connect.crisistextline.org",
+      "address": null,
+      "website": "https://www.crisistextline.org/",
+      "hours": "24/7",
+      "native": false,
+      "source": "https://www.crisistextline.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "dv-sa",
+      "name": "National Domestic Violence Hotline",
+      "description": "24/7 confidential support, safety planning, and local referrals for anyone experiencing domestic violence or abuse.",
+      "phones": [
+        { "label": "Call, 24/7", "number": "1-800-799-7233" },
+        { "label": "Deaf/HoH videophone", "number": "1-855-812-1001" }
+      ],
+      "text": "Text START to 88788, or chat at thehotline.org",
+      "address": null,
+      "website": "https://www.thehotline.org/",
+      "hours": "24/7",
+      "native": false,
+      "source": "https://www.thehotline.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "dv-sa",
+      "name": "RAINN National Sexual Assault Hotline",
+      "description": "Free, confidential 24/7 support for survivors of sexual assault and their loved ones, in English and Spanish.",
+      "phones": [{ "label": "Call, 24/7", "number": "1-800-656-4673" }],
+      "text": "Text HOPE to 64673, or chat at rainn.org/hotline (Signal messaging also available)",
+      "address": null,
+      "website": "https://rainn.org/",
+      "hours": "24/7",
+      "native": false,
+      "source": "https://rainn.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "dv-sa",
+      "name": "National Human Trafficking Hotline",
+      "description": "24/7 confidential help and tip line for victims and survivors of sex or labor trafficking, and for reporting suspected trafficking.",
+      "phones": [
+        { "label": "Call, 24/7 (TTY 711)", "number": "1-888-373-7888" }
+      ],
+      "text": "Text 233733, or chat at humantraffickinghotline.org",
+      "address": null,
+      "website": "https://humantraffickinghotline.org/",
+      "hours": "24/7",
+      "native": false,
+      "source": "https://humantraffickinghotline.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "missing-persons",
+      "name": "NamUs (National Missing & Unidentified Persons System)",
+      "description": "Free national database where families can enter a missing loved one's case once a police report exists; cases are vetted with the investigating agency, and NamUs provides free forensic services including family DNA kits.",
+      "phones": [],
+      "text": "Create a case or send questions via the web form at namus.nij.ojp.gov/contact (choose Case Support)",
+      "address": null,
+      "website": "https://namus.nij.ojp.gov/",
+      "hours": null,
+      "native": false,
+      "source": "https://namus.nij.ojp.gov/contact",
+      "confidence": "high"
+    },
+    {
+      "category": "missing-persons",
+      "name": "National Center for Missing & Exploited Children (NCMEC)",
+      "description": "24-hour hotline for reporting and finding missing children and teens under 18 — call right after 911.",
+      "phones": [{ "label": "24-hour hotline", "number": "1-800-843-5678" }],
+      "text": null,
+      "address": null,
+      "website": "https://www.missingkids.org/",
+      "hours": "24/7",
+      "native": false,
+      "source": "https://www.missingkids.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "law-enforcement",
+      "name": "BIA Missing & Murdered Unit (MMU)",
+      "description": "Federal unit that analyzes and helps solve missing and murdered cases involving American Indians and Alaska Natives — families can submit case information or tips by phone, email (OJS_MMU@bia.gov), or online form.",
+      "phones": [
+        {
+          "label": "Office line, Mon-Fri 8:30am-4:30pm",
+          "number": "1-833-560-2065"
+        }
+      ],
+      "text": "Submit a tip or case online at bia.gov/service/mmu/submit-tip-or-case-information",
+      "address": null,
+      "website": "https://www.bia.gov/service/mmu",
+      "hours": "Mon-Fri 8:30am-4:30pm (call 911 in an emergency)",
+      "native": true,
+      "source": "https://www.bia.gov/service/mmu",
+      "confidence": "high"
+    },
+    {
+      "category": "law-enforcement",
+      "name": "FBI Tips",
+      "description": "Report a federal crime or share information on a missing or murdered loved one's case with the FBI by phone or online.",
+      "phones": [{ "label": "1-800-CALL-FBI", "number": "1-800-225-5324" }],
+      "text": "Submit a tip online at tips.fbi.gov",
+      "address": null,
+      "website": "https://www.fbi.gov/tips",
+      "hours": null,
+      "native": false,
+      "source": "https://www.fbi.gov/contact-us",
+      "confidence": "high"
+    }
+  ],
+  "california": [
+    {
+      "category": "missing-persons",
+      "name": "California DOJ Missing Persons Section",
+      "description": "The state's missing persons clearinghouse — searchable database, free DNA program for families, and confirmation that there is NO waiting period to report someone missing in California (missing.persons@doj.ca.gov).",
+      "phones": [
+        {
+          "label": "Missing Children Clearinghouse (1-800-222-FIND)",
+          "number": "1-800-222-3463"
+        }
+      ],
+      "text": null,
+      "address": null,
+      "website": "https://oag.ca.gov/missing",
+      "hours": null,
+      "native": false,
+      "source": "https://oag.ca.gov/missing",
+      "confidence": "high"
+    },
+    {
+      "category": "missing-persons",
+      "name": "Feather Alert (California Highway Patrol)",
+      "description": "California's emergency alert for missing Indigenous people in danger — ask the investigating law enforcement agency to request activation from CHP; if police make no determination within 24 hours, the person's tribe may request it from CHP directly.",
+      "phones": [],
+      "text": null,
+      "address": null,
+      "website": "https://www.chp.ca.gov/news-alerts/alerts/Feather-Alert",
+      "hours": null,
+      "native": true,
+      "source": "https://www.chp.ca.gov/news-alerts/alerts/Feather-Alert",
+      "confidence": "high"
+    },
+    {
+      "category": "law-enforcement",
+      "name": "CA DOJ Office of Native American Affairs (ONAA)",
+      "description": "The Attorney General's tribal liaison office — leads the state's MMIP outreach, Missing in California Indian Country events, and tribal community response planning (ONAA@doj.ca.gov).",
+      "phones": [{ "label": "Office line", "number": "(916) 210-6474" }],
+      "text": null,
+      "address": "P.O. Box 944255, Sacramento, CA 94244-2550",
+      "website": "https://oag.ca.gov/nativeamerican",
+      "hours": null,
+      "native": true,
+      "source": "https://oag.ca.gov/nativeamerican/contact",
+      "confidence": "high"
+    },
+    {
+      "category": "missing-persons",
+      "name": "Yurok Tribal Court MMIP Program (To' Kee Skuy' Soo Ney-Wo-Chek')",
+      "description": "Tribal MMIP program serving Northern California families — case and tip intake, search assistance, advocacy, accompaniment, and support with reunification costs.",
+      "phones": [
+        { "label": "877-YT-COURT, ext. 4", "number": "1-877-982-6878" }
+      ],
+      "text": "Anonymous case and tip forms at yuroktribalcourt.org",
+      "address": "230 Klamath Blvd. Ste. A, Klamath, CA",
+      "website": "https://yuroktribalcourt.org/programs/to-kee-skuy-soo-ney-wo-chek/",
+      "hours": null,
+      "native": true,
+      "source": "https://yuroktribalcourt.org/programs/to-kee-skuy-soo-ney-wo-chek/",
+      "confidence": "high"
+    },
+    {
+      "category": "legal-advocacy",
+      "name": "California Victim Compensation Board (CalVCB)",
+      "description": "State program that reimburses crime-related expenses for victims and families, such as counseling, medical care, and funeral or burial costs.",
+      "phones": [{ "label": "Helpline", "number": "1-800-777-9229" }],
+      "text": null,
+      "address": "P.O. Box 3036, Sacramento, CA 95812-3036",
+      "website": "https://victims.ca.gov/",
+      "hours": null,
+      "native": false,
+      "source": "https://victims.ca.gov/contact-us/",
+      "confidence": "high"
+    },
+    {
+      "category": "crisis-hotlines",
+      "name": "211 California",
+      "description": "Free, confidential referrals to local food, housing, health, mental health, and crisis services anywhere in California.",
+      "phones": [
+        { "label": "Dial 2-1-1", "number": "211" },
+        { "label": "Outside your home county", "number": "1-866-346-3211" }
+      ],
+      "text": "Text your ZIP code to 898211 (where available)",
+      "address": null,
+      "website": "https://211ca.org/",
+      "hours": "24/7 in most counties (13 rural counties lack full 24/7 service)",
+      "native": false,
+      "source": "https://211ca.org/about-211-california-united-ways-resources/",
+      "confidence": "high"
+    },
+    {
+      "category": "legal-advocacy",
+      "name": "California Tribal Families Coalition (CTFC)",
+      "description": "Statewide coalition of California tribes advocating for the health, safety, and welfare of tribal children and families (contact@caltribalfamilies.org).",
+      "phones": [{ "label": "Office line", "number": "(916) 583-8289" }],
+      "text": null,
+      "address": null,
+      "website": "https://caltribalfamilies.org/",
+      "hours": null,
+      "native": true,
+      "source": "https://caltribalfamilies.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "legal-advocacy",
+      "name": "California Indian Legal Services (CILS)",
+      "description": "Free or low-cost legal help for Native individuals and tribes in every California county, with offices in Escondido, Sacramento, Bishop, and Eureka.",
+      "phones": [
+        { "label": "Escondido (Southern)", "number": "1-800-743-8941" },
+        { "label": "Sacramento (Central)", "number": "1-800-829-0284" },
+        { "label": "Bishop (Eastern)", "number": "1-800-736-3582" },
+        { "label": "Eureka (Northern)", "number": "1-800-347-2402" }
+      ],
+      "text": null,
+      "address": null,
+      "website": "https://www.calindian.org/",
+      "hours": null,
+      "native": true,
+      "source": "https://www.calindian.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "native-health",
+      "name": "California Rural Indian Health Board (CRIHB)",
+      "description": "Statewide network of tribal health programs promoting the health and social conditions of California's Indian people, including domestic violence prevention.",
+      "phones": [{ "label": "Main office", "number": "(916) 929-9761" }],
+      "text": null,
+      "address": "1020 Sundown Way, Roseville, CA 95661",
+      "website": "https://crihb.org/",
+      "hours": null,
+      "native": true,
+      "source": "https://crihb.org/",
+      "confidence": "high"
+    },
+    {
+      "category": "native-health",
+      "name": "California Consortium for Urban Indian Health (CCUIH)",
+      "description": "Statewide association of ten urban Indian health programs offering culturally centered care, with violence-prevention work through its Red Women Rising program.",
+      "phones": [{ "label": "Main office", "number": "(916) 285-5824" }],
+      "text": null,
+      "address": "1900 Point West Way, Ste. 111, Sacramento, CA 95815",
+      "website": "https://ccuih.org/",
+      "hours": null,
+      "native": true,
+      "source": "https://ccuih.org/our-team/",
+      "confidence": "high"
+    }
+  ]
+}

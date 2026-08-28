@@ -285,6 +285,15 @@
   --link: var(--color-gold-700);
   --link-hover: var(--color-gold-600);
 
+  /* Get Help — the crisis CTA. Terracotta reads urgent and warm without
+     tipping into alarm red, and stays distinct from gold (primary) and
+     twilight (secondary). White ink clears AA on the 500 fill; hover and
+     press deepen so label contrast never inverts. */
+  --help: var(--color-terracota-500);
+  --help-hover: var(--color-terracota-600);
+  --help-active: var(--color-terracota-700);
+  --help-foreground: var(--color-white);
+
   /* ========================================================= */
   /* Border & Divider Colors                                   */
   /* ========================================================= */
@@ -424,6 +433,13 @@
 
   --link: var(--color-gold-300);
   --link-hover: var(--color-gold-200);
+
+  /* Get Help mirrors the dark primary pattern: a lifted terracotta fill with
+     umber ink, brightening on hover so the label never loses contrast. */
+  --help: var(--color-terracota-400);
+  --help-hover: var(--color-terracota-300);
+  --help-active: var(--color-terracota-200);
+  --help-foreground: var(--color-sand-950);
 
   --border: 0.37 0.01 75;
   --border-strong: 0.46 0.012 75;
