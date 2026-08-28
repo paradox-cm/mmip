@@ -124,7 +124,7 @@ function BuiltBy() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background"
+          className="absolute inset-0 hidden bg-gradient-to-b from-background/50 via-background/70 to-background dark:block"
         />
       </div>
       <div className="container absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 pb-28 md:relative md:justify-normal md:gap-4 md:py-20 lg:py-24 xl:py-28">
@@ -132,10 +132,10 @@ function BuiltBy() {
           <Image src={CommunityEagleImg} alt="Community eagle" />
         </div>
         <div className="-mt-2 flex flex-col gap-0.5 md:mt-0 md:gap-2">
-          <h2 className="text-center text-lg leading-tight dark:text-brand-ink md:text-3xl md:leading-normal">
+          <h2 className="text-center text-lg leading-tight md:text-3xl md:leading-normal">
             Built by and for Native communities.
           </h2>
-          <p className="text-center text-xs leading-snug dark:text-twilight-950 md:text-body">
+          <p className="text-center text-xs leading-snug md:text-body">
             For families, advocates, and future generations.
           </p>
         </div>
