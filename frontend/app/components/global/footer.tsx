@@ -122,6 +122,10 @@ function BuiltBy() {
           alt="Community background"
           className="min-h-[280px] w-full object-cover max-md:h-full md:min-h-[500px]"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background"
+        />
       </div>
       <div className="container relative z-10 flex flex-col items-center gap-1 pb-8 pt-3 md:gap-4 md:py-20 lg:py-24 xl:py-28">
         <div className="w-[156px] md:w-[207px]">

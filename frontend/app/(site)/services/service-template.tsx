@@ -88,7 +88,7 @@ function ServiceBody({
         <div className="flex max-w-80 flex-col gap-6 md:sticky md:top-36 lg:top-40">
           {/* Contact Information */}
           {contactInfo && (
-            <div className="rounded-lg border bg-card p-6">
+            <div className="rounded-lg border border-strong bg-card p-6">
               <h3 className="mb-4 text-lg font-semibold">Contact Information</h3>
               <div className="space-y-3">
                 {contactInfo.address && (
@@ -110,7 +110,10 @@ function ServiceBody({
                 {contactInfo.phone && (
                   <div className="flex items-center gap-2">
                     <LuPhone className="size-4 shrink-0 text-foreground-muted" />
-                    <a href={`tel:${contactInfo.phone}`} className="text-sm hover:underline">
+                    <a
+                      href={`tel:${contactInfo.phone}`}
+                      className="text-sm text-link underline underline-offset-4 hover:text-link-hover"
+                    >
                       {contactInfo.phone}
                     </a>
                   </div>
@@ -119,7 +122,10 @@ function ServiceBody({
                 {contactInfo.email && (
                   <div className="flex items-center gap-2">
                     <LuMail className="size-4 shrink-0 text-foreground-muted" />
-                    <a href={`mailto:${contactInfo.email}`} className="text-sm hover:underline">
+                    <a
+                      href={`mailto:${contactInfo.email}`}
+                      className="text-sm text-link underline underline-offset-4 hover:text-link-hover"
+                    >
                       {contactInfo.email}
                     </a>
                   </div>
@@ -132,7 +138,7 @@ function ServiceBody({
                       href={contactInfo.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm hover:underline"
+                      className="text-sm text-link underline underline-offset-4 hover:text-link-hover"
                     >
                       {formatWebsiteUrl(contactInfo.website)}
                     </a>
@@ -144,7 +150,7 @@ function ServiceBody({
 
           {/* Operating Hours */}
           {hours && (
-            <div className="rounded-lg border bg-card p-6">
+            <div className="rounded-lg border border-strong bg-card p-6">
               <h3 className="mb-4 text-lg font-semibold">Operating Hours</h3>
               <div className="flex items-center gap-2">
                 <LuClock className="size-4 shrink-0 text-foreground-muted" />

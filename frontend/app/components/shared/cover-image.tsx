@@ -12,7 +12,7 @@ export default function CoverImage({ image }: { image: SanityImageType | null })
         priority={true}
       />
     ) : (
-      <div className="rounded border bg-sand-200 pt-[100%]" />
+      <div className="rounded border bg-muted pt-[100%]" />
     )
 
   return <div className="relative">{img}</div>

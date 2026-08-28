@@ -67,7 +67,7 @@ function SheetContent({
         {showCloseButton && (
           <SheetPrimitive.Close
             data-slot="sheet-close"
-            className="absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-lg border bg-background text-foreground outline-none transition-[background-color,box-shadow,transform] duration-fast ease-standard hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 motion-reduce:active:scale-100"
+            className="absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-lg border border-strong bg-background text-foreground outline-none transition-[background-color,box-shadow,transform] duration-fast ease-standard hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 motion-reduce:active:scale-100"
           >
             <LuX className="size-5" aria-hidden="true" />
             <span className="sr-only">Close menu</span>

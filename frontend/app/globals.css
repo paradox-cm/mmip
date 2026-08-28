@@ -118,22 +118,34 @@
   --color-success-300: 0.84 0.04 145; /* oklch(0.84 0.04 145) */
   --color-success-400: 0.78 0.04 145; /* oklch(0.78 0.04 145) */
   --color-success-500: 0.72 0.04 145; /* oklch(0.72 0.04 145) */
+  --color-success-700: 0.38 0.05 145; /* oklch(0.38 0.05 145) */
+  --color-success-800: 0.32 0.045 145; /* oklch(0.32 0.045 145) */
   --color-success-foreground: 0.25 0.03 145; /* oklch(0.25 0.03 145) */
+  --color-success-ink: 0.9 0.04 145; /* oklch(0.9 0.04 145) */
 
   --color-warning-300: 0.85 0.06 75; /* oklch(0.85 0.06 75) */
   --color-warning-400: 0.8 0.06 75; /* oklch(0.8 0.06 75) */
   --color-warning-500: 0.74 0.06 75; /* oklch(0.74 0.06 75) */
+  --color-warning-700: 0.38 0.07 75; /* oklch(0.38 0.07 75) */
+  --color-warning-800: 0.32 0.06 75; /* oklch(0.32 0.06 75) */
   --color-warning-foreground: 0.26 0.04 75; /* oklch(0.26 0.04 75) */
+  --color-warning-ink: 0.92 0.05 75; /* oklch(0.92 0.05 75) */
 
   --color-error-300: 0.77 0.05 25; /* oklch(0.77 0.05 25) */
   --color-error-400: 0.7 0.04 25; /* oklch(0.7 0.04 25) */
   --color-error-500: 0.63 0.04 25; /* oklch(0.63 0.04 25) */
+  --color-error-700: 0.36 0.05 25; /* oklch(0.36 0.05 25) */
+  --color-error-800: 0.3 0.045 25; /* oklch(0.3 0.045 25) */
   --color-error-foreground: 0.19 0.03 25; /* oklch(0.19 0.03 25) */
+  --color-error-ink: 0.9 0.03 25; /* oklch(0.9 0.03 25) */
 
   --color-info-300: 0.82 0.03 210; /* oklch(0.82 0.03 210) */
   --color-info-400: 0.76 0.03 210; /* oklch(0.76 0.03 210) */
   --color-info-500: 0.7 0.03 210; /* oklch(0.7 0.03 210) */
+  --color-info-700: 0.36 0.04 210; /* oklch(0.36 0.04 210) */
+  --color-info-800: 0.3 0.035 210; /* oklch(0.3 0.035 210) */
   --color-info-foreground: 0.24 0.02 210; /* oklch(0.24 0.02 210) */
+  --color-info-ink: 0.9 0.03 210; /* oklch(0.9 0.03 210) */
 
   /* ============================ */
   /* Radius                       */
@@ -165,6 +177,12 @@
 }
 
 :root {
+  color-scheme: light;
+
+  /* Layered elevation. Dark remaps this to a heavier black so sheets
+     and dialogs still lift off warm sand-950. */
+  --shadow-layer: 0 35px 60px -15px rgb(0 0 0 / 0.3);
+
   /* ========================================================= */
   /* Foundation Colors (Backgrounds & Foregrounds)             */
   /* ========================================================= */
@@ -330,6 +348,8 @@
   --brand-seal-wordmark: var(--brand-seal-mark);
   --brand-seal-mark: var(--color-gold-300);
 
+  --shadow-layer: 0 35px 60px -15px rgb(0 0 0 / 0.7);
+
   --background: 0.258 0.009 75; /* #26231f */
   --background-subtle: 0.213 0.009 75;
   --background-emphasis: 0.285 0.01 75;
@@ -373,10 +393,34 @@
   --accent-active: 0.375 0.012 75;
   --accent-foreground: var(--foreground);
 
-  --destructive-strong: 0.79 0.06 25;
+  --success: var(--color-success-700);
+  --success-hover: var(--color-success-800);
+  --success-active: var(--color-success-800);
+  --success-foreground: var(--color-success-ink);
+
+  --warning: var(--color-warning-700);
+  --warning-hover: var(--color-warning-800);
+  --warning-active: var(--color-warning-800);
+  --warning-foreground: var(--color-warning-ink);
+
+  --error: var(--color-error-700);
+  --error-hover: var(--color-error-800);
+  --error-active: var(--color-error-800);
+  --error-foreground: var(--color-error-ink);
+
+  --info: var(--color-info-700);
+  --info-hover: var(--color-info-800);
+  --info-active: var(--color-info-800);
+  --info-foreground: var(--color-info-ink);
+
+  --destructive: var(--color-error-700);
+  --destructive-hover: var(--color-error-800);
+  --destructive-foreground: var(--color-error-ink);
+  --destructive-strong: var(--color-terracota-300);
 
   --muted: 0.295 0.01 75;
-  --muted-foreground: var(--foreground-muted);
+  /* sand-300 on the lifted wash clears 4.5:1 without collapsing into heading white. */
+  --muted-foreground: var(--color-sand-300);
 
   --link: var(--color-gold-300);
   --link-hover: var(--color-gold-200);
@@ -421,6 +465,19 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    scrollbar-color: oklch(var(--border-strong)) oklch(var(--background));
+  }
+
+  /* Chrome's yellow autofill wash punches a light hole in dark forms. */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-text-fill-color: oklch(var(--foreground));
+    caret-color: oklch(var(--foreground));
+    box-shadow: 0 0 0 1000px oklch(var(--input)) inset;
+    transition: background-color 99999s ease-in-out 0s;
   }
 
   /* Reduced motion is honoured globally. Opt an element back in with

@@ -5,6 +5,7 @@ import * as React from 'react'
 import {
   type Appearance,
   APPEARANCE_STORAGE_KEY,
+  APPEARANCE_THEME_COLORS,
   isAppearance,
   type ResolvedAppearance,
 } from './config'
@@ -31,6 +32,10 @@ function applyToDocument(resolved: ResolvedAppearance) {
   root.classList.toggle('dark', resolved === 'dark')
   root.setAttribute('data-color-scheme', resolved)
   root.style.colorScheme = resolved
+  const meta = document.querySelector('meta[name="theme-color"]')
+  if (meta) {
+    meta.setAttribute('content', APPEARANCE_THEME_COLORS[resolved])
+  }
 }
 
 export function AppearanceProvider({ children }: { children: React.ReactNode }) {
