@@ -5,9 +5,9 @@ import { SanityDocument } from 'next-sanity'
 import { useOptimistic } from 'next-sanity/hooks'
 
 import BlockRenderer from '@/app/components/shared/block-renderer'
+import Section from '@/app/components/shared/section'
 import { Button } from '@/app/components/ui/button'
 import { GetPageQueryResult } from '@/sanity.types'
-import { studioUrl } from '@/sanity/lib/api'
 import { dataAttr } from '@/sanity/lib/utils'
 
 type PageBuilderPageProps = {
@@ -52,25 +52,21 @@ function renderEmptyState(page: GetPageQueryResult) {
     return null
   }
   return (
-    <div className="container">
-      <h1 className="text-h1 font-extrabold tracking-tight text-foreground-heading sm:text-5xl">
-        This page has no content!
-      </h1>
-      <p className="mt-2 text-body-small text-foreground-muted">
-        Open the page in Sanity Studio to add content.
-      </p>
-      <div className="mt-10 flex">
-        <Button asChild size="lg">
-          <Link
-            href={`${studioUrl}/structure/intent/edit/template=page;type=page;path=pageBuilder;id=${page._id}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Add content to this page
-          </Link>
-        </Button>
+    <Section>
+      <div className="container">
+        <h1 className="text-h2 font-extrabold tracking-tight text-foreground-heading sm:text-h1">
+          More content is on the way
+        </h1>
+        <p className="mt-4 max-w-xl text-body-small text-foreground-muted">
+          We&apos;re working on bringing you more information here. Please check back soon.
+        </p>
+        <div className="mt-10 flex">
+          <Button asChild size="lg">
+            <Link href="/">Back to home</Link>
+          </Button>
+        </div>
       </div>
-    </div>
+    </Section>
   )
 }
 
