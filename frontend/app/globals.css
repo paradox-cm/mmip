@@ -570,7 +570,7 @@
   }
 
   .taxonomy-icon {
-    @apply inline-block shrink-0 bg-brand-emphasis transition-colors duration-fast ease-standard;
+    @apply inline-block shrink-0 bg-brand-emphasis;
     mask-image: var(--taxonomy-icon-source);
     mask-repeat: no-repeat;
     mask-position: center;
