@@ -31,7 +31,9 @@ async function runAxe(route: string, page: Page) {
     (response?.status() ?? 0) >= 500,
     `${route} returned ${response?.status()} (CMS/env unavailable)`,
   )
-  await page.waitForLoadState('networkidle').catch(() => undefined)
+  // Sanity Live maintains a long-lived connection, so `networkidle` can never
+  // settle. A visible main landmark is the stable, user-facing readiness signal.
+  await page.locator('main').waitFor({ state: 'visible' })
   await expectNoAxeViolations(page)
 }
 

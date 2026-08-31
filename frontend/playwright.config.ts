@@ -1,5 +1,7 @@
-import { loadEnvConfig } from '@next/env'
+import nextEnv from '@next/env'
 import { defineConfig, devices } from '@playwright/test'
+
+const { loadEnvConfig } = nextEnv
 
 loadEnvConfig(process.cwd())
 

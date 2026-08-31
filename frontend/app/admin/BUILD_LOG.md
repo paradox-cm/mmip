@@ -2,10 +2,10 @@
 
 **Audience:** anyone picking up this webapp.  
 **Source of this page:** `frontend/app/admin/BUILD_LOG.md` (also served as [raw Markdown](/admin/build-log/raw))  
-**Last updated:** 25 August 2026  
-**Working copy:** [paradox-cm/mmip](https://github.com/paradox-cm/mmip) · **upstream:** [caseykennedy/mmip](https://github.com/caseykennedy/mmip)
+**Last updated:** 31 August 2026  
+**Working copy:** [paradox-cm/mmip](https://github.com/paradox-cm/mmip) (`mmip-p2`) · **upstream:** [caseykennedy/mmip](https://github.com/caseykennedy/mmip)
 
-This log is the record of finishing Casey Kennedy’s MMIP site into the public Resilient Relatives webapp. It separates what we inherited from what this pass added, and it is honest about what is still open.
+This log is the record of the P2 pass: taking Casey Kennedy’s MMIP site to the public Resilient Relatives webapp. It separates what we inherited from what this pass added, and it is honest about what is still open.
 
 ---
 
@@ -28,7 +28,7 @@ This log is the record of finishing Casey Kennedy’s MMIP site into the public 
 
 Work began by downloading [caseykennedy/mmip](https://github.com/caseykennedy/mmip) — a Next.js 15 + Sanity Studio monorepo that had already left the generic Sanity clean template and become a Cahuilla / MMIP resource site branded **Resilient Relatives**.
 
-The upstream history (July 2025 – May 2026) is the product skeleton: schema, routing, search, tribes, services, and a first visual pass. This working copy (`paradox-cm/mmip`, August 2026) is the finishing pass: token contract, design-system catalog, public-site UX, accessibility gates, and deploy hardening.
+The upstream history (July 2025 – May 2026) is the product skeleton: schema, routing, search, tribes, services, and a first visual pass. This working copy (`paradox-cm/mmip`, branch `mmip-p2`, August 2026) is the P2 pass: token contract, design-system catalog, public-site UX, accessibility gates, and deploy hardening.
 
 Local remotes:
 
@@ -87,7 +87,7 @@ A development-only screen: one button, “Reindex Algolia Search,” and a JSON 
 
 ---
 
-## What this finishing pass added (August 2026)
+## What P2 added (August 2026)
 
 Commits from `69bbc54` through `a0057bb` (21–24 August 2026), plus the open working tree.
 
@@ -123,7 +123,7 @@ Implemented on existing routes and tokens:
 
 **Explicitly deferred**
 
-- **Lane E:** hide-website already exists; remaining crisis chrome (Esc, history note, Get Help singleton) is not in scope.
+- **Lane E:** hide-website already exists. Get Help shipped at `/get-help`. Remaining crisis chrome (Esc, history note) is still deferred.
 - **Lane F:** portable-text callouts/steps, tags as a public surface, structured hours, submit-a-resource.
 
 ### 4. Platform and deploy
@@ -168,7 +168,7 @@ Implemented on existing routes and tokens:
 | Studio schema | `studio/src/schemas/` |
 | Token hygiene | `frontend/scripts/check-token-hygiene.mjs` |
 | Search handoff | `frontend/SEARCH_HANDOFF.md` |
-| UX backlog plan | `.cursor/plans/ux_bells_backlog_62b13aae.plan.md` |
+| P2 merge handoff | `docs/CASEY_MERGE_HANDOFF.md` |
 
 ---
 
@@ -191,7 +191,7 @@ Treat that list as in-flight, not as shipped.
 
 1. **Algolia production handoff** — create keys, set Vercel env, run an authenticated full index, attach the Sanity webhook. See `frontend/SEARCH_HANDOFF.md`. Until then, `/search` and the command palette degrade to “temporarily unavailable.”
 2. **Featured services on home** — schema and query exist; the grid is not rendered.
-3. **Sitemap** — `frontend/app/sitemap.ts` still emits the host plus pages and posts. Tribes, services, and the index routes (`/tribes`, `/services`, `/search`, `/articles`, `/guides`, `/tools`) are not included, despite the Lane A plan.
+3. **Sitemap indexes** — `/`, `/get-help`, `/services`, `/tribes`, and CMS pages, posts, services, and tribes are included with canonical `NEXT_PUBLIC_BASE_URL`. `/search`, `/articles`, `/guides`, and `/tools` are still not listed.
 4. **Package scripts** — wire `check:tokens` and `test:a11y` (or stop advertising those names in STANDARDS).
 5. **PWA / push** — either finish `push-manager` and service-worker headers or remove the dead path so it does not look like a feature.
 6. **Onboarding component** — delete once Studio has real content and `NEXT_PUBLIC_SANITY_STUDIO_URL` is a real URL.

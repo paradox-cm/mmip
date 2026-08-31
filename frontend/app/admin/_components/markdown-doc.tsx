@@ -195,7 +195,7 @@ function renderInline(text: string): ReactNode[] {
 
 function MarkdownLink({ href, children }: { href: string; children: ReactNode }) {
   const external = /^https?:\/\//.test(href)
-  const className = 'focus-ring rounded-sm text-primary'
+  const className = 'focus-ring rounded-sm text-primary underline underline-offset-4'
 
   if (external) {
     return (

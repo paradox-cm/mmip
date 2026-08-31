@@ -15,7 +15,7 @@ const tools = [
     href: '/admin/build-log',
     label: 'Build log',
     description:
-      'Inherited Casey work, this finishing pass, and remaining gaps — as formatted Markdown.',
+      'Inherited Casey work, the P2 pass, and remaining gaps — as formatted Markdown.',
   },
 ] as const
 

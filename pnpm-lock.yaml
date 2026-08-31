@@ -105,6 +105,9 @@ importers:
       '@eslint/js':
         specifier: ^9.27.0
         version: 9.33.0
+      '@next/env':
+        specifier: 15.5.9
+        version: 15.5.9
       '@next/eslint-plugin-next':
         specifier: ^15.3.2
         version: 15.4.6
@@ -2971,7 +2974,6 @@ packages:
 
   /@next/env@15.5.9:
     resolution: {integrity: sha512-4GlTZ+EJM7WaW2HEZcyU317tIQDjkQIyENDLxYJfSWlfqguN+dHkZgyQTV/7ykvobU7yEH5gKvreNrH4B6QgIg==}
-    dev: false
 
   /@next/eslint-plugin-next@15.4.6:
     resolution: {integrity: sha512-2NOu3ln+BTcpnbIDuxx6MNq+pRrCyey4WSXGaJIyt0D2TYicHeO9QrUENNjcf673n3B1s7hsiV5xBYRCK1Q8kA==}

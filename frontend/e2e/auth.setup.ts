@@ -19,7 +19,7 @@ setup('authenticate admin', async ({ page }) => {
 
   await page.goto('/admin/login')
   await page.getByLabel('Username').fill(user)
-  await page.getByLabel('Password').fill(password)
+  await page.locator('input[name="password"]').fill(password)
   await page.getByRole('button', { name: 'Sign in' }).click()
   await page.waitForURL(/\/admin(?!\/login)/)
   await page.context().storageState({ path: authFile })

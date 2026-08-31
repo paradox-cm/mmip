@@ -20,15 +20,17 @@ test.describe('admin login', () => {
     test.skip(!adminConfigured, 'ADMIN_BASIC_* are not set')
     await page.goto('/admin/login')
     await page.getByLabel('Username').fill(user!)
-    await page.getByLabel('Password').fill('incorrect-password')
+    await page.locator('input[name="password"]').fill('incorrect-password')
     await page.getByRole('button', { name: 'Sign in' }).click()
-    await expect(page.getByRole('alert')).toContainText('Username or password is incorrect.')
+    await expect(
+      page.getByRole('alert').filter({ hasText: 'Username or password is incorrect.' }),
+    ).toContainText('Username or password is incorrect.')
     await expect(page).toHaveURL(/\/admin\/login/)
   })
 
   test('toggles password visibility, remember-me, and help mail', async ({ page }) => {
     await page.goto('/admin/login')
-    const password = page.getByLabel('Password')
+    const password = page.locator('input[name="password"]')
     await password.fill('secret-value')
     await expect(password).toHaveAttribute('type', 'password')
     await page.getByRole('button', { name: 'Show password' }).click()
@@ -45,7 +47,7 @@ test.describe('admin login', () => {
     await page.goto('/admin/design')
     await expect(page).toHaveURL(/\/admin\/login/)
     await page.getByLabel('Username').fill(user!)
-    await page.getByLabel('Password').fill(password!)
+    await page.locator('input[name="password"]').fill(password!)
     await page.getByRole('button', { name: 'Sign in' }).click()
     await expect(page).toHaveURL(/\/admin\/design/)
     await expect(page.getByRole('button', { name: 'Sign out' })).toBeVisible()

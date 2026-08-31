@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
-import { headers } from 'next/headers'
 
+import { BASE_URL } from '@/lib/constants'
 import { sanityFetch } from '@/sanity/lib/live'
 import { sitemapData } from '@/sanity/lib/queries'
 
@@ -13,9 +13,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allPostsAndPages = await sanityFetch({
     query: sitemapData,
   })
-  const headersList = await headers()
   const sitemap: MetadataRoute.Sitemap = []
-  const domain: string = headersList.get('host') as string
+  const domain = BASE_URL
   sitemap.push({
     url: domain,
     lastModified: new Date(),

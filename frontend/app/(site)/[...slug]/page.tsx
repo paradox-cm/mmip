@@ -26,6 +26,15 @@ type Props = {
 }
 
 /**
+ * These paths have dedicated App Router pages. The CMS also has lightweight
+ * `page` documents for them so editors can select them in navigation, but the
+ * catch-all route must never prerender those documents. Otherwise Next emits
+ * duplicate static output and serves the generic page builder in place of the
+ * directory.
+ */
+const DEDICATED_ROOT_ROUTE_SLUGS = new Set(['services', 'tribes'])
+
+/**
  * Generate the static params for the page.
  * https://nextjs.org/docs/app/api-reference/functions/generate-static-params
  */
@@ -59,7 +68,9 @@ export async function generateStaticParams() {
   const posts = (postsResult.data || []) as Array<{ slug?: string; categorySlug?: string }>
 
   const staticParams = [
-    ...pages.filter(page => page.slug).map(page => ({ slug: [page.slug as string] })),
+    ...pages
+      .filter(page => page.slug && !DEDICATED_ROOT_ROUTE_SLUGS.has(page.slug))
+      .map(page => ({ slug: [page.slug as string] })),
     ...categories
       .filter(category => category.slug)
       .map(category => ({ slug: [category.slug as string] })),

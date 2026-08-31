@@ -13,16 +13,22 @@ export default async function BuildLogPage() {
     <>
       <PageHeader
         title="Build log"
-        description="The finishing record for this webapp: what Casey’s repo already contained, what this pass added, and what is still open. The same document is a Markdown file in the repo."
+        description="The P2 record for this webapp: what Casey’s repo already contained, what this pass added, and what is still open. The same document is a Markdown file in the repo."
       />
       <p className="max-w-reading text-sm text-foreground-subtle">
         Source file: <DocCode>frontend/app/admin/BUILD_LOG.md</DocCode>
         {' · '}
-        <Link href="/admin/build-log/raw" className="focus-ring rounded-sm text-primary">
+        <Link
+          href="/admin/build-log/raw"
+          className="focus-ring rounded-sm text-primary underline underline-offset-4"
+        >
           View raw Markdown
         </Link>
         {' · '}
-        <Link href="/admin" className="focus-ring rounded-sm text-primary">
+        <Link
+          href="/admin"
+          className="focus-ring rounded-sm text-primary underline underline-offset-4"
+        >
           Back to admin
         </Link>
       </p>

@@ -27,7 +27,10 @@ export default function DesignSystemOverviewPage() {
         </ul>
         <p className="max-w-reading text-sm text-foreground-subtle">
           Full protocol: <DocCode>app/admin/design/STANDARDS.md</DocCode>. The{' '}
-          <Link href="/admin/design/foundations" className="focus-ring rounded-sm text-primary">
+          <Link
+            href="/admin/design/foundations"
+            className="focus-ring rounded-sm text-primary underline underline-offset-4"
+          >
             Principles
           </Link>{' '}
           page is the living summary. Automated gates are <DocCode>check:tokens</DocCode> and{' '}

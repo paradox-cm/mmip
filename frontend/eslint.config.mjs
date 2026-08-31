@@ -29,6 +29,7 @@ export default [
     ignores: [
       'next.config.ts',
       'sanity.types.ts',
+      'next-env.d.ts',
       'node_modules/',
       '.next/',
       'dist/',
