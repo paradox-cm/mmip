@@ -35,11 +35,7 @@ export default async function HomePage({ data }: { data: GetHomepageQueryResult 
           </div>
         </Section>
       )}
-      <Section>
-        <div className="container">
-          <Categories />
-        </div>
-      </Section>
+      <Categories />
       {featuredPosts && featuredPosts.length > 0 && (
         <Section>
           <div className="container">
@@ -48,11 +44,7 @@ export default async function HomePage({ data }: { data: GetHomepageQueryResult 
           </div>
         </Section>
       )}
-      <Section>
-        <div className="container">
-          <Topics />
-        </div>
-      </Section>
+      <Topics />
     </>
   )
 }
